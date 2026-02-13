@@ -10,9 +10,15 @@ config_version=5
 
 [application]
 
-config/name="Новый игровой проект"
+config/name="KOTIK_Games"
+run/main_scene="uid://b22md6rp3di3v"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://sprites/icon.svg"
+
+[display]
+
+window/size/viewport_width=600
+window/size/viewport_height=1200
 
 [physics]
 
@@ -21,3 +27,4 @@ config/icon="res://icon.svg"
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+renderer/rendering_method="mobile"

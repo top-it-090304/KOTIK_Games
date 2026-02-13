@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://bvbornp0xpqdy"]
+
+[ext_resource type="Script" uid="uid://1ovquond18v3" path="res://sciens/windows_UI/choice_screen/choice_menu.gd" id="1_qn3gq"]
+[ext_resource type="Texture2D" uid="uid://dsfhkt1so4612" path="res://sprites/icon.svg" id="2_rvods"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_m61yp"]
+diffuse_texture = ExtResource("2_rvods")
+
+[node name="choice_menu" type="Control" unique_id=1593413815]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qn3gq")
+
+[node name="Control" type="Control" parent="." unique_id=1765610469]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CenterContainer" type="CenterContainer" parent="Control" unique_id=543539433]
+layout_mode = 0
+offset_right = 600.0
+offset_bottom = 1200.0
+scale = Vector2(2.5, 2.5)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer" unique_id=1562520787]
+modulate = Color(0.80031496, 0.9978886, 0.9795534, 1)
+self_modulate = Color(0.9470666, 0.8538693, 0.88649964, 1)
+layout_mode = 2
+alignment = 2
+
+[node name="Button" type="Button" parent="Control/CenterContainer/VBoxContainer" unique_id=1026290]
+layout_mode = 2
+text = "Онлайн "
+
+[node name="Button2" type="Button" parent="Control/CenterContainer/VBoxContainer" unique_id=1618272684]
+layout_mode = 2
+text = "Очно"
+
+[node name="Button" type="Button" parent="Control" unique_id=1344269697]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 152.0
+offset_bottom = 148.0
+icon = SubResource("CanvasTexture_m61yp")
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]

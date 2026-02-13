@@ -1,0 +1,203 @@
+[gd_scene format=3 uid="uid://dogi11w7hj4er"]
+
+[ext_resource type="Script" uid="uid://cphbed5gwnwpg" path="res://sciens/windows_UI/main/main.gd" id="1_u7s8l"]
+[ext_resource type="FontFile" uid="uid://dqqpnwqlql3ow" path="res://Text_stule/Playwrite/static/PlaywriteAT-Italic.ttf" id="2_yc3kn"]
+
+[node name="MenuContainer" type="Control" unique_id=1233784439]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u7s8l")
+
+[node name="PlayPanel" type="Panel" parent="." unique_id=1178276201]
+visible = false
+modulate = Color(0.8627451, 1, 1, 1)
+self_modulate = Color(0.9529412, 0, 0.9529412, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PlayPanel" unique_id=340404504]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="BackButton" type="Button" parent="PlayPanel/MarginContainer" unique_id=1068676890]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 50
+text = "back"
+
+[node name="Label" type="Label" parent="PlayPanel/MarginContainer" unique_id=781427708]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 80
+text = "Меню Игры"
+
+[node name="SettingsPanel" type="Panel" parent="." unique_id=1469547588]
+self_modulate = Color(0.45738387, 0.21931669, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsPanel" unique_id=2068621487]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="Label" type="Label" parent="SettingsPanel/MarginContainer" unique_id=1810654698]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 80
+text = "Настройки"
+
+[node name="BackButton" type="Button" parent="SettingsPanel/MarginContainer" unique_id=1424084701]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 50
+text = "back"
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsPanel/MarginContainer" unique_id=1325017214]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 103
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 80
+
+[node name="TabBar" type="TabBar" parent="SettingsPanel/MarginContainer/MarginContainer" unique_id=254164447]
+layout_mode = 2
+size_flags_vertical = 0
+current_tab = 0
+tab_count = 4
+tab_0/title = "Настройки 1"
+tab_1/title = "Настройки 2"
+tab_2/title = "Настройки 2"
+tab_3/title = "Настройки 2"
+
+[node name="CheckButton" type="CheckButton" parent="SettingsPanel/MarginContainer/MarginContainer/TabBar" unique_id=912628967]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = 19.7
+offset_right = 44.000008
+offset_bottom = 43.70001
+grow_vertical = 2
+
+[node name="ExitPanel" type="Panel" parent="." unique_id=60503752]
+visible = false
+self_modulate = Color(0, 0.10446545, 0.04455792, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ExitPanel" unique_id=1996995090]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="BackButton" type="Button" parent="ExitPanel/MarginContainer" unique_id=749487769]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 50
+text = "back"
+
+[node name="Label" type="Label" parent="ExitPanel/MarginContainer" unique_id=1304932738]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 80
+text = "Выход"
+
+[node name="MainPanel" type="Panel" parent="." unique_id=19324989]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MainPanel" unique_id=476330356]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="MainPanel/MarginContainer" unique_id=412751161]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="PlauBatton" type="Button" parent="MainPanel/MarginContainer/ButtonsContainer" unique_id=1492171648]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Играть"
+
+[node name="SettingsButton" type="Button" parent="MainPanel/MarginContainer/ButtonsContainer" unique_id=585867821]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Настройки"
+
+[node name="ExitButton" type="Button" parent="MainPanel/MarginContainer/ButtonsContainer" unique_id=2138324214]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Выход"
+
+[node name="Label" type="Label" parent="MainPanel/MarginContainer" unique_id=1996031042]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_yc3kn")
+theme_override_font_sizes/font_size = 110
+text = "Mafia"
+
+[connection signal="pressed" from="PlayPanel/MarginContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="SettingsPanel/MarginContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="ExitPanel/MarginContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="MainPanel/MarginContainer/ButtonsContainer/PlauBatton" to="." method="_on_plau_batton_pressed"]
+[connection signal="pressed" from="MainPanel/MarginContainer/ButtonsContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="MainPanel/MarginContainer/ButtonsContainer/ExitButton" to="." method="_on_exit_button_pressed"]

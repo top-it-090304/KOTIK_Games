@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://x7cwy0sp364a"]
+
+[ext_resource type="Script" uid="uid://ejo1qmj6m736" path="res://sciens/windows_UI/first_screen/first_menu.gd" id="1_i5mk5"]
+
+[node name="First_menu" type="Control" unique_id=1438406607]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i5mk5")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1673888550]
+layout_mode = 0
+offset_right = 600.0
+offset_bottom = 1200.0
+scale = Vector2(2.5, 2.5)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1518407406]
+layout_mode = 2
+alignment = 2
+
+[node name="Button" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1374143608]
+layout_mode = 2
+text = "Играть"
+
+[node name="Button2" type="Button" parent="CenterContainer/VBoxContainer" unique_id=546216575]
+layout_mode = 2
+text = "Настройки"
+
+[node name="Button3" type="Button" parent="CenterContainer/VBoxContainer" unique_id=692290871]
+layout_mode = 2
+text = "Профиль"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
