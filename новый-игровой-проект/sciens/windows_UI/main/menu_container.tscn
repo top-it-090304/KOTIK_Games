@@ -8,12 +8,15 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 1.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_u7s8l")
 
 [node name="PlayPanel" type="Panel" parent="." unique_id=1178276201]
-visible = false
 modulate = Color(0.8627451, 1, 1, 1)
 self_modulate = Color(0.9529412, 0, 0.9529412, 1)
 layout_mode = 1
@@ -28,6 +31,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -15.5
+offset_right = 15.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 32
@@ -45,10 +50,23 @@ text = "back"
 [node name="Label" type="Label" parent="PlayPanel/MarginContainer" unique_id=781427708]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 45
 text = "Меню Игры"
 
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayPanel/MarginContainer" unique_id=1086115016]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Server" type="Button" parent="PlayPanel/MarginContainer/VBoxContainer" unique_id=1957916728]
+layout_mode = 2
+text = "Server"
+
+[node name="Client" type="Button" parent="PlayPanel/MarginContainer/VBoxContainer" unique_id=1768965853]
+layout_mode = 2
+text = "Client"
+
 [node name="SettingsPanel" type="Panel" parent="." unique_id=1469547588]
+visible = false
 self_modulate = Color(0.45738387, 0.21931669, 0, 1)
 layout_mode = 1
 anchors_preset = 15
@@ -73,7 +91,7 @@ theme_override_constants/margin_bottom = 32
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 48
 text = "Настройки"
 
 [node name="BackButton" type="Button" parent="SettingsPanel/MarginContainer" unique_id=1424084701]
@@ -94,6 +112,7 @@ theme_override_constants/margin_bottom = 80
 [node name="TabBar" type="TabBar" parent="SettingsPanel/MarginContainer/MarginContainer" unique_id=254164447]
 layout_mode = 2
 size_flags_vertical = 0
+theme_override_font_sizes/font_size = 13
 current_tab = 0
 tab_count = 4
 tab_0/title = "Настройки 1"
@@ -174,17 +193,17 @@ size_flags_vertical = 8
 
 [node name="PlauBatton" type="Button" parent="MainPanel/MarginContainer/ButtonsContainer" unique_id=1492171648]
 layout_mode = 2
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 40
 text = "Играть"
 
 [node name="SettingsButton" type="Button" parent="MainPanel/MarginContainer/ButtonsContainer" unique_id=585867821]
 layout_mode = 2
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 40
 text = "Настройки"
 
 [node name="ExitButton" type="Button" parent="MainPanel/MarginContainer/ButtonsContainer" unique_id=2138324214]
 layout_mode = 2
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 40
 text = "Выход"
 
 [node name="Label" type="Label" parent="MainPanel/MarginContainer" unique_id=1996031042]
@@ -192,10 +211,12 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_fonts/font = ExtResource("2_yc3kn")
-theme_override_font_sizes/font_size = 110
+theme_override_font_sizes/font_size = 60
 text = "Mafia"
 
 [connection signal="pressed" from="PlayPanel/MarginContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="PlayPanel/MarginContainer/VBoxContainer/Server" to="." method="_on_server_pressed"]
+[connection signal="pressed" from="PlayPanel/MarginContainer/VBoxContainer/Client" to="." method="_on_client_pressed"]
 [connection signal="pressed" from="SettingsPanel/MarginContainer/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="ExitPanel/MarginContainer/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="MainPanel/MarginContainer/ButtonsContainer/PlauBatton" to="." method="_on_plau_batton_pressed"]

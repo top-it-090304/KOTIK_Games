@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bnlgadb66y0yj"]
+
+[ext_resource type="Script" uid="uid://dgpp8k3qv1uj4" path="res://sciens/Multiplayer/high_level_multiplayer_spavner.gd" id="1_ywgbr"]
+[ext_resource type="PackedScene" uid="uid://ch6y1tucav8p3" path="res://sciens/players/high_level_network_player.tscn" id="2_i47nq"]
+[ext_resource type="PackedScene" uid="uid://c6rqrnnjrq7nt" path="res://sciens/windows_UI/HighLevel/high_level_ui.tscn" id="3_i47nq"]
+
+[node name="game" type="Node2D" unique_id=1405191803]
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=1305262638]
+_spawnable_scenes = PackedStringArray("uid://ch6y1tucav8p3")
+spawn_path = NodePath("..")
+script = ExtResource("1_ywgbr")
+network_player = ExtResource("2_i47nq")
+
+[node name="HighLevelUI" parent="." unique_id=245319913 instance=ExtResource("3_i47nq")]

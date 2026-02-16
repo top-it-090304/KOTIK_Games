@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://ch6y1tucav8p3"]
+
+[ext_resource type="Script" uid="uid://d3ob814lbwwd7" path="res://sciens/players/high_level_network_player.gd" id="1_21qag"]
+[ext_resource type="Texture2D" uid="uid://dfwdmcuow3oa2" path="res://LOGO_STUDIO.png" id="2_qo81s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vlqgk"]
+size = Vector2(23.962788, 27.457012)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_trngk"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[node name="HighLevelNetworkPlayer" type="CharacterBody2D" unique_id=1526030748]
+script = ExtResource("1_21qag")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=719391897]
+scale = Vector2(0.034611862, 0.03969575)
+texture = ExtResource("2_qo81s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=16338460]
+position = Vector2(1.4305108e-06, 1.4305115e-06)
+rotation = -3.1415925
+scale = Vector2(3.3385096, 2.9136453)
+shape = SubResource("RectangleShape2D_vlqgk")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1172092850]
+replication_config = SubResource("SceneReplicationConfig_trngk")

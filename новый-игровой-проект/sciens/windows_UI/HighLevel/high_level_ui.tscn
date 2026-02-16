@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c6rqrnnjrq7nt"]
+
+[ext_resource type="Script" uid="uid://dq4rxubl7bs5h" path="res://sciens/windows_UI/HighLevel/high_level_ui.gd" id="1_4nifo"]
+
+[node name="HighLevelUI" type="Control" unique_id=245319913]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4nifo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1006321043]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Server" type="Button" parent="VBoxContainer" unique_id=679907218]
+layout_mode = 2
+text = "Server"
+
+[node name="Client" type="Button" parent="VBoxContainer" unique_id=1429163689]
+layout_mode = 2
+text = "Client"
+
+[connection signal="pressed" from="VBoxContainer/Server" to="." method="_on_server_pressed"]
+[connection signal="pressed" from="VBoxContainer/Client" to="." method="_on_client_pressed"]

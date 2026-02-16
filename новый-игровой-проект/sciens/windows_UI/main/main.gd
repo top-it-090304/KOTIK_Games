@@ -1,5 +1,6 @@
 extends Control
 
+@onready var game : String = "res://sciens/game/game.tscn"
 @onready var play_panel = $PlayPanel
 @onready var settings_panel = $SettingsPanel
 @onready var exit_panel = $ExitPanel
@@ -35,3 +36,13 @@ func _on_back_button_pressed():
 func _on_plau_batton_pressed() -> void:
 	hide_all_panels()
 	play_panel.show()
+
+
+func _on_server_pressed() -> void:
+	HighLevelNetworkHandler.start_server
+	hide_all_panels()
+
+
+func _on_client_pressed() -> void:
+	HighLevelNetworkHandler.start_client
+	hide_all_panels()
