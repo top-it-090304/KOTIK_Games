@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://dv32f8gd4y1jg"]
+
+[ext_resource type="Script" uid="uid://cf1cyk78ek0ap" path="res://sciens/windows_UI/main/Play.gd" id="1_wevfn"]
+
+[node name="Play" type="Control" unique_id=813698499]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wevfn")
+
+[node name="count_label" type="Label" parent="." unique_id=1658605084]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 104.0
+offset_right = 163.0
+offset_bottom = 127.0
+text = "4"
+
+[node name="plus_button" type="Button" parent="." unique_id=1653444555]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 96.0
+offset_right = 264.0
+offset_bottom = 128.0
+text = "+"
+
+[node name="minus_button" type="Button" parent="." unique_id=547961293]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 96.0
+offset_right = 216.0
+offset_bottom = 128.0
+text = "-"
+
+[node name="title" type="Label" parent="." unique_id=1921102319]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 16.0
+offset_right = 265.0
+offset_bottom = 39.0
+text = "Выберите количество ролей"
+
+[node name="Mafia" type="Label" parent="." unique_id=807977865]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 104.0
+offset_right = 109.0
+offset_bottom = 127.0
+text = "Мафия:"

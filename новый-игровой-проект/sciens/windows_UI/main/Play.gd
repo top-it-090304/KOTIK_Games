@@ -1,12 +1,12 @@
-extends Panel
+extends Control
 
 # Сигнал для отправки количества игроков в другие скрипты
 signal players_count_changed(count)
 
 # Экспортируемая переменная для настройки в инспекторе
-@export var min_players: int = 2
-@export var max_players: int = 12
-@export var start_players: int = 4
+@export var min_players: int = 1
+@export var max_players: int = 5
+@export var start_players: int = 1
 
 # Текущее количество игроков
 var current_players: int
