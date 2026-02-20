@@ -59,11 +59,11 @@ size_flags_vertical = 4
 
 [node name="Server" type="Button" parent="PlayPanel/MarginContainer/VBoxContainer" unique_id=1957916728]
 layout_mode = 2
-text = "Server"
+text = "Онлайн"
 
 [node name="Client" type="Button" parent="PlayPanel/MarginContainer/VBoxContainer" unique_id=1768965853]
 layout_mode = 2
-text = "Client"
+text = "Офлайн"
 
 [node name="SettingsPanel" type="Panel" parent="." unique_id=1469547588]
 visible = false

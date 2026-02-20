@@ -39,10 +39,8 @@ func _on_plau_batton_pressed() -> void:
 
 
 func _on_server_pressed() -> void:
-	HighLevelNetworkHandler.start_server
-	hide_all_panels()
+	get_tree().change_scene_to_file("res://sciens/game/game.tscn")
 
 
 func _on_client_pressed() -> void:
-	HighLevelNetworkHandler.start_client
-	hide_all_panels()
+	get_tree().change_scene_to_file("res://sciens/windows_UI/main/Play.tscn")
