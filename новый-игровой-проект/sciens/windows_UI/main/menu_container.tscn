@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cphbed5gwnwpg" path="res://sciens/windows_UI/main/main.gd" id="1_u7s8l"]
 [ext_resource type="FontFile" uid="uid://dqqpnwqlql3ow" path="res://Text_stule/Playwrite/static/PlaywriteAT-Italic.ttf" id="2_yc3kn"]
+[ext_resource type="Script" uid="uid://o4vpj8o8l60q" path="res://sciens/windows_UI/main/play_panel_2_0.gd" id="3_yc3kn"]
 
 [node name="MenuContainer" type="Control" unique_id=1233784439]
 layout_mode = 3
@@ -17,6 +18,7 @@ grow_vertical = 2
 script = ExtResource("1_u7s8l")
 
 [node name="PlayPanel" type="Panel" parent="." unique_id=1178276201]
+visible = false
 modulate = Color(0.8627451, 1, 1, 1)
 self_modulate = Color(0.9529412, 0, 0.9529412, 1)
 layout_mode = 1
@@ -214,14 +216,65 @@ theme_override_fonts/font = ExtResource("2_yc3kn")
 theme_override_font_sizes/font_size = 60
 text = "Mafia"
 
-[node name="Panel" type="Panel" parent="." unique_id=86129376]
-visible = false
+[node name="PlayPanel_2_0" type="Panel" parent="." unique_id=86129376]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -2.0
+offset_right = -1.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("3_yc3kn")
+
+[node name="Start" type="Button" parent="PlayPanel_2_0" unique_id=425506587]
+layout_mode = 0
+offset_left = 119.0
+offset_top = 518.0
+offset_right = 285.0
+offset_bottom = 574.0
+text = "Start"
+
+[node name="Back" type="Button" parent="PlayPanel_2_0" unique_id=957399519]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 542.0
+offset_right = 60.0
+offset_bottom = 573.0
+text = "Back"
+
+[node name="count _label" type="Label" parent="PlayPanel_2_0" unique_id=1098597900]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 96.0
+offset_right = 233.0
+offset_bottom = 130.0
+
+[node name="plus_button" type="Button" parent="PlayPanel_2_0" unique_id=567317745]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 80.0
+offset_right = 288.0
+offset_bottom = 111.0
+text = "+"
+
+[node name="minus_button" type="Button" parent="PlayPanel_2_0" unique_id=552679640]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 120.0
+offset_right = 288.0
+offset_bottom = 152.0
+text = "-"
+
+[node name="Label" type="Label" parent="PlayPanel_2_0" unique_id=1557303133]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 96.0
+offset_right = 160.0
+offset_bottom = 120.0
+text = "Колиство игроков:"
 
 [connection signal="pressed" from="PlayPanel/MarginContainer/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="PlayPanel/MarginContainer/VBoxContainer/Server" to="." method="_on_server_pressed"]

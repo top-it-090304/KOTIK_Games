@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://b65c2sp1rydr2"]
+
+[ext_resource type="FontFile" uid="uid://blfr5fqwcdq5t" path="res://Text_stule/Playwrite/static/PlaywriteAT-Regular.ttf" id="2_5ddng"]
+
+[sub_resource type="GDScript" id="GDScript_2fl4b"]
+script/source = "extends CanvasLayer
+class_name UI
+
+
+const FIRST_MENU : String = \"res://sciens/windows_UI/first_screen/first_menu.tscn\"
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	ResourceLoader.load_threaded_request(FIRST_MENU)
+	_on_button_pressed()
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+func _on_button_pressed(): # Button was pressed.
+	# Obtain the resource now that we need it.
+	var first_scene = ResourceLoader.load_threaded_get(FIRST_MENU)
+	# Instantiate the enemy scene and add it to the current scene.
+	var enemy = first_scene.instantiate()
+	add_child(enemy)
+"
+
+[node name="UI" type="CanvasLayer" unique_id=1255120562]
+script = SubResource("GDScript_2fl4b")
+
+[node name="Control" type="Control" parent="." unique_id=536276993]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1508266055]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14087903, 0.1412307, 0.16316453, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=352367810]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer" unique_id=1606096826]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Button" type="Button" parent="Control/MarginContainer/VBoxContainer" unique_id=1905193652]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7137255, 0.76862746, 0.8, 1)
+theme_override_font_sizes/font_size = 100
+text = "gyh"
+
+[node name="Button2" type="Button" parent="Control/MarginContainer/VBoxContainer" unique_id=965468849]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7137255, 0.76862746, 0.8, 1)
+theme_override_font_sizes/font_size = 100
+text = "gyh"
+
+[node name="Button3" type="Button" parent="Control/MarginContainer/VBoxContainer" unique_id=1573203570]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7137255, 0.76862746, 0.8, 1)
+theme_override_font_sizes/font_size = 100
+text = "gyh"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer" unique_id=506434349]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="Control/MarginContainer/HBoxContainer" unique_id=357270539]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.736364, 0.74779063, 0.8457735, 1)
+theme_override_fonts/font = ExtResource("2_5ddng")
+theme_override_font_sizes/font_size = 128
+text = "Mafia"

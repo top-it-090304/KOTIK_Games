@@ -39,10 +39,10 @@ func _on_plau_batton_pressed() -> void:
 
 
 func _on_server_pressed() -> void:
-	HighLevelNetworkHandler.start_server
+	#HighLevelNetworkHandler.start_server
 	hide_all_panels()
 
 
 func _on_client_pressed() -> void:
-	HighLevelNetworkHandler.start_client
+	#HighLevelNetworkHandler.start_client
 	hide_all_panels()
