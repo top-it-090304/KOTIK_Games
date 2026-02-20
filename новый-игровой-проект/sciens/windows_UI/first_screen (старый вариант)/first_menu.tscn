@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://x7cwy0sp364a"]
 
-[ext_resource type="Script" uid="uid://ejo1qmj6m736" path="res://sciens/windows_UI/first_screen/first_menu.gd" id="1_i5mk5"]
+[ext_resource type="Script" uid="uid://ejo1qmj6m736" path="res://sciens/windows_UI/first_screen (старый вариант)/first_menu.gd" id="1_i5mk5"]
 
 [node name="First_menu" type="Control" unique_id=1438406607]
 layout_mode = 3

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c6rqrnnjrq7nt"]
 
-[ext_resource type="Script" uid="uid://dq4rxubl7bs5h" path="res://sciens/windows_UI/HighLevel/high_level_ui.gd" id="1_4nifo"]
+[ext_resource type="Script" uid="uid://dq4rxubl7bs5h" path="res://sciens/windows_UI/HighLevel (старый вариант)/high_level_ui.gd" id="1_4nifo"]
 
 [node name="HighLevelUI" type="Control" unique_id=245319913]
 layout_mode = 3

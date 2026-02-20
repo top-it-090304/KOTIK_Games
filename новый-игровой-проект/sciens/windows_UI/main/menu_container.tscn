@@ -214,6 +214,15 @@ theme_override_fonts/font = ExtResource("2_yc3kn")
 theme_override_font_sizes/font_size = 60
 text = "Mafia"
 
+[node name="Panel" type="Panel" parent="." unique_id=86129376]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [connection signal="pressed" from="PlayPanel/MarginContainer/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="PlayPanel/MarginContainer/VBoxContainer/Server" to="." method="_on_server_pressed"]
 [connection signal="pressed" from="PlayPanel/MarginContainer/VBoxContainer/Client" to="." method="_on_client_pressed"]

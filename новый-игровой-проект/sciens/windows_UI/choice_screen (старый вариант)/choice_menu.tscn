@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bvbornp0xpqdy"]
 
-[ext_resource type="Script" uid="uid://1ovquond18v3" path="res://sciens/windows_UI/choice_screen/choice_menu.gd" id="1_qn3gq"]
+[ext_resource type="Script" uid="uid://1ovquond18v3" path="res://sciens/windows_UI/choice_screen (старый вариант)/choice_menu.gd" id="1_qn3gq"]
 [ext_resource type="Texture2D" uid="uid://dsfhkt1so4612" path="res://sprites/icon.svg" id="2_rvods"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_m61yp"]
