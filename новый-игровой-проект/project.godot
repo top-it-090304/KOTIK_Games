@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="KOTIK_Games"
+config/tags=PackedStringArray("практика")
 run/main_scene="uid://dogi11w7hj4er"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://sprites/icon.svg"

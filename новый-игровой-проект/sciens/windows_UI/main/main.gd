@@ -1,6 +1,7 @@
 extends Control
 
-@onready var game : String = "res://sciens/game/game.tscn"
+@onready var online = preload("res://sciens/game/game.tscn").instantiate()
+@onready var ofline = preload("res://sciens/windows_UI/main/Play.tscn").instantiate()
 @onready var play_panel = $PlayPanel
 @onready var settings_panel = $SettingsPanel
 @onready var exit_panel = $ExitPanel
