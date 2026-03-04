@@ -1,0 +1,208 @@
+[gd_scene format=3 uid="uid://c5v2eartl5xfu"]
+
+[ext_resource type="Script" uid="uid://3vfbswg5p635" path="res://sciens/windows_UI/Распределение ролей/Определение_роли.gd" id="1_ukqid"]
+[ext_resource type="Theme" uid="uid://cc3vs4pyvy260" path="res://sciens/windows_UI/main/button_theme.tres" id="2_8hxei"]
+[ext_resource type="Texture2D" uid="uid://bdqad7sy2jpg5" path="res://sprites/Карточки/Некто.png" id="2_cef3j"]
+[ext_resource type="Texture2D" uid="uid://bxve4l0nqh5sw" path="res://sprites/Карточки/Мирный.png" id="4_u6t2v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ukqid"]
+
+[sub_resource type="Animation" id="Animation_mn0c8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Sprite2D2:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.27, 0.27)]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Sprite2D2:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/Sprite2D2:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_g0rx6"]
+resource_name = "new_animation"
+length = 0.8
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.27, 0.27), Vector2(0, 0.3), Vector2(0, 0.3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("AnimationPlayer/Sprite2D2:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.19999999, 0.6),
+"transitions": PackedFloat32Array(1, 1.0000002, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0.3), Vector2(-0.27, 0.27)]
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/Sprite2D2:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(3, 3, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.0502617, 0, 0.0502617, 0, 0.27, 0, 0.255, 0.06630182, -1.73),
+"times": PackedFloat32Array(0, 0.2010468, 0.4)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer/Sprite2D2:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.27, 0, 0, 0, 0, 0.27, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.2, 0.4)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a61oc"]
+_data = {
+&"RESET": SubResource("Animation_mn0c8"),
+&"new_animation": SubResource("Animation_g0rx6")
+}
+
+[node name="Panel" type="Panel" unique_id=1544003752]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ukqid")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=902935389]
+modulate = Color(0.4075654, 0.40756536, 0.40756533, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1554782654]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1343058969]
+layout_mode = 2
+theme_override_constants/separation = 46
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer" unique_id=1535852713]
+layout_mode = 2
+theme_override_font_sizes/font_size = 39
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=616679375]
+layout_mode = 2
+theme = ExtResource("2_8hxei")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_ukqid")
+text = "Следующий"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MarginContainer/VBoxContainer" unique_id=1517206722]
+libraries/ = SubResource("AnimationLibrary_a61oc")
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/VBoxContainer/AnimationPlayer" unique_id=1035581182]
+position = Vector2(150, 376)
+scale = Vector2(0.10918616, 0.2878682)
+texture = ExtResource("2_cef3j")
+
+[node name="Sprite2D2" type="Sprite2D" parent="MarginContainer/VBoxContainer/AnimationPlayer" unique_id=130318125]
+position = Vector2(150, 376)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("4_u6t2v")
+flip_h = true
+
+[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer" unique_id=710326006]
+visible = false
+layout_mode = 2
+text = "      
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+ 
+
+ 
+
+  
+ 
+
+ 
+ 
+ 
+  
+ 
+/
+///
+
+/
+/
+//
+
+//
+/
+//
+/
+/
+
+/
+//
+"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
