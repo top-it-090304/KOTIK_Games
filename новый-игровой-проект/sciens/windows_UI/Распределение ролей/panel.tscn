@@ -5,9 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://bdqad7sy2jpg5" path="res://sprites/Карточки/Некто.png" id="2_cef3j"]
 [ext_resource type="Texture2D" uid="uid://b04wgwcxdnosl" path="res://sprites/Карточки/Дон_Мафия.png" id="4_ukqid"]
 [ext_resource type="Texture2D" uid="uid://cu7co611l76cm" path="res://sprites/кнопка.png" id="5_u6t2v"]
+[ext_resource type="AudioStream" uid="uid://bk51j4xvmu61q" path="res://audio/Переворот карты.mp3" id="6_mn0c8"]
 
 [sub_resource type="Animation" id="Animation_mn0c8"]
-length = 0.1
+length = 0.23333333
+step = 0.016666668
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -15,9 +17,9 @@ tracks/0/path = NodePath("AnimationPlayer/Sprite2D2:scale:y")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(2, 2, 2),
-"points": PackedFloat32Array(0.27, -0.05, 0, 0.05, 0, 0.3, -0.011111112, 0, 0, 0, 0.27, -0.005555555, 0, 0, 0),
-"times": PackedFloat32Array(0, 0.06666667, 0.1)
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.31563246, -0.049999997, -0.02190885, 0, 0, 0.27, -0.016666666, 0.04520017, 0, 0),
+"times": PackedFloat32Array(0.11666667, 0.23333333)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -26,9 +28,9 @@ tracks/1/path = NodePath("AnimationPlayer/Sprite2D2:scale:x")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(2, 2, 2),
-"points": PackedFloat32Array(0, -0.05, 0, 0.05, 0, 0, -0.011111112, 0, 0, 0, 0.27, -0.005555555, 0.044999998, 0, 0),
-"times": PackedFloat32Array(0, 0.06666667, 0.1)
+"handle_modes": PackedInt32Array(3, 0),
+"points": PackedFloat32Array(3.7252903e-09, -0.11666667, -0.06494495, 0.11666667, 0.06494495, 0.27, -0.03333333, -0.041826755, 0, 0),
+"times": PackedFloat32Array(0.11666667, 0.23333333)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
@@ -38,8 +40,8 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(2, 0),
-"points": PackedFloat32Array(0.27, -0.05, 0, 0.05, 0, 0, -0.011111112, 0, 0, 0),
-"times": PackedFloat32Array(0, 0.06666667)
+"points": PackedFloat32Array(0.26845708, -0.04998566, 0.003578351, 0.050000004, -0.0035793781, 0, -0.11666666, 0.07572473, 0, 0),
+"times": PackedFloat32Array(0, 0.11666667)
 }
 tracks/3/type = "bezier"
 tracks/3/imported = false
@@ -48,10 +50,25 @@ tracks/3/path = NodePath("AnimationPlayer/Sprite2D:scale:y")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"handle_modes": PackedInt32Array(2, 2, 0),
-"points": PackedFloat32Array(0.27, 0, 0, 0.011111112, 0.050000004, 0.3, -0.011111112, 0, 0, 0, 0, -0.05, 0, 0.05, 0),
-"times": PackedFloat32Array(0, 0.06666667, 0.27)
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(0.27, 0, 0, 0.016666668, 0.030040264, 0.31440216, -0.08333333, -0.00046530366, 0, 0),
+"times": PackedFloat32Array(0, 0.11666667)
 }
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../AudioStreamPlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.85927796,
+"start_offset": 0.19470204,
+"stream": ExtResource("6_mn0c8")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/4/use_blend = true
 
 [sub_resource type="Animation" id="Animation_g0rx6"]
 resource_name = "new_animation"
@@ -115,6 +132,8 @@ diffuse_texture = ExtResource("5_u6t2v")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ukqid"]
 
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_mn0c8"]
+
 [node name="Panel" type="Panel" unique_id=1544003752]
 anchors_preset = 15
 anchor_right = 1.0
@@ -160,12 +179,12 @@ libraries/ = SubResource("AnimationLibrary_a61oc")
 
 [node name="Sprite2D" type="Sprite2D" parent="MarginContainer/VBoxContainer/AnimationPlayer" unique_id=1035581182]
 position = Vector2(150, 300)
-scale = Vector2(0.27, 0.27)
+scale = Vector2(0.26845708, 0.27)
 texture = ExtResource("2_cef3j")
 
 [node name="Sprite2D2" type="Sprite2D" parent="MarginContainer/VBoxContainer/AnimationPlayer" unique_id=130318125]
 position = Vector2(150, 300)
-scale = Vector2(1e-05, 0.27)
+scale = Vector2(1e-05, 0.31563246)
 texture = ExtResource("4_ukqid")
 
 [node name="Button2" type="Button" parent="MarginContainer/VBoxContainer" unique_id=710326006]
@@ -179,6 +198,9 @@ theme = ExtResource("2_8hxei")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxFlat_ukqid")
 text = "Следующий"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1313147842]
+stream = SubResource("AudioStreamPolyphonic_mn0c8")
 
 [connection signal="editing_toggled" from="MarginContainer/VBoxContainer/LineEdit" to="." method="_on_line_edit_editing_toggled"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

@@ -4,6 +4,8 @@ extends Panel
 @onready var card_animation = $MarginContainer/VBoxContainer/AnimationPlayer
 @onready var button = $MarginContainer/VBoxContainer/Button2
 @onready var lineedit = $MarginContainer/VBoxContainer/LineEdit
+@onready var audio = $AudioStreamPlayer
+
 var name_
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,7 +21,7 @@ func _ready() -> void:
 
 
 func _on_button_2_pressed() -> void:
-	
+	#audio.playing = true 
 	card_animation.play("RESET")
 	button.disabled = true
 
