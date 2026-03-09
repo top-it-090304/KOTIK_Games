@@ -1,15 +1,15 @@
 extends HBoxContainer
 
-# Сигнал для отправки количества игроков в другие скрипты
-signal players_count_changed(count)
-
 # Экспортируемая переменная для настройки в инспекторе
 @export var min_players: int = 2
 @export var max_players: int = 9
 @export var start_players: int = 2
 
 # Текущее количество игроков
-var current_players: int
+var current_players: int = 3
+
+# Сигнал для отправки количества игроков в другие скрипты
+signal players_count_changed(current_players)
 
 # Ссылки на узлы
 @onready var minus_button: Button = $minus_button
