@@ -1,0 +1,245 @@
+[gd_scene format=3 uid="uid://dogi11w7hj4er"]
+
+[ext_resource type="Script" uid="uid://cphbed5gwnwpg" path="res://sciens/windows_UI/new folder/main.gd" id="1_u7s8l"]
+[ext_resource type="Theme" uid="uid://cc3vs4pyvy260" path="res://sciens/windows_UI/Распределение_играков/button_theme.tres" id="2_bgekr"]
+[ext_resource type="FontFile" uid="uid://dqqpnwqlql3ow" path="res://Text_stule/Playwrite/static/PlaywriteAT-Italic.ttf" id="2_yc3kn"]
+[ext_resource type="Theme" uid="uid://bbnhc7wafxvbb" path="res://sciens/windows_UI/new folder/Panel.tres" id="3_he4ji"]
+[ext_resource type="StyleBox" uid="uid://6l6ur0wn3nuv" path="res://sciens/windows_UI/Распределение ролей/BackGraund_style_box_flat.tres" id="3_le6tk"]
+[ext_resource type="AudioStream" uid="uid://4mqxfl6a5o48" path="res://audio/Кнопки/bubble-wrap-single-pop-01.mp3" id="3_yc3kn"]
+
+[node name="MenuContainer" type="Control" unique_id=1233784439]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_he4ji")
+script = ExtResource("1_u7s8l")
+
+[node name="PlayPanel" type="Panel" parent="." unique_id=1178276201]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("3_le6tk")
+
+[node name="MarginContainer" type="MarginContainer" parent="PlayPanel" unique_id=340404504]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -15.5
+offset_right = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="BackButton" type="Button" parent="PlayPanel/MarginContainer" unique_id=1068676890]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme = ExtResource("2_bgekr")
+theme_override_font_sizes/font_size = 50
+text = "back"
+
+[node name="Label" type="Label" parent="PlayPanel/MarginContainer" unique_id=781427708]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 45
+text = "Меню Игры"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayPanel/MarginContainer" unique_id=1086115016]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Server" type="Button" parent="PlayPanel/MarginContainer/VBoxContainer" unique_id=1957916728]
+layout_mode = 2
+theme = ExtResource("2_bgekr")
+text = "Онлайн"
+
+[node name="Client" type="Button" parent="PlayPanel/MarginContainer/VBoxContainer" unique_id=1768965853]
+layout_mode = 2
+theme = ExtResource("2_bgekr")
+text = "Офлайн"
+
+[node name="SettingsPanel" type="Panel" parent="." unique_id=1469547588]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("3_le6tk")
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsPanel" unique_id=2068621487]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="Label" type="Label" parent="SettingsPanel/MarginContainer" unique_id=1810654698]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 48
+text = "Настройки"
+
+[node name="BackButton" type="Button" parent="SettingsPanel/MarginContainer" unique_id=1424084701]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme = ExtResource("2_bgekr")
+theme_override_font_sizes/font_size = 50
+text = "back"
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsPanel/MarginContainer" unique_id=1325017214]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 103
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 80
+
+[node name="TabBar" type="TabBar" parent="SettingsPanel/MarginContainer/MarginContainer" unique_id=254164447]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("2_bgekr")
+theme_override_font_sizes/font_size = 13
+current_tab = 0
+tab_count = 4
+tab_0/title = "Настройки 1"
+tab_1/title = "Настройки 2"
+tab_2/title = "Настройки 2"
+tab_3/title = "Настройки 2"
+
+[node name="CheckButton" type="CheckButton" parent="SettingsPanel/MarginContainer/MarginContainer/TabBar" unique_id=912628967]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = 19.7
+offset_right = 44.000008
+offset_bottom = 43.70001
+grow_vertical = 2
+theme = ExtResource("2_bgekr")
+
+[node name="ExitPanel" type="Panel" parent="." unique_id=60503752]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("3_le6tk")
+
+[node name="MarginContainer" type="MarginContainer" parent="ExitPanel" unique_id=1996995090]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="BackButton" type="Button" parent="ExitPanel/MarginContainer" unique_id=749487769]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme = ExtResource("2_bgekr")
+theme_override_font_sizes/font_size = 50
+text = "back"
+
+[node name="Label" type="Label" parent="ExitPanel/MarginContainer" unique_id=1304932738]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 80
+text = "Выход"
+
+[node name="MainPanel" type="Panel" parent="." unique_id=19324989]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_he4ji")
+theme_override_styles/panel = ExtResource("3_le6tk")
+
+[node name="MarginContainer" type="MarginContainer" parent="MainPanel" unique_id=476330356]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="MainPanel/MarginContainer" unique_id=412751161]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="PlauBatton" type="Button" parent="MainPanel/MarginContainer/ButtonsContainer" unique_id=1492171648]
+layout_mode = 2
+theme = ExtResource("2_bgekr")
+theme_override_font_sizes/font_size = 40
+text = "Играть"
+
+[node name="SettingsButton" type="Button" parent="MainPanel/MarginContainer/ButtonsContainer" unique_id=585867821]
+layout_mode = 2
+theme = ExtResource("2_bgekr")
+theme_override_font_sizes/font_size = 40
+text = "Настройки"
+
+[node name="ExitButton" type="Button" parent="MainPanel/MarginContainer/ButtonsContainer" unique_id=2138324214]
+layout_mode = 2
+theme = ExtResource("2_bgekr")
+theme_override_font_sizes/font_size = 40
+text = "Выход"
+
+[node name="Label" type="Label" parent="MainPanel/MarginContainer" unique_id=1996031042]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("2_bgekr")
+theme_override_fonts/font = ExtResource("2_yc3kn")
+theme_override_font_sizes/font_size = 60
+text = "Mafia"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1927965370]
+stream = ExtResource("3_yc3kn")
+volume_db = -7.73
+
+[connection signal="pressed" from="PlayPanel/MarginContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="PlayPanel/MarginContainer/VBoxContainer/Server" to="." method="_on_server_pressed"]
+[connection signal="pressed" from="PlayPanel/MarginContainer/VBoxContainer/Client" to="." method="_on_client_pressed"]
+[connection signal="pressed" from="SettingsPanel/MarginContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="ExitPanel/MarginContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="MainPanel/MarginContainer/ButtonsContainer/PlauBatton" to="." method="_on_plau_batton_pressed"]
+[connection signal="pressed" from="MainPanel/MarginContainer/ButtonsContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="MainPanel/MarginContainer/ButtonsContainer/ExitButton" to="." method="_on_exit_button_pressed"]

@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://c5v2eartl5xfu"]
 
+[ext_resource type="StyleBox" uid="uid://6l6ur0wn3nuv" path="res://sciens/windows_UI/Распределение ролей/BackGraund_style_box_flat.tres" id="1_a61oc"]
 [ext_resource type="Script" uid="uid://3vfbswg5p635" path="res://sciens/windows_UI/Распределение ролей/Определение_роли.gd" id="1_ukqid"]
-[ext_resource type="Theme" uid="uid://cc3vs4pyvy260" path="res://sciens/windows_UI/main/button_theme.tres" id="2_8hxei"]
+[ext_resource type="Theme" uid="uid://cc3vs4pyvy260" path="res://sciens/windows_UI/Распределение_играков/button_theme.tres" id="2_8hxei"]
 [ext_resource type="Texture2D" uid="uid://bdqad7sy2jpg5" path="res://sprites/Карточки/Некто.png" id="2_cef3j"]
 [ext_resource type="Texture2D" uid="uid://b04wgwcxdnosl" path="res://sprites/Карточки/Дон_Мафия.png" id="4_ukqid"]
 [ext_resource type="Texture2D" uid="uid://cu7co611l76cm" path="res://sprites/кнопка.png" id="5_u6t2v"]
 [ext_resource type="AudioStream" uid="uid://bk51j4xvmu61q" path="res://audio/Переворот карты.mp3" id="6_mn0c8"]
+[ext_resource type="AudioStream" uid="uid://4mqxfl6a5o48" path="res://audio/Кнопки/bubble-wrap-single-pop-01.mp3" id="7_g0rx6"]
 
 [sub_resource type="Animation" id="Animation_mn0c8"]
 length = 0.23333333
@@ -132,7 +134,7 @@ diffuse_texture = ExtResource("5_u6t2v")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ukqid"]
 
-[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_mn0c8"]
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_t854q"]
 
 [node name="Panel" type="Panel" unique_id=1544003752]
 anchors_preset = 15
@@ -140,9 +142,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_a61oc")
 script = ExtResource("1_ukqid")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=902935389]
+visible = false
 modulate = Color(0.4075654, 0.40756536, 0.40756533, 1)
 layout_mode = 1
 anchors_preset = 15
@@ -200,7 +204,11 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ukqid")
 text = "Следующий"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1313147842]
-stream = SubResource("AudioStreamPolyphonic_mn0c8")
+stream = SubResource("AudioStreamPolyphonic_t854q")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=776225658]
+stream = ExtResource("7_g0rx6")
 
 [connection signal="editing_toggled" from="MarginContainer/VBoxContainer/LineEdit" to="." method="_on_line_edit_editing_toggled"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
