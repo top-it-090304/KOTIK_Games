@@ -17,6 +17,7 @@ grow_vertical = 2
 script = ExtResource("1_u7s8l")
 
 [node name="PlayPanel" type="Panel" parent="." unique_id=1178276201]
+visible = false
 modulate = Color(0.8627451, 1, 1, 1)
 self_modulate = Color(0.9529412, 0, 0.9529412, 1)
 layout_mode = 1
@@ -167,7 +168,6 @@ theme_override_font_sizes/font_size = 80
 text = "Выход"
 
 [node name="MainPanel" type="Panel" parent="." unique_id=19324989]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
