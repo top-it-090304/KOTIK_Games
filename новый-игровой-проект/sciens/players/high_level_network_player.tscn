@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ch6y1tucav8p3"]
 
 [ext_resource type="Script" uid="uid://d3ob814lbwwd7" path="res://sciens/players/high_level_network_player.gd" id="1_21qag"]
-[ext_resource type="Texture2D" uid="uid://dfwdmcuow3oa2" path="res://LOGO_STUDIO.png" id="2_qo81s"]
+[ext_resource type="Texture2D" uid="uid://dsfhkt1so4612" path="res://icon.svg" id="2_qo81s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vlqgk"]
 size = Vector2(23.962788, 27.457012)
