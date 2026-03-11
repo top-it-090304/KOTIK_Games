@@ -17,7 +17,6 @@ grow_vertical = 2
 script = ExtResource("1_yhr2i")
 
 [node name="PlayPanel" type="Panel" parent="." unique_id=1178276201]
-visible = false
 modulate = Color(0.8627451, 1, 1, 1)
 self_modulate = Color(0.9529412, 0, 0.9529412, 1)
 layout_mode = 1
