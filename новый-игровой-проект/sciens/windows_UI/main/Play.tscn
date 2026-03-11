@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://dv32f8gd4y1jg"]
 
 [ext_resource type="Script" uid="uid://cf1cyk78ek0ap" path="res://sciens/windows_UI/main/Play.gd" id="1_wevfn"]
-[ext_resource type="Script" uid="uid://cpm38840v4at" path="res://sciens/windows_UI/main/h_box_мафия.gd" id="2_2x2xx"]
+[ext_resource type="Script" uid="uid://cvgfbdxpjntg3" path="res://sciens/windows_UI/main/h_box_мафия.gd" id="2_2x2xx"]
 [ext_resource type="Script" uid="uid://biyxg0px0ciyv" path="res://sciens/windows_UI/main/margin_container.gd" id="2_4ad8q"]
 [ext_resource type="Theme" uid="uid://cc3vs4pyvy260" path="res://sciens/windows_UI/main/button_theme.tres" id="3_xkv1l"]
-[ext_resource type="Script" uid="uid://b7hyrvnx45o2u" path="res://sciens/windows_UI/main/h_box_дон.gd" id="4_4qv0n"]
-[ext_resource type="Script" uid="uid://dgfy7om1kottd" path="res://sciens/windows_UI/main/h_box_мирный.gd" id="5_pq57i"]
-[ext_resource type="Script" uid="uid://d35twrrpde4rd" path="res://sciens/windows_UI/main/h_box_доктор.gd" id="6_f0q8f"]
-[ext_resource type="Script" uid="uid://dlq3o7snjwaxn" path="res://sciens/windows_UI/main/h_box_шериф.gd" id="7_awowo"]
+[ext_resource type="Script" uid="uid://vd26qrt788ls" path="res://sciens/windows_UI/main/h_box_дон.gd" id="4_4qv0n"]
+[ext_resource type="Script" uid="uid://cm7qpvdtnw8ly" path="res://sciens/windows_UI/main/h_box_мирный.gd" id="5_pq57i"]
+[ext_resource type="Script" uid="uid://caa8nijmxpsm8" path="res://sciens/windows_UI/main/h_box_доктор.gd" id="6_f0q8f"]
+[ext_resource type="Script" uid="uid://cqxgc52jrqiaa" path="res://sciens/windows_UI/main/h_box_шериф.gd" id="7_awowo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ad8q"]
 bg_color = Color(0.039215688, 0.039215688, 0.039215688, 1)

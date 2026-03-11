@@ -1,22 +1,23 @@
 [gd_scene format=3 uid="uid://dogi11w7hj4er"]
 
-[ext_resource type="Script" uid="uid://cphbed5gwnwpg" path="res://sciens/windows_UI/main/main.gd" id="1_u7s8l"]
-[ext_resource type="FontFile" uid="uid://dqqpnwqlql3ow" path="res://Text_stule/Playwrite/static/PlaywriteAT-Italic.ttf" id="2_yc3kn"]
+[ext_resource type="Script" uid="uid://cphbed5gwnwpg" path="res://sciens/windows_UI/main_screen/main.gd" id="1_yhr2i"]
+[ext_resource type="FontFile" uid="uid://dqqpnwqlql3ow" path="res://Text_stule/Playwrite/static/PlaywriteAT-Italic.ttf" id="2_tyq4u"]
 
 [node name="MenuContainer" type="Control" unique_id=1233784439]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1.0
-offset_top = 2.0
-offset_right = 1.0
-offset_bottom = 2.0
+offset_left = -6.0
+offset_top = -12.0
+offset_right = -6.0
+offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_u7s8l")
+script = ExtResource("1_yhr2i")
 
 [node name="PlayPanel" type="Panel" parent="." unique_id=1178276201]
+visible = false
 modulate = Color(0.8627451, 1, 1, 1)
 self_modulate = Color(0.9529412, 0, 0.9529412, 1)
 layout_mode = 1
@@ -210,7 +211,7 @@ text = "Выход"
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("2_yc3kn")
+theme_override_fonts/font = ExtResource("2_tyq4u")
 theme_override_font_sizes/font_size = 60
 text = "Mafia"
 
