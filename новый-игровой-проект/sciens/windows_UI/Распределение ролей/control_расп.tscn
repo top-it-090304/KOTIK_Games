@@ -1,8 +1,5 @@
 [gd_scene format=3 uid="uid://cc25nu0qxmo0"]
 
-[ext_resource type="Script" uid="uid://cr0hr0x7cfl3j" path="res://sciens/windows_UI/Распределение ролей/Распределение_ролей.gd" id="1_sxa1l"]
-[ext_resource type="PackedScene" uid="uid://dv32f8gd4y1jg" path="res://sciens/windows_UI/main/Play.tscn" id="2_v5n23"]
-
 [node name="Control" type="Control" unique_id=397175873]
 layout_mode = 3
 anchors_preset = 15
@@ -10,7 +7,3 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_sxa1l")
-
-[node name="Play" parent="." unique_id=813698499 instance=ExtResource("2_v5n23")]
-layout_mode = 1
