@@ -6,6 +6,7 @@ extends MarginContainer
 @onready var hbox_doc = $"VBoxContainer/Доктор/HBox_Доктор"
 @onready var hbox_sh = $"VBoxContainer/Шериф/HBox_Шериф"
 
+
 @onready var count_label = $"VBoxContainer/HBoxContainer/Count"
 
 var all_count: int = 3
