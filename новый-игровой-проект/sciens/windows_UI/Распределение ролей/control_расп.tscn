@@ -1,14 +1,97 @@
 [gd_scene format=3 uid="uid://cc25nu0qxmo0"]
 
 [ext_resource type="PackedScene" uid="uid://dv32f8gd4y1jg" path="res://sciens/windows_UI/main/Play.tscn" id="1_n5gs3"]
+[ext_resource type="Script" uid="uid://bsbri68bqil5s" path="res://sciens/windows_UI/Распределение ролей/control_расп.gd" id="1_sxa1l"]
+[ext_resource type="Script" uid="uid://e6dplgl8srbn" path="res://sciens/windows_UI/Распределение ролей/menu.gd" id="3_v5n23"]
 
-[node name="Control" type="Control" unique_id=397175873]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sxa1l"]
+bg_color = Color(0.039215688, 0.039215688, 0.039215688, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sxa1l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5n23"]
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Control1" type="Control" unique_id=397175873]
 layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sxa1l")
+
+[node name="Play" parent="." unique_id=813698499 instance=ExtResource("1_n5gs3")]
+layout_mode = 1
+
+[node name="Test" type="Control" parent="." unique_id=1983113514]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Test" unique_id=858127796]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 252.0
+offset_right = 144.0
+offset_bottom = 275.0
+
+[node name="Menu" type="Control" parent="." unique_id=966096972]
+visible = false
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("3_v5n23")
 
-[node name="Play" parent="." unique_id=813698499 instance=ExtResource("1_n5gs3")]
+[node name="Panel" type="Panel" parent="Menu" unique_id=734876090]
 layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sxa1l")
+
+[node name="MarginContainer" type="MarginContainer" parent="Menu" unique_id=1635813537]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/MarginContainer" unique_id=1993689486]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Menu/MarginContainer/VBoxContainer" unique_id=2103113981]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_sxa1l")
+
+[node name="Label" type="Label" parent="Menu/MarginContainer/VBoxContainer/PanelContainer" unique_id=1731979464]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "День"
+
+[node name="PanelContainer2" type="PanelContainer" parent="Menu/MarginContainer/VBoxContainer" unique_id=1002504458]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_v5n23")
+
+[node name="Label" type="Label" parent="Menu/MarginContainer/VBoxContainer/PanelContainer2" unique_id=1208927216]
+layout_mode = 2
+text = "Игрок 1"

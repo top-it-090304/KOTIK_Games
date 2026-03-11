@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c5v2eartl5xfu"]
 
 [ext_resource type="Script" uid="uid://3vfbswg5p635" path="res://sciens/windows_UI/Распределение ролей/Определение_роли.gd" id="1_ukqid"]
-[ext_resource type="Theme" uid="uid://cc3vs4pyvy260" path="res://sciens/windows_UI/main/button_theme.tres" id="2_8hxei"]
+[ext_resource type="Theme" uid="uid://cc3vs4pyvy260" path="res://sciens/windows_UI/Стили/button_theme.tres" id="2_8hxei"]
 [ext_resource type="Texture2D" uid="uid://bdqad7sy2jpg5" path="res://sprites/Карточки/Некто.png" id="2_cef3j"]
 [ext_resource type="Texture2D" uid="uid://b04wgwcxdnosl" path="res://sprites/Карточки/Дон_Мафия.png" id="4_ukqid"]
 [ext_resource type="Texture2D" uid="uid://cu7co611l76cm" path="res://sprites/кнопка.png" id="5_u6t2v"]

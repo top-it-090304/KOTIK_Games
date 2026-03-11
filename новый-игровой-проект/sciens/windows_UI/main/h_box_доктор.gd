@@ -6,7 +6,7 @@ extends HBoxContainer
 @export var start_players: int = 0
 
 # Текущее количество игроков
-var current_players: int =0
+var current_players: int = 0
 
 # Сигнал для отправки количества игроков в другие скрипты
 signal players_count_changed(current_players)

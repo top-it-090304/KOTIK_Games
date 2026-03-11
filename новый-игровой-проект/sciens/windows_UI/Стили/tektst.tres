@@ -1,0 +1,8 @@
+[gd_resource type="Theme" format=3 uid="uid://cx0e6ps1ynwnf"]
+
+[sub_resource type="FontVariation" id="FontVariation_8x55y"]
+
+[resource]
+Label/colors/font_color = Color(0.7529412, 0.7529412, 0.7529412, 1)
+Label/font_sizes/font_size = 16
+Label/fonts/font = SubResource("FontVariation_8x55y")
