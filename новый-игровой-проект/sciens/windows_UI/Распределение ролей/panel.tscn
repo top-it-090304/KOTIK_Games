@@ -134,7 +134,7 @@ diffuse_texture = ExtResource("5_u6t2v")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ukqid"]
 
-[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_a61oc"]
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_t854q"]
 
 [node name="Panel" type="Panel" unique_id=1544003752]
 anchors_preset = 15
@@ -204,7 +204,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ukqid")
 text = "Следующий"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1313147842]
-stream = SubResource("AudioStreamPolyphonic_a61oc")
+stream = SubResource("AudioStreamPolyphonic_t854q")
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=776225658]
 stream = ExtResource("7_g0rx6")

@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://dogi11w7hj4er"]
 
-[ext_resource type="Script" uid="uid://cphbed5gwnwpg" path="res://sciens/windows_UI/new folder/main.gd" id="1_u7s8l"]
+[ext_resource type="Script" uid="uid://cphbed5gwnwpg" path="res://sciens/windows_UI/main/main.gd" id="1_u7s8l"]
 [ext_resource type="FontFile" uid="uid://dqqpnwqlql3ow" path="res://Text_stule/Playwrite/static/PlaywriteAT-Italic.ttf" id="2_yc3kn"]
-[ext_resource type="AudioStream" uid="uid://4mqxfl6a5o48" path="res://audio/Кнопки/bubble-wrap-single-pop-01.mp3" id="3_yc3kn"]
 
 [node name="MenuContainer" type="Control" unique_id=1233784439]
 layout_mode = 3
@@ -214,9 +213,6 @@ size_flags_vertical = 0
 theme_override_fonts/font = ExtResource("2_yc3kn")
 theme_override_font_sizes/font_size = 60
 text = "Mafia"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1729103024]
-stream = ExtResource("3_yc3kn")
 
 [connection signal="pressed" from="PlayPanel/MarginContainer/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="PlayPanel/MarginContainer/VBoxContainer/Server" to="." method="_on_server_pressed"]
