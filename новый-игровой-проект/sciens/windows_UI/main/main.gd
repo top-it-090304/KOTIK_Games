@@ -6,7 +6,6 @@ extends Control
 @onready var settings_panel = $SettingsPanel
 @onready var exit_panel = $ExitPanel
 @onready var main_panel = $MainPanel
-@onready var audio = $AudioStreamPlayer
 
 func _ready():
 	# Скрываем все панели при запуске
@@ -24,31 +23,25 @@ func hide_all_panels():
 func _on_settings_button_pressed():
 	hide_all_panels()
 	settings_panel.show()
-	audio.playing = true
 
 func _on_exit_button_pressed():
 	hide_all_panels()
 	exit_panel.show()
 	get_tree().quit()
-	audio.playing = true
 
 func _on_back_button_pressed():
 	hide_all_panels()	
 	main_panel.show()
-	audio.playing = true
 
 
 func _on_plau_batton_pressed() -> void:
 	hide_all_panels()
 	play_panel.show()
-	audio.playing = true
 
 
 func _on_server_pressed() -> void:
-	audio.playing = true
 	get_tree().change_scene_to_file("res://sciens/game/game.tscn")
 
 
 func _on_client_pressed() -> void:
-	audio.playing = true
 	get_tree().change_scene_to_file("res://sciens/windows_UI/main/Play.tscn")
