@@ -24,8 +24,6 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1.0
-offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sxa1l")
@@ -34,8 +32,11 @@ script = ExtResource("1_sxa1l")
 layout_mode = 1
 
 [node name="Test" type="Control" parent="." unique_id=1983113514]
-anchors_preset = 0
-offset_right = 40.0
+layout_mode = 1
+anchor_left = -0.003
+anchor_right = -0.003
+offset_left = 0.90000004
+offset_right = 40.9
 offset_bottom = 40.0
 
 [node name="Label" type="Label" parent="Test" unique_id=858127796]
@@ -46,7 +47,6 @@ offset_right = 144.0
 offset_bottom = 275.0
 
 [node name="Menu" type="Control" parent="." unique_id=966096972]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -69,6 +69,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 20
@@ -88,10 +90,14 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "День"
 
-[node name="PanelContainer2" type="PanelContainer" parent="Menu/MarginContainer/VBoxContainer" unique_id=1002504458]
-layout_mode = 2
+[node name="PanelContainer3" type="PanelContainer" parent="Menu" unique_id=14016962]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 20.0
+offset_right = 95.0
+offset_bottom = 47.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_v5n23")
 
-[node name="Label" type="Label" parent="Menu/MarginContainer/VBoxContainer/PanelContainer2" unique_id=1208927216]
+[node name="Label" type="Label" parent="Menu/PanelContainer3" unique_id=609920143]
 layout_mode = 2
 text = "Игрок 1"

@@ -9,13 +9,18 @@ extends Control
 
 @onready var label = $Test/Label
 
+@onready var pan = $Menu/PanelContainer3
+
+signal value_changed(all_count)
+
 #Переменные со всей информацией
-var all_count: int = 0
+var all_count: int = 2
 var mafia_count: int = 0
 var don_count: int = 0
 var doc_count: int = 0
 var mir_count: int = 0
 var sh_count: int = 0
+var yes: int = 0
 
 
 func _ready() -> void:
@@ -39,7 +44,9 @@ func dalee_pressed():
 	sh_count = ras_rol.old_count_sh
 	#label.text = str(all_count)
 	test_panel.show()
+	pan.hide()
 	Vvod()
+	value_changed.emit(all_count)
 	
 func Vvod():
 	print(all_count)
