@@ -15,6 +15,12 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sw6da"]
 bg_color = Color(0.38, 0.16327335, 0.1596, 1)
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_mn0c8"]
+diffuse_texture = ExtResource("5_u6t2v")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_sw6da"]
+diffuse_texture = ExtResource("2_cef3j")
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_trvlx"]
 animations = [{
 "frames": [{
@@ -40,9 +46,6 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_mn0c8"]
-diffuse_texture = ExtResource("5_u6t2v")
 
 [node name="Panel" type="Panel" unique_id=1544003752]
 anchors_preset = 15
@@ -76,20 +79,6 @@ placeholder_text = "Ввидите Имя"
 alignment = 1
 max_length = 15
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="MarginContainer/VBoxContainer" unique_id=1517206722]
-libraries/ = ExtResource("2_sw6da")
-
-[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/VBoxContainer/AnimationPlayer" unique_id=1035581182]
-position = Vector2(150, 300)
-scale = Vector2(0.26845708, 0.27)
-texture = ExtResource("2_cef3j")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MarginContainer/VBoxContainer/AnimationPlayer" unique_id=1383644770]
-position = Vector2(150, 300)
-scale = Vector2(1e-05, 0.314)
-sprite_frames = SubResource("SpriteFrames_trvlx")
-frame = 2
-
 [node name="Button2" type="Button" parent="MarginContainer/VBoxContainer" unique_id=710326006]
 layout_mode = 2
 icon = SubResource("CanvasTexture_mn0c8")
@@ -101,7 +90,20 @@ theme = ExtResource("2_8hxei")
 theme_override_font_sizes/font_size = 35
 text = "Следующий"
 
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/VBoxContainer" unique_id=1035581182]
+position = Vector2(126.5, 268)
+scale = Vector2(0.27, 0.27)
+texture = SubResource("CanvasTexture_sw6da")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MarginContainer/VBoxContainer" unique_id=1383644770]
+position = Vector2(126.5, 268)
+scale = Vector2(1e-05, 0.314)
+sprite_frames = SubResource("SpriteFrames_trvlx")
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1313147842]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1517206722]
+libraries/ = ExtResource("2_sw6da")
 
 [connection signal="editing_toggled" from="MarginContainer/VBoxContainer/LineEdit" to="." method="_on_line_edit_editing_toggled"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

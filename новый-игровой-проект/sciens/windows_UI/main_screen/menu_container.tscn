@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://3vfbswg5p635" path="res://sciens/windows_UI/Распределение ролей/Определение_роли.gd" id="1_ftvc1"]
 [ext_resource type="AudioStream" uid="uid://bk51j4xvmu61q" path="res://audio/Переворот карты.mp3" id="2_a4ync"]
-[ext_resource type="Animation" path="res://animation/card/forward.res" id="3_2rbxp"]
+[ext_resource type="Animation" uid="uid://4rdb7ot5bej4" path="res://animations/card/forward.res" id="3_ftvc1"]
 [ext_resource type="Texture2D" uid="uid://bdqad7sy2jpg5" path="res://sprites/Карточки/Некто.png" id="4_grkqq"]
 [ext_resource type="Texture2D" uid="uid://d34soxfc37u2p" path="res://sprites/Карточки/Шериф.png" id="5_jd8kr"]
 [ext_resource type="Texture2D" uid="uid://bxve4l0nqh5sw" path="res://sprites/Карточки/Мирный.png" id="6_s4v2x"]
@@ -83,7 +83,7 @@ tracks/4/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a61oc"]
 _data = {
 &"back": SubResource("Animation_rrf5e"),
-&"forward": ExtResource("3_2rbxp")
+&"forward": ExtResource("3_ftvc1")
 }
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_trvlx"]

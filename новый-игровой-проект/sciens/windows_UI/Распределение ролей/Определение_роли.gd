@@ -1,14 +1,14 @@
 extends Panel
 
-@onready var card_animation = $MarginContainer/VBoxContainer/AnimationPlayer
+@onready var card_animation = $AnimationPlayer
 @onready var button = $MarginContainer/VBoxContainer/Button2
 @onready var lineedit = $MarginContainer/VBoxContainer/LineEdit
 @onready var audio = $AudioStreamPlayer
 var turned_over = false
 var name_
 # Called when the node enters the scene tree for the first time.
-
-
+func _ready() -> void:
+	$MarginContainer/VBoxContainer/AnimatedSprite2D.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
