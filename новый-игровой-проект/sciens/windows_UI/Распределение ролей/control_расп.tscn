@@ -45,6 +45,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sxa1l")
 
+[node name="Panel" parent="." unique_id=1544003752 instance=ExtResource("5_slymg")]
+layout_mode = 1
+
 [node name="Play" parent="." unique_id=813698499 instance=ExtResource("1_n5gs3")]
 layout_mode = 1
 
@@ -64,6 +67,7 @@ offset_right = 144.0
 offset_bottom = 275.0
 
 [node name="Menu" type="Control" parent="." unique_id=966096972]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -132,6 +136,3 @@ theme = ExtResource("4_ive8x")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxEmpty_slymg")
 text = "Игрок 1"
-
-[node name="Panel" parent="." unique_id=1544003752 instance=ExtResource("5_slymg")]
-layout_mode = 1

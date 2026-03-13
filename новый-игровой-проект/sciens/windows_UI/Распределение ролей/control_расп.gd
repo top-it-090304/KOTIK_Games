@@ -55,3 +55,8 @@ func Vvod():
 	print(doc_count)
 	print(mir_count)
 	print(sh_count)
+
+
+func action_of_card():
+	$Panel.changing_thе_image(2)
+	
