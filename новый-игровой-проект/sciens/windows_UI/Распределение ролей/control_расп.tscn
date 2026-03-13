@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cc25nu0qxmo0"]
 
 [ext_resource type="PackedScene" uid="uid://dv32f8gd4y1jg" path="res://sciens/windows_UI/main/Play.tscn" id="1_n5gs3"]
-[ext_resource type="Script" uid="uid://bsbri68bqil5s" path="res://sciens/windows_UI/Распределение ролей/control_расп.gd" id="1_sxa1l"]
-[ext_resource type="Script" uid="uid://e6dplgl8srbn" path="res://sciens/windows_UI/Распределение ролей/menu.gd" id="3_v5n23"]
+[ext_resource type="Script" path="res://sciens/windows_UI/Распределение ролей/control_расп.gd" id="1_sxa1l"]
+[ext_resource type="Script" path="res://sciens/windows_UI/Распределение ролей/menu.gd" id="3_v5n23"]
 [ext_resource type="Theme" uid="uid://cx0e6ps1ynwnf" path="res://sciens/windows_UI/Стили/tektst.tres" id="4_ive8x"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sxa1l"]
