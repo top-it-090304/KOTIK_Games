@@ -3,21 +3,37 @@
 [ext_resource type="PackedScene" uid="uid://dv32f8gd4y1jg" path="res://sciens/windows_UI/main/Play.tscn" id="1_n5gs3"]
 [ext_resource type="Script" uid="uid://bsbri68bqil5s" path="res://sciens/windows_UI/Распределение ролей/control_расп.gd" id="1_sxa1l"]
 [ext_resource type="Script" uid="uid://e6dplgl8srbn" path="res://sciens/windows_UI/Распределение ролей/menu.gd" id="3_v5n23"]
+[ext_resource type="Theme" uid="uid://cx0e6ps1ynwnf" path="res://sciens/windows_UI/Стили/tektst.tres" id="4_ive8x"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sxa1l"]
 bg_color = Color(0.039215688, 0.039215688, 0.039215688, 1)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sxa1l"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5n23"]
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ive8x"]
+bg_color = Color(0.8510876, 0.768821, 0.37911937, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.5019608, 0.03137255, 0.03137255, 1)
+border_blend = true
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5n23"]
+bg_color = Color(0.7019608, 0.5921569, 0, 0.8117647)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.5019608, 0.03137255, 0.03137255, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_slymg"]
 
 [node name="Control1" type="Control" unique_id=397175873]
 layout_mode = 3
@@ -80,17 +96,27 @@ theme_override_constants/margin_bottom = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Menu/MarginContainer" unique_id=1993689486]
 layout_mode = 2
+theme_override_constants/separation = 8
 
 [node name="PanelContainer" type="PanelContainer" parent="Menu/MarginContainer/VBoxContainer" unique_id=2103113981]
+custom_minimum_size = Vector2(200, 35)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_sxa1l")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_ive8x")
 
 [node name="Label" type="Label" parent="Menu/MarginContainer/VBoxContainer/PanelContainer" unique_id=1731979464]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "День"
 
+[node name="Control" type="Control" parent="Menu/MarginContainer/VBoxContainer" unique_id=810695934]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
 [node name="PanelContainer3" type="PanelContainer" parent="Menu" unique_id=14016962]
+visible = false
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 0
 offset_left = 19.0
 offset_top = 20.0
@@ -100,4 +126,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_v5n23")
 
 [node name="Label" type="Label" parent="Menu/PanelContainer3" unique_id=609920143]
 layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("4_ive8x")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxEmpty_slymg")
 text = "Игрок 1"
