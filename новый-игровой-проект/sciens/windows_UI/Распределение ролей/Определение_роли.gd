@@ -18,6 +18,7 @@ func changing_thе_image(number_of_card):
 
 
 func _on_button_2_pressed() -> void:
+	#changing_thе_image(2)
 	if turned_over == false:
 		card_animation.play("forward")
 		audio.playing = true

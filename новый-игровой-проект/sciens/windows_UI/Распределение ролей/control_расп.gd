@@ -3,18 +3,18 @@ extends Control
 @onready var ras_rol = $Play/MarginContainer
 
 @onready var play_panel = $Play
-@onready var test_panel = $Menu
+@onready var panel = $Panel
+@onready var menu_panel = $Menu
 
 @onready var dalee_button: Button = $Play/MarginContainer/VBoxContainer/HBoxContainer2/Button2
 
-@onready var label = $Test/Label
 
 @onready var pan = $Menu/PanelContainer3
 
 signal value_changed(all_count)
 
 #Переменные со всей информацией
-var all_count: int = 2
+var all_count: int = 0
 var mafia_count: int = 0
 var don_count: int = 0
 var doc_count: int = 0
@@ -31,7 +31,8 @@ func _ready() -> void:
 
 func hide_all_panels():
 	play_panel.hide()
-	test_panel.hide()
+	menu_panel.hide()
+	panel.hide()
 
 
 func dalee_pressed():
@@ -42,8 +43,8 @@ func dalee_pressed():
 	doc_count = ras_rol.old_count_doc
 	mir_count = ras_rol.old_count_mir
 	sh_count = ras_rol.old_count_sh
-	#label.text = str(all_count)
-	test_panel.show()
+	action_of_card()
+	panel.show()
 	pan.hide()
 	Vvod()
 	value_changed.emit(all_count)
@@ -58,5 +59,5 @@ func Vvod():
 
 
 func action_of_card():
-	$Panel.changing_thе_image(2)
+	$Panel.changing_thе_image(5)
 	
