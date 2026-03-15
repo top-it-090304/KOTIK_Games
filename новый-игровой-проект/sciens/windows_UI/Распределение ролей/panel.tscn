@@ -107,4 +107,3 @@ libraries/ = ExtResource("2_sw6da")
 
 [connection signal="editing_toggled" from="MarginContainer/VBoxContainer/LineEdit" to="." method="_on_line_edit_editing_toggled"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

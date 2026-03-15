@@ -13,7 +13,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 
-func changing_thе_image(number_of_card):
+func changing_the_image(number_of_card):
 	$MarginContainer/VBoxContainer/AnimatedSprite2D.frame = number_of_card
 
 
@@ -34,5 +34,5 @@ func _on_line_edit_editing_toggled(_toggled_on: bool) -> void:
 	name_ = lineedit.text
 	print(name_)
 	
-func _on_button_pressed() -> void:
-	pass
+#func _on_button_pressed() -> void:
+	#pass
