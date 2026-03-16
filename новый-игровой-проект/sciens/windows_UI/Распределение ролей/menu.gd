@@ -7,11 +7,14 @@ extends Control
 
 var allcount : int = 5
 
+var Player_name_Men = []
+
 func _ready() -> void:
 	vbox_container.remove_child(player_template)
 	#var count = get_parent()
 	#allcount = count.all_count
 	get_parent().value_changed.connect(_on_value_changed)
+	get_parent().name_changed.connect(_on_name)
 	# Скрываем шаблон
 	#player_template.visible = false
 	# Создаем панели для игроков
@@ -19,6 +22,11 @@ func _ready() -> void:
 func _on_value_changed(all):
 	allcount = all
 	create_player_panels()
+
+func _on_name(name_menu):
+	Player_name_Men = name_menu
+	print(Player_name_Men)
+
 
 
 func create_player_panels():

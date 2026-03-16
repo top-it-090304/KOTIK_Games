@@ -15,6 +15,7 @@ extends Control
 
 
 signal value_changed(all_count)
+signal name_changed(name_arr)
 
 #Переменные со всей информацией
 var all_count: int = 0
@@ -23,24 +24,42 @@ var don_count: int = 0
 var doc_count: int = 0
 var mir_count: int = 0
 var sh_count: int = 0
-var a: int = 1
+var a: int = 0
+var rand: int = 0
+var ind: int = 0
+var pl_name_glob: String = " "
 
 var player_panels = []  # массив для хранения созданных панелей
 var current_panel_index: int = 0  # индекс текущей панели
 
-
+var rol_arr = []
+var name_arr = []
 
 func _ready() -> void:
 	hide_all_panels()
 	play_panel.show()
 	dalee_button.pressed.connect(dalee_pressed)
-	
 
+func app_name(player_name):
+	pl_name_glob = player_name
 
 func hide_all_panels():
 	play_panel.hide()
 	menu_panel.hide()
 	panel.hide()
+
+
+func app_arr_rol():
+	for i in range(mafia_count):
+		rol_arr.append(2)
+	for i in range(don_count):
+		rol_arr.append(5)
+	for i in range(mir_count):
+		rol_arr.append(1)
+	for i in range(doc_count):
+		rol_arr.append(4)
+	for i in range(sh_count):
+		rol_arr.append(0)
 
 
 func dalee_pressed():
@@ -51,19 +70,26 @@ func dalee_pressed():
 	doc_count = ras_rol.old_count_doc
 	mir_count = ras_rol.old_count_mir
 	sh_count = ras_rol.old_count_sh
-	
+	rand = all_count - 1
+	app_arr_rol()
+	print(rol_arr)
 	duplicate_panels_for_players()
-	
-	#action_of_card()
-	#panel.show()
 	pan.hide()
-	#Vvod()
 	value_changed.emit(all_count)
 
+
 func Daleerol_pressed():
-	current_panel_index = current_panel_index + 1
-	show_current_panel()
-	print(9)
+	name_arr.append(pl_name_glob)
+	if rand == -1:
+		hide_all_panels()
+		player_panels[current_panel_index].visible = false
+		menu_panel.show()
+		print(name_arr)
+		name_changed.emit(name_arr)
+	else:
+		current_panel_index = current_panel_index + 1
+		show_current_panel()
+
 
 func duplicate_panels_for_players():
 	# Скрываем оригинальную панель (она будет шаблоном)
@@ -73,42 +99,37 @@ func duplicate_panels_for_players():
 	for i in range(all_count):
 		var new_panel = panel.duplicate()
 		new_panel.visible = false
-		#new_panel.name = "Panel_Player_%d" % (i + 1)
-		
-		# Настраиваем содержимое панели под конкретного игрока
-		# Добавляем панель в Control1 (на тот же уровень, что и оригинал
 		add_child(new_panel)
 		player_panels.append(new_panel)
-		print(0)
-	show_current_panel()
-		# Важно: перемещаем панель выше по иерархии, чтобы она не перекрывала интерфейс
-		# Если нужно, чтобы панели были одна за другой, а не накладывались
-		# Но так как панель на весь экран, они будут перекрывать друг друга
 		
-		# Если нужно показывать только одну панель за раз:
-		# new_panel.visible = false  # и показывать по необходимости
-
-
+	show_current_panel()
 
 
 func show_current_panel():
 	# Скрываем все панели
 	for panel_i in player_panels:
 		panel_i.visible = false
-	print(a)
+		
+	randomize()
+	
+	ind = randi_range(0, rand)
+	a = rol_arr[ind]
+	rol_arr.remove_at(ind)
+	rand = rand - 1
 
 	player_panels[current_panel_index].changing_the_image(a)
 	player_panels[current_panel_index].visible = true
 	var p = player_panels[current_panel_index]
 	var but = p.get_node("MarginContainer/VBoxContainer/Button")
+	p.new_name_pl.connect(app_name)
 	but.pressed.connect(Daleerol_pressed)
-	a = a + 1
+	
 
 
 
 
-func action_of_card(i: int):
-	$Panel.changing_thе_image(i)
+#func action_of_card(i: int):
+	#$Panel.changing_thе_image(i)
 	
 
 func Vvod():

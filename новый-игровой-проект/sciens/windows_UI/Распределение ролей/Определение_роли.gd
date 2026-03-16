@@ -5,7 +5,9 @@ extends Panel
 @onready var lineedit = $MarginContainer/VBoxContainer/LineEdit
 @onready var audio = $AudioStreamPlayer
 var turned_over = false
-var name_
+var n: String = " "
+
+signal new_name_pl(n)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$MarginContainer/VBoxContainer/AnimatedSprite2D.visible = false
@@ -31,8 +33,7 @@ func _on_button_2_pressed() -> void:
 
 
 func _on_line_edit_editing_toggled(_toggled_on: bool) -> void:
-	name_ = lineedit.text
-	print(name_)
+	n = lineedit.text
+	new_name_pl.emit(n)
+	print(n)
 	
-#func _on_button_pressed() -> void:
-	#pass
