@@ -46,9 +46,11 @@ grow_vertical = 2
 script = ExtResource("1_sxa1l")
 
 [node name="Panel" parent="." unique_id=1544003752 instance=ExtResource("5_slymg")]
+visible = false
 layout_mode = 1
 
 [node name="Play" parent="." unique_id=813698499 instance=ExtResource("1_n5gs3")]
+visible = false
 layout_mode = 1
 
 [node name="Menu" type="Control" parent="." unique_id=966096972]
@@ -61,6 +63,7 @@ grow_vertical = 2
 script = ExtResource("3_v5n23")
 
 [node name="Panel" type="Panel" parent="Menu" unique_id=734876090]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -104,7 +107,6 @@ custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 
 [node name="PanelContainer3" type="PanelContainer" parent="Menu" unique_id=14016962]
-visible = false
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 0
 offset_left = 19.0

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cu7co611l76cm"
-path="res://.godot/imported/кнопка.png-aced2514ccf1d1120dc22ae322456833.ctex"
+uid="uid://ce8xgv47xjvp6"
+path="res://.godot/imported/кнопка4.png-ca532f33c564d5fd190683717e6d2c9c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/кнопка.png"
-dest_files=["res://.godot/imported/кнопка.png-aced2514ccf1d1120dc22ae322456833.ctex"]
+source_file="res://sprites/кннк/кнопка4.png"
+dest_files=["res://.godot/imported/кнопка4.png-ca532f33c564d5fd190683717e6d2c9c.ctex"]
 
 [params]
 

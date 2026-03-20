@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dxw2w31ytl7ot"]
+
+[ext_resource type="Shader" uid="uid://diumpwnqudm8f" path="res://sciens/кнопка для Егора/button.gdshader" id="1_figoo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_el5ya"]
+shader = ExtResource("1_figoo")
+shader_parameter/Line_Smoothness = 0.045
+shader_parameter/Line_Width = 0.09
+shader_parameter/Brightness = 3.0
+shader_parameter/Rotation_deg = 30.0
+shader_parameter/Distortion = 1.8
+shader_parameter/Speed = 0.7
+shader_parameter/Position = 0.0
+shader_parameter/Position_Min = 0.25
+shader_parameter/Position_Max = 0.5
+shader_parameter/Alpha = 1.0
+
+[node name="Button" type="Button" unique_id=1448409723]
+material = SubResource("ShaderMaterial_el5ya")
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 134.0
+grow_horizontal = 2
+pivot_offset = Vector2(60, -17)
+theme_override_font_sizes/font_size = 92
+text = "Текст"

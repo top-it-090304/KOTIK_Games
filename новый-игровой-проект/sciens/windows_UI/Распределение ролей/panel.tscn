@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d34soxfc37u2p" path="res://sprites/Карточки/Шериф.png" id="4_88a3v"]
 [ext_resource type="Texture2D" uid="uid://b04wgwcxdnosl" path="res://sprites/Карточки/Дон_Мафия.png" id="4_ukqid"]
 [ext_resource type="Texture2D" uid="uid://bxve4l0nqh5sw" path="res://sprites/Карточки/Мирный.png" id="5_kd564"]
-[ext_resource type="Texture2D" uid="uid://cu7co611l76cm" path="res://sprites/кнопка.png" id="5_u6t2v"]
+[ext_resource type="Texture2D" uid="uid://cu7co611l76cm" path="res://sprites/кннк/кнопка.png" id="5_u6t2v"]
 [ext_resource type="Texture2D" uid="uid://d10qpigmwfvrt" path="res://sprites/Карточки/Мафия.png" id="6_6cg88"]
 [ext_resource type="Texture2D" uid="uid://to78ujs5525t" path="res://sprites/Карточки/Любовница.png" id="7_gcnhb"]
 [ext_resource type="Texture2D" uid="uid://d2b4l32wgeq7w" path="res://sprites/Карточки/Доктор.png" id="8_xp5vq"]
