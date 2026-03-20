@@ -1,0 +1,11 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://b3g53xgid2gt5"]
+
+[ext_resource type="FontFile" uid="uid://dqqpnwqlql3ow" path="res://Text_stule/Playwrite/static/PlaywriteAT-Italic.ttf" id="1_8ve8o"]
+
+[resource]
+font = ExtResource("1_8ve8o")
+font_size = 72
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 43
+shadow_color = Color(1, 1, 1, 1)

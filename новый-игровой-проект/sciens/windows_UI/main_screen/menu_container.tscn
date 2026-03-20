@@ -1,179 +1,176 @@
 [gd_scene format=3 uid="uid://dogi11w7hj4er"]
 
-[ext_resource type="Script" uid="uid://3vfbswg5p635" path="res://sciens/windows_UI/Распределение ролей/Определение_роли.gd" id="1_ftvc1"]
-[ext_resource type="AudioStream" uid="uid://bk51j4xvmu61q" path="res://audio/Переворот карты.mp3" id="2_a4ync"]
-[ext_resource type="Animation" uid="uid://4rdb7ot5bej4" path="res://animations/card/forward.res" id="3_ftvc1"]
-[ext_resource type="Texture2D" uid="uid://bdqad7sy2jpg5" path="res://sprites/Карточки/Некто.png" id="4_grkqq"]
-[ext_resource type="Texture2D" uid="uid://d34soxfc37u2p" path="res://sprites/Карточки/Шериф.png" id="5_jd8kr"]
-[ext_resource type="Texture2D" uid="uid://bxve4l0nqh5sw" path="res://sprites/Карточки/Мирный.png" id="6_s4v2x"]
-[ext_resource type="Texture2D" uid="uid://d10qpigmwfvrt" path="res://sprites/Карточки/Мафия.png" id="7_x5jif"]
-[ext_resource type="Texture2D" uid="uid://to78ujs5525t" path="res://sprites/Карточки/Любовница.png" id="8_m3rdd"]
-[ext_resource type="Texture2D" uid="uid://d2b4l32wgeq7w" path="res://sprites/Карточки/Доктор.png" id="9_yf1ym"]
-[ext_resource type="Texture2D" uid="uid://b04wgwcxdnosl" path="res://sprites/Карточки/Дон_Мафия.png" id="10_k2poy"]
-[ext_resource type="Texture2D" uid="uid://cu7co611l76cm" path="res://sprites/кнопка.png" id="11_yyfd6"]
+[ext_resource type="Script" uid="uid://cphbed5gwnwpg" path="res://sciens/windows_UI/main_screen/main.gd" id="1_wvf6q"]
+[ext_resource type="Texture2D" uid="uid://j1eae5au0pbm" path="res://sprites/фре.png" id="2_b2yqp"]
+[ext_resource type="LabelSettings" uid="uid://b3g53xgid2gt5" path="res://sciens/windows_UI/Стили/Загаловок.tres" id="3_qobn5"]
+[ext_resource type="FontFile" uid="uid://dqqpnwqlql3ow" path="res://Text_stule/Playwrite/static/PlaywriteAT-Italic.ttf" id="5_w1i2x"]
+[ext_resource type="Animation" uid="uid://da76lltko4yei" path="res://animations/main_screen.res" id="6_b2yqp"]
 [ext_resource type="Theme" uid="uid://cc3vs4pyvy260" path="res://sciens/windows_UI/Стили/button_theme.tres" id="12_4yxdq"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sw6da"]
-bg_color = Color(0.38, 0.16327335, 0.1596, 1)
+[sub_resource type="LabelSettings" id="LabelSettings_qfjnm"]
+font = ExtResource("5_w1i2x")
+font_size = 51
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 43
+shadow_color = Color(1, 1, 1, 1)
 
-[sub_resource type="Animation" id="Animation_rrf5e"]
-resource_name = "forward"
-length = 0.23333333
-step = 0.016666668
+[sub_resource type="Animation" id="Animation_wvf6q"]
+length = 0.001
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/Sprite2D:scale:x")
+tracks/0/path = NodePath("Главный_экран_1/MarginContainer/VBoxContainer/Label:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(2, 0),
-"points": PackedFloat32Array(0.26845708, -0.04998566, 0.003578351, 0.050000004, -0.0035793781, 0, -0.11666666, 0.07572473, 0, 0),
-"times": PackedFloat32Array(0, 0.11666667)
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.23333333, 0, 0.23333333, 0),
+"times": PackedFloat32Array(0)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer/Sprite2D:scale:y")
+tracks/1/path = NodePath("Главный_экран_1/MarginContainer/VBoxContainer/Играть:position:x")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(2, 0),
-"points": PackedFloat32Array(0.27, 0, 0, 0.016666668, 0.030040264, 0.31440216, -0.08333333, -0.00046530366, 0, 0),
-"times": PackedFloat32Array(0, 0.11666667)
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.23333333, 0, 0.23333333, 0),
+"times": PackedFloat32Array(0)
 }
-tracks/2/type = "audio"
+tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../../AudioStreamPlayer")
+tracks/2/path = NodePath("Главный_экран_1/MarginContainer/VBoxContainer/Выход:position:x")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"clips": [{
-"end_offset": 0.85927796,
-"start_offset": 0.19470204,
-"stream": ExtResource("2_a4ync")
-}],
-"times": PackedFloat32Array(0.11666667)
-}
-tracks/2/use_blend = true
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("AnimationPlayer/AnimatedSprite2D:scale:x")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, 0, 0, 0.1, 0.009151448, 0.27, -0.033333346, -0.013225615, 0, 0),
-"times": PackedFloat32Array(0.11666667, 0.23333335)
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("AnimationPlayer/AnimatedSprite2D:scale:y")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0.314, 0, 0, 0.07, 0, 0.27, 0, 0, 0, 0),
-"times": PackedFloat32Array(0.11666667, 0.23333335)
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.23333333, 0, 0.23333333, 0),
+"times": PackedFloat32Array(0)
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_a61oc"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qobn5"]
 _data = {
-&"back": SubResource("Animation_rrf5e"),
-&"forward": ExtResource("3_ftvc1")
+&"RESET": SubResource("Animation_wvf6q"),
+&"main_screen": ExtResource("6_b2yqp")
 }
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_trvlx"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_jd8kr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_s4v2x")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_x5jif")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_m3rdd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_yf1ym")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_k2poy")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_mn0c8"]
-diffuse_texture = ExtResource("11_yyfd6")
-
-[node name="Panel" type="Panel" unique_id=1544003752]
+[node name="Главный_экран" type="Control" unique_id=646969502]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_sw6da")
-script = ExtResource("1_ftvc1")
+script = ExtResource("1_wvf6q")
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1554782654]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1330521519]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 32
-theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 32
-theme_override_constants/margin_bottom = 32
+texture = ExtResource("2_b2yqp")
+expand_mode = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1343058969]
+[node name="Главный_экран_1" type="Panel" parent="." unique_id=901090603]
+self_modulate = Color(0, 0, 0, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Главный_экран_1" unique_id=1226652847]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 9
+theme_override_constants/margin_top = 11
+theme_override_constants/margin_right = 9
+theme_override_constants/margin_bottom = 11
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Главный_экран_1/MarginContainer" unique_id=528685459]
 layout_mode = 2
-theme_override_constants/separation = 46
+size_flags_vertical = 8
 
-[node name="LineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer" unique_id=1535852713]
+[node name="Label" type="Label" parent="Главный_экран_1/MarginContainer/VBoxContainer" unique_id=1489541062]
 layout_mode = 2
-theme_override_font_sizes/font_size = 33
-placeholder_text = "Ввидите Имя"
-alignment = 1
-max_length = 15
+text = "Mafia
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="MarginContainer/VBoxContainer" unique_id=1517206722]
-libraries/ = SubResource("AnimationLibrary_a61oc")
 
-[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/VBoxContainer/AnimationPlayer" unique_id=1035581182]
-position = Vector2(150, 300)
-scale = Vector2(0.26845708, 0.27)
-texture = ExtResource("4_grkqq")
+"
+label_settings = ExtResource("3_qobn5")
+horizontal_alignment = 1
+vertical_alignment = 1
+tab_stops = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MarginContainer/VBoxContainer/AnimationPlayer" unique_id=1383644770]
-position = Vector2(150, 300)
-scale = Vector2(1e-05, 0.314)
-sprite_frames = SubResource("SpriteFrames_trvlx")
-frame = 2
-
-[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer" unique_id=710326006]
-layout_mode = 2
-icon = SubResource("CanvasTexture_mn0c8")
-flat = true
-
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=616679375]
+[node name="Играть" type="Button" parent="Главный_экран_1/MarginContainer/VBoxContainer" unique_id=1791864295]
 layout_mode = 2
 theme = ExtResource("12_4yxdq")
-theme_override_font_sizes/font_size = 35
-text = "Следующий"
+text = "Играть"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1313147842]
+[node name="Настройки" type="Button" parent="Главный_экран_1/MarginContainer/VBoxContainer" unique_id=1633385000]
+layout_mode = 2
+theme = ExtResource("12_4yxdq")
+text = "Настройки"
 
-[connection signal="editing_toggled" from="MarginContainer/VBoxContainer/LineEdit" to="." method="_on_line_edit_editing_toggled"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[node name="Выход" type="Button" parent="Главный_экран_1/MarginContainer/VBoxContainer" unique_id=1490381813]
+layout_mode = 2
+theme = ExtResource("12_4yxdq")
+text = "Выйти"
+
+[node name="Главный_экран_Настройки" type="Panel" parent="." unique_id=1850849650]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Главный_экран_Настройки" unique_id=689045708]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 9
+theme_override_constants/margin_top = 11
+theme_override_constants/margin_right = 9
+theme_override_constants/margin_bottom = 11
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Главный_экран_Настройки/MarginContainer" unique_id=436529214]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Главный_экран_Настройки/MarginContainer/VBoxContainer" unique_id=1189724503]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Настройки"
+label_settings = SubResource("LabelSettings_qfjnm")
+
+[node name="CheckBox" type="CheckBox" parent="Главный_экран_Настройки/MarginContainer/VBoxContainer" unique_id=1059632671]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="Главный_экран_Настройки/MarginContainer/VBoxContainer" unique_id=1028594779]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="Главный_экран_Настройки/MarginContainer/VBoxContainer" unique_id=1378295332]
+layout_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1824378787]
+libraries/ = SubResource("AnimationLibrary_qobn5")
+autoplay = &"main_screen"
+speed_scale = 0.702
+
+[connection signal="pressed" from="Главный_экран_1/MarginContainer/VBoxContainer/Играть" to="." method="_on_играть_pressed"]
+[connection signal="pressed" from="Главный_экран_1/MarginContainer/VBoxContainer/Настройки" to="." method="_on_настройки_pressed"]
+[connection signal="pressed" from="Главный_экран_1/MarginContainer/VBoxContainer/Выход" to="." method="_on_выход_pressed"]
