@@ -50,10 +50,10 @@ visible = false
 layout_mode = 1
 
 [node name="Play" parent="." unique_id=813698499 instance=ExtResource("1_n5gs3")]
-visible = false
 layout_mode = 1
 
 [node name="Menu" type="Control" parent="." unique_id=966096972]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -63,7 +63,6 @@ grow_vertical = 2
 script = ExtResource("3_v5n23")
 
 [node name="Panel" type="Panel" parent="Menu" unique_id=734876090]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

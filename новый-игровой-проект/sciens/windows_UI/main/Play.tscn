@@ -1,23 +1,30 @@
 [gd_scene format=3 uid="uid://dv32f8gd4y1jg"]
 
 [ext_resource type="Script" uid="uid://cf1cyk78ek0ap" path="res://sciens/windows_UI/main/Play.gd" id="1_wevfn"]
-[ext_resource type="Script" uid="uid://cvgfbdxpjntg3" path="res://sciens/windows_UI/main/h_box_мафия.gd" id="2_2x2xx"]
+[ext_resource type="Script" uid="uid://cpm38840v4at" path="res://sciens/windows_UI/main/h_box_мафия.gd" id="2_2x2xx"]
 [ext_resource type="Script" uid="uid://biyxg0px0ciyv" path="res://sciens/windows_UI/main/margin_container.gd" id="2_4ad8q"]
 [ext_resource type="Theme" uid="uid://cx0e6ps1ynwnf" path="res://sciens/windows_UI/Стили/tektst.tres" id="3_h278r"]
+[ext_resource type="Texture2D" uid="uid://j1eae5au0pbm" path="res://sprites/фре.png" id="3_xj8yt"]
 [ext_resource type="Theme" uid="uid://cc3vs4pyvy260" path="res://sciens/windows_UI/Стили/button_theme.tres" id="3_xkv1l"]
-[ext_resource type="Script" uid="uid://vd26qrt788ls" path="res://sciens/windows_UI/main/h_box_дон.gd" id="4_4qv0n"]
-[ext_resource type="Script" uid="uid://cm7qpvdtnw8ly" path="res://sciens/windows_UI/main/h_box_мирный.gd" id="5_pq57i"]
+[ext_resource type="Script" uid="uid://b7hyrvnx45o2u" path="res://sciens/windows_UI/main/h_box_дон.gd" id="4_4qv0n"]
+[ext_resource type="Script" uid="uid://dgfy7om1kottd" path="res://sciens/windows_UI/main/h_box_мирный.gd" id="5_pq57i"]
 [ext_resource type="Script" uid="uid://d35twrrpde4rd" path="res://sciens/windows_UI/main/h_box_доктор.gd" id="6_f0q8f"]
-[ext_resource type="Script" uid="uid://cqxgc52jrqiaa" path="res://sciens/windows_UI/main/h_box_шериф.gd" id="7_awowo"]
+[ext_resource type="Script" uid="uid://dlq3o7snjwaxn" path="res://sciens/windows_UI/main/h_box_шериф.gd" id="7_awowo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ad8q"]
 bg_color = Color(0.039215688, 0.039215688, 0.039215688, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xj8yt"]
+bg_color = Color(0, 0, 0, 0.80784315)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2x2xx"]
-draw_center = false
+bg_color = Color(0, 0, 0, 0.80784315)
 border_width_top = 1
 border_width_bottom = 1
 border_color = Color(0.2901961, 0.015686275, 0.015686275, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rc2ji"]
+bg_color = Color(0, 0, 0, 0.80784315)
 
 [node name="Play" type="Control" unique_id=813698499]
 layout_mode = 3
@@ -30,6 +37,7 @@ theme = ExtResource("3_h278r")
 script = ExtResource("1_wevfn")
 
 [node name="Panel" type="Panel" parent="." unique_id=75271525]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -37,6 +45,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_4ad8q")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1571629375]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_xj8yt")
+expand_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=142700411]
 layout_mode = 1
@@ -55,7 +73,11 @@ script = ExtResource("2_4ad8q")
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="title" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1921102319]
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=791319621]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xj8yt")
+
+[node name="title" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer" unique_id=1921102319]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
@@ -277,14 +299,18 @@ size_flags_vertical = 4
 theme = ExtResource("3_xkv1l")
 text = "+"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1693505587]
+[node name="PanelContainer2" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=1782022415]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rc2ji")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer2" unique_id=1693505587]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=789751159]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer2/HBoxContainer" unique_id=789751159]
 layout_mode = 2
 text = "Общее количество игроков: "
 
-[node name="Count" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1984039121]
+[node name="Count" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer2/HBoxContainer" unique_id=1984039121]
 layout_mode = 2
 text = "3"
 
