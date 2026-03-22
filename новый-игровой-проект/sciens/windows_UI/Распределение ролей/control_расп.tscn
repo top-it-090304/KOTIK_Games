@@ -50,10 +50,10 @@ visible = false
 layout_mode = 1
 
 [node name="Play" parent="." unique_id=813698499 instance=ExtResource("1_n5gs3")]
+visible = false
 layout_mode = 1
 
 [node name="Menu" type="Control" parent="." unique_id=966096972]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -99,7 +99,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_ive8x")
 [node name="Label" type="Label" parent="Menu/MarginContainer/VBoxContainer/PanelContainer" unique_id=1731979464]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "День"
+text = "Мафия делает свой выбор"
 
 [node name="Control" type="Control" parent="Menu/MarginContainer/VBoxContainer" unique_id=810695934]
 custom_minimum_size = Vector2(0, 10)
@@ -121,3 +121,12 @@ theme = ExtResource("4_ive8x")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxEmpty_slymg")
 text = "Игрок 1"
+
+[node name="Test" type="Control" parent="." unique_id=75803561]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
