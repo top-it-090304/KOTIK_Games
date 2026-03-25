@@ -3,19 +3,11 @@
 [ext_resource type="Script" uid="uid://cphbed5gwnwpg" path="res://sciens/windows_UI/main_screen/main.gd" id="1_wvf6q"]
 [ext_resource type="Texture2D" uid="uid://j1eae5au0pbm" path="res://sprites/фре.png" id="2_b2yqp"]
 [ext_resource type="LabelSettings" uid="uid://b3g53xgid2gt5" path="res://sciens/windows_UI/Стили/Загаловок.tres" id="3_qobn5"]
-[ext_resource type="Texture2D" uid="uid://d2b4l32wgeq7w" path="res://sprites/Карточки/Доктор.png" id="5_qfjnm"]
 [ext_resource type="FontFile" uid="uid://dqqpnwqlql3ow" path="res://Text_stule/Playwrite/static/PlaywriteAT-Italic.ttf" id="5_w1i2x"]
 [ext_resource type="Animation" uid="uid://da76lltko4yei" path="res://animations/main_screen.res" id="6_b2yqp"]
-[ext_resource type="Texture2D" uid="uid://b04wgwcxdnosl" path="res://sprites/Карточки/Дон_Мафия.png" id="6_qof6w"]
 [ext_resource type="Theme" uid="uid://cc3vs4pyvy260" path="res://sciens/windows_UI/Стили/button_theme.tres" id="12_4yxdq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_487y7"]
-
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_ftvc1"]
-frames = 2
-frame_0/texture = ExtResource("5_qfjnm")
-frame_1/texture = ExtResource("6_qof6w")
-frame_1/duration = 1.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_qfjnm"]
 font = ExtResource("5_w1i2x")
@@ -27,25 +19,13 @@ shadow_color = Color(1, 1, 1, 1)
 
 [sub_resource type="Animation" id="Animation_a4ync"]
 resource_name = "Button"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Главный_экран_1/MarginContainer/VBoxContainer/TextureButton:texture_normal")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [SubResource("AnimatedTexture_ftvc1")]
-}
 
 [sub_resource type="Animation" id="Animation_wvf6q"]
 length = 0.001
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Главный_экран_1/MarginContainer/VBoxContainer/Label:position:x")
+tracks/0/path = NodePath("Главный_экран_1/MarginContainer/Label:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -56,7 +36,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Главный_экран_1/MarginContainer/VBoxContainer/Играть:position:x")
+tracks/1/path = NodePath("Главный_экран_1/MarginContainer/VBoxContainer2/Играть:position:x")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -67,25 +47,13 @@ tracks/1/keys = {
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Главный_экран_1/MarginContainer/VBoxContainer/Выход:position:x")
+tracks/2/path = NodePath("Главный_экран_1/MarginContainer/VBoxContainer2/Выход:position:x")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(0),
 "points": PackedFloat32Array(0, -0.23333333, 0, 0.23333333, 0),
 "times": PackedFloat32Array(0)
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Главный_экран_1/MarginContainer/VBoxContainer/TextureButton:texture_normal")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [SubResource("AnimatedTexture_ftvc1")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qobn5"]
@@ -135,39 +103,39 @@ theme_override_constants/margin_top = 11
 theme_override_constants/margin_right = 9
 theme_override_constants/margin_bottom = 11
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Главный_экран_1/MarginContainer" unique_id=528685459]
+[node name="Label" type="Label" parent="Главный_экран_1/MarginContainer" unique_id=1489541062]
 layout_mode = 2
-size_flags_vertical = 8
-
-[node name="Label" type="Label" parent="Главный_экран_1/MarginContainer/VBoxContainer" unique_id=1489541062]
-layout_mode = 2
-text = "Mafia
-"
+size_flags_vertical = 0
+text = "Mafia"
 label_settings = ExtResource("3_qobn5")
 horizontal_alignment = 1
 vertical_alignment = 1
 tab_stops = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 
-[node name="Играть" type="Button" parent="Главный_экран_1/MarginContainer/VBoxContainer" unique_id=1791864295]
-material = SubResource("ShaderMaterial_487y7")
+[node name="VBoxContainer2" type="VBoxContainer" parent="Главный_экран_1/MarginContainer" unique_id=2028229254]
 layout_mode = 2
-theme = ExtResource("12_4yxdq")
-text = "Играть"
+size_flags_vertical = 8
 
-[node name="Настройки" type="Button" parent="Главный_экран_1/MarginContainer/VBoxContainer" unique_id=1633385000]
+[node name="Настройки" type="Button" parent="Главный_экран_1/MarginContainer/VBoxContainer2" unique_id=1633385000]
 layout_mode = 2
 theme = ExtResource("12_4yxdq")
+theme_override_font_sizes/font_size = 40
 text = "Настройки"
 
-[node name="Выход" type="Button" parent="Главный_экран_1/MarginContainer/VBoxContainer" unique_id=1490381813]
+[node name="Играть" type="Button" parent="Главный_экран_1/MarginContainer/VBoxContainer2" unique_id=1791864295]
+material = SubResource("ShaderMaterial_487y7")
 layout_mode = 2
+size_flags_vertical = 8
 theme = ExtResource("12_4yxdq")
-text = "Выйти"
+theme_override_font_sizes/font_size = 40
+text = "Играть"
 
-[node name="TextureButton" type="TextureButton" parent="Главный_экран_1/MarginContainer/VBoxContainer" unique_id=1403318438]
-visible = false
+[node name="Выход" type="Button" parent="Главный_экран_1/MarginContainer/VBoxContainer2" unique_id=1490381813]
 layout_mode = 2
-texture_normal = SubResource("AnimatedTexture_ftvc1")
+size_flags_vertical = 8
+theme = ExtResource("12_4yxdq")
+theme_override_font_sizes/font_size = 40
+text = "Выйти"
 
 [node name="Главный_экран_Настройки" type="Panel" parent="." unique_id=1850849650]
 visible = false
@@ -213,6 +181,6 @@ libraries/ = SubResource("AnimationLibrary_qobn5")
 autoplay = &"main_screen"
 speed_scale = 0.562
 
-[connection signal="pressed" from="Главный_экран_1/MarginContainer/VBoxContainer/Играть" to="." method="_on_играть_pressed"]
-[connection signal="pressed" from="Главный_экран_1/MarginContainer/VBoxContainer/Настройки" to="." method="_on_настройки_pressed"]
-[connection signal="pressed" from="Главный_экран_1/MarginContainer/VBoxContainer/Выход" to="." method="_on_выход_pressed"]
+[connection signal="pressed" from="Главный_экран_1/MarginContainer/VBoxContainer2/Настройки" to="." method="_on_настройки_pressed"]
+[connection signal="pressed" from="Главный_экран_1/MarginContainer/VBoxContainer2/Играть" to="." method="_on_играть_pressed"]
+[connection signal="pressed" from="Главный_экран_1/MarginContainer/VBoxContainer2/Выход" to="." method="_on_выход_pressed"]

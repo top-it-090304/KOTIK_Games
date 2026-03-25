@@ -4,7 +4,8 @@ extends Control
 @onready var play_panel = $"Главный_экран_1"
 @onready var settings_panel = $"Главный_экран_Настройки"
 
-
+#func _ready() -> void:
+	#get_tree().ScreenOrientation = 1
 
 func hide_all_panels():
 	play_panel.hide()
