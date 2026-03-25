@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bvsrc7anpxvr8"]
 
 [ext_resource type="Script" uid="uid://360ae8jadxr2" path="res://sciens/speaker/speaker.gd" id="1_8tnqe"]
-[ext_resource type="AudioStream" path="res://audio/Фразы/Город засыпает.mp3" id="2_anyxt"]
+[ext_resource type="AudioStream" uid="uid://bxxhep2fy0t8a" path="res://audio/Фразы/City_wake_up.mp3" id="2_anyxt"]
 [ext_resource type="AudioStream" uid="uid://c6xsfefw7k1nt" path="res://audio/Фразы/Mafia_wake_up.mp3" id="3_bctpm"]
 
 [sub_resource type="Animation" id="Animation_l08dr"]

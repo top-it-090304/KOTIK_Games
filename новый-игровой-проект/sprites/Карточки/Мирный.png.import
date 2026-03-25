@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bxve4l0nqh5sw"
 path.s3tc="res://.godot/imported/Мирный.png-71db8cb3cd3426b410e080a9f9fb22f2.s3tc.ctex"
+path.etc2="res://.godot/imported/Мирный.png-71db8cb3cd3426b410e080a9f9fb22f2.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://sprites/Карточки/Мирный.png"
-dest_files=["res://.godot/imported/Мирный.png-71db8cb3cd3426b410e080a9f9fb22f2.s3tc.ctex"]
+dest_files=["res://.godot/imported/Мирный.png-71db8cb3cd3426b410e080a9f9fb22f2.s3tc.ctex", "res://.godot/imported/Мирный.png-71db8cb3cd3426b410e080a9f9fb22f2.etc2.ctex"]
 
 [params]
 
