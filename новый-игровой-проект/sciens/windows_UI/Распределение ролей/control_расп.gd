@@ -5,6 +5,7 @@ extends Control
 @onready var play_panel = $Play
 @onready var panel = $Panel
 @onready var menu_panel = $Menu
+@onready var For_maf = $ForMafia
 
 @onready var dalee_button: Button = $Play/MarginContainer/VBoxContainer/HBoxContainer2/Button2
 
@@ -16,6 +17,10 @@ extends Control
 @onready var menu_panel_pl = $Menu/PanelContainer3
 
 @onready var where_label = $Menu/MarginContainer/VBoxContainer
+
+@onready var menu_panel_M: Button = $ForMafia/Button
+
+@onready var where_label_M = $ForMafia/MarginContainer/VBoxContainer
 
 signal value_changed(all_count)
 signal name_changed(name_arr)
@@ -36,6 +41,7 @@ var player_panels = []  # массив для хранения созданны�
 var current_panel_index: int = 0  # индекс текущей панели
 
 var rol_arr = []
+var rol_arr_2 =[]
 var name_arr = []
 
 func _ready() -> void:
@@ -50,6 +56,7 @@ func hide_all_panels():
 	play_panel.hide()
 	menu_panel.hide()
 	panel.hide()
+	For_maf.hide()
 
 
 func app_arr_rol():
@@ -86,8 +93,10 @@ func Daleerol_pressed():
 	if rand == -1:
 		hide_all_panels()
 		player_panels[current_panel_index].visible = false
-		duplicate_menu_player()
-		menu_panel.show()
+		#duplicate_menu_player()
+		duplicate_menu_maf()
+		For_maf.show()
+		#menu_panel.show()
 		print(name_arr)
 		name_changed.emit(name_arr)
 	else:
@@ -118,6 +127,7 @@ func show_current_panel():
 	
 	ind = randi_range(0, rand)
 	a = rol_arr[ind]
+	rol_arr_2.append(a)
 	rol_arr.remove_at(ind)
 	rand = rand - 1
 
@@ -142,7 +152,7 @@ func duplicate_menu_player():
 		new_menu_panel.visible = false
 		where_label.add_child(new_menu_panel)
 		menu_player_dub.append(new_menu_panel)
-		
+	
 	show_all_menu_panel()
 		
 
@@ -154,10 +164,30 @@ func show_all_menu_panel():
 		menu_player_dub[i].visible = true
 
 
+#ГЕМПЛЕЙ ДЛЯ МАФИИ
 
+var menu_maf_dub = []
 
+func duplicate_menu_maf():
+	# Скрываем оригинальную панель (она будет шаблоном)
+	menu_panel_M.visible = false
+	
+	# Создаем панели для каждого игрока
+	for i in range(all_count):
+		var new_menu_panel_M = menu_panel_M.duplicate()
+		new_menu_panel_M.visible = false
+		where_label_M.add_child(new_menu_panel_M)
+		menu_maf_dub.append(new_menu_panel_M)
+	
+	mafia_kill()
+		
 
-
+func mafia_kill():
+	for i in range(all_count):
+		if rol_arr_2[i] != 2 and rol_arr_2[i] != 5:
+			var current = menu_maf_dub[i]
+			current.text = name_arr[i]
+			menu_maf_dub[i].visible = true
 
 
 
