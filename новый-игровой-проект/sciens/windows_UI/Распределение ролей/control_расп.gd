@@ -13,6 +13,9 @@ extends Control
 #Test
 @onready var Daleerol: Button = $Panel/MarginContainer/VBoxContainer/Button
 
+@onready var menu_panel_pl = $Menu/PanelContainer3
+
+@onready var where_label = $Menu/MarginContainer/VBoxContainer
 
 signal value_changed(all_count)
 signal name_changed(name_arr)
@@ -83,6 +86,7 @@ func Daleerol_pressed():
 	if rand == -1:
 		hide_all_panels()
 		player_panels[current_panel_index].visible = false
+		duplicate_menu_player()
 		menu_panel.show()
 		print(name_arr)
 		name_changed.emit(name_arr)
@@ -125,11 +129,43 @@ func show_current_panel():
 	but.pressed.connect(Daleerol_pressed)
 	
 
+#Запись имен в Label
+var menu_player_dub = []
+
+func duplicate_menu_player():
+	# Скрываем оригинальную панель (она будет шаблоном)
+	menu_panel_pl.visible = false
+	
+	# Создаем панели для каждого игрока
+	for i in range(all_count):
+		var new_menu_panel = menu_panel_pl.duplicate()
+		new_menu_panel.visible = false
+		where_label.add_child(new_menu_panel)
+		menu_player_dub.append(new_menu_panel)
+		
+	show_all_menu_panel()
+		
+
+func show_all_menu_panel():
+	for i in range(all_count):
+		var current = menu_player_dub[i]
+		var menu_name = current.get_node("Label")
+		menu_name.text = name_arr[i]
+		menu_player_dub[i].visible = true
 
 
 
-#func action_of_card(i: int):
-	#$Panel.changing_thе_image(i)
+
+
+
+
+
+
+
+
+
+
+
 	
 
 func Vvod():
