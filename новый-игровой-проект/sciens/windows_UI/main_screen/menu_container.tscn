@@ -36,7 +36,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Главный_экран_1/MarginContainer/VBoxContainer2/Играть:position:x")
+tracks/1/path = NodePath("Главный_экран_1/MarginContainer/VBoxContainer2/play:position:x")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -47,7 +47,7 @@ tracks/1/keys = {
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Главный_экран_1/MarginContainer/VBoxContainer2/Выход:position:x")
+tracks/2/path = NodePath("Главный_экран_1/MarginContainer/VBoxContainer2/quit:position:x")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -73,6 +73,7 @@ grow_vertical = 2
 script = ExtResource("1_wvf6q")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1330521519]
+modulate = Color(0.71044844, 0.6552133, 0.53463954, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -116,13 +117,7 @@ tab_stops = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 layout_mode = 2
 size_flags_vertical = 8
 
-[node name="Настройки" type="Button" parent="Главный_экран_1/MarginContainer/VBoxContainer2" unique_id=1633385000]
-layout_mode = 2
-theme = ExtResource("12_4yxdq")
-theme_override_font_sizes/font_size = 40
-text = "Настройки"
-
-[node name="Играть" type="Button" parent="Главный_экран_1/MarginContainer/VBoxContainer2" unique_id=1791864295]
+[node name="play" type="Button" parent="Главный_экран_1/MarginContainer/VBoxContainer2" unique_id=1791864295]
 material = SubResource("ShaderMaterial_487y7")
 layout_mode = 2
 size_flags_vertical = 8
@@ -130,7 +125,13 @@ theme = ExtResource("12_4yxdq")
 theme_override_font_sizes/font_size = 40
 text = "Играть"
 
-[node name="Выход" type="Button" parent="Главный_экран_1/MarginContainer/VBoxContainer2" unique_id=1490381813]
+[node name="options" type="Button" parent="Главный_экран_1/MarginContainer/VBoxContainer2" unique_id=1633385000]
+layout_mode = 2
+theme = ExtResource("12_4yxdq")
+theme_override_font_sizes/font_size = 40
+text = "Настройки"
+
+[node name="quit" type="Button" parent="Главный_экран_1/MarginContainer/VBoxContainer2" unique_id=1490381813]
 layout_mode = 2
 size_flags_vertical = 8
 theme = ExtResource("12_4yxdq")
@@ -181,6 +182,6 @@ libraries/ = SubResource("AnimationLibrary_qobn5")
 autoplay = &"main_screen"
 speed_scale = 0.562
 
-[connection signal="pressed" from="Главный_экран_1/MarginContainer/VBoxContainer2/Настройки" to="." method="_on_настройки_pressed"]
-[connection signal="pressed" from="Главный_экран_1/MarginContainer/VBoxContainer2/Играть" to="." method="_on_играть_pressed"]
-[connection signal="pressed" from="Главный_экран_1/MarginContainer/VBoxContainer2/Выход" to="." method="_on_выход_pressed"]
+[connection signal="pressed" from="Главный_экран_1/MarginContainer/VBoxContainer2/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Главный_экран_1/MarginContainer/VBoxContainer2/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Главный_экран_1/MarginContainer/VBoxContainer2/quit" to="." method="_on_quit_pressed"]
