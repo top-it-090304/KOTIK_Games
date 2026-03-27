@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c5v2eartl5xfu"]
 
 [ext_resource type="Script" uid="uid://3vfbswg5p635" path="res://sciens/windows_UI/Распределение ролей/Определение_роли.gd" id="1_ukqid"]
-[ext_resource type="Theme" uid="uid://cc3vs4pyvy260" path="res://sciens/windows_UI/Стили/button_theme.tres" id="2_8hxei"]
+[ext_resource type="Theme" uid="uid://bxf6wdwvnb7wu" path="res://sciens/windows_UI/Стили/new_theme_but2.tres" id="2_8hxei"]
 [ext_resource type="Texture2D" uid="uid://bdqad7sy2jpg5" path="res://sprites/Карточки/Некто.png" id="2_cef3j"]
 [ext_resource type="AnimationLibrary" uid="uid://cw358ktr02ej7" path="res://animations/card/card.res" id="2_sw6da"]
 [ext_resource type="Texture2D" uid="uid://d34soxfc37u2p" path="res://sprites/Карточки/Шериф.png" id="4_88a3v"]

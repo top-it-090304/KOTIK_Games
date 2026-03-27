@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://e6dplgl8srbn" path="res://sciens/windows_UI/Распределение ролей/menu.gd" id="3_v5n23"]
 [ext_resource type="Theme" uid="uid://cx0e6ps1ynwnf" path="res://sciens/windows_UI/Стили/tektst.tres" id="4_ive8x"]
 [ext_resource type="PackedScene" uid="uid://c5v2eartl5xfu" path="res://sciens/windows_UI/Распределение ролей/panel.tscn" id="5_slymg"]
+[ext_resource type="Theme" uid="uid://bxf6wdwvnb7wu" path="res://sciens/windows_UI/Стили/new_theme_but2.tres" id="6_e5n5q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sxa1l"]
 bg_color = Color(0.039215688, 0.039215688, 0.039215688, 1)
@@ -54,6 +55,7 @@ visible = false
 layout_mode = 1
 
 [node name="Menu" type="Control" parent="." unique_id=966096972]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -122,11 +124,98 @@ theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxEmpty_slymg")
 text = "Игрок 1"
 
-[node name="Test" type="Control" parent="." unique_id=75803561]
-visible = false
+[node name="ForMafia" type="Control" parent="." unique_id=923831909]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("3_v5n23")
+
+[node name="Panel" type="Panel" parent="ForMafia" unique_id=243060774]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sxa1l")
+
+[node name="PanelContainer" type="PanelContainer" parent="ForMafia/Panel" unique_id=2008980915]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -107.0
+offset_top = -24.5
+offset_right = 107.0
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ForMafia/Panel/PanelContainer" unique_id=1512813912]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ForMafia/Panel/PanelContainer/VBoxContainer" unique_id=699878710]
+layout_mode = 2
+text = "Вы точно уверенны, что
+хотите убить этого игрока?"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ForMafia/Panel/PanelContainer/VBoxContainer" unique_id=1786658577]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="ForMafia/Panel/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1467717859]
+layout_mode = 2
+text = "Нет"
+
+[node name="Button2" type="Button" parent="ForMafia/Panel/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1623571720]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+text = "Да"
+
+[node name="MarginContainer" type="MarginContainer" parent="ForMafia" unique_id=939140833]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ForMafia/MarginContainer" unique_id=1383126138]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="PanelContainer" type="PanelContainer" parent="ForMafia/MarginContainer/VBoxContainer" unique_id=754281662]
+custom_minimum_size = Vector2(200, 35)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_ive8x")
+
+[node name="Label" type="Label" parent="ForMafia/MarginContainer/VBoxContainer/PanelContainer" unique_id=381750422]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Мафия делает свой выбор"
+
+[node name="Control" type="Control" parent="ForMafia/MarginContainer/VBoxContainer" unique_id=1114153416]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="ForMafia" unique_id=166093597]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 16.0
+theme = ExtResource("6_e5n5q")
+text = "Игорок 1"
