@@ -23,7 +23,7 @@ extends Control
 @onready var where_label_M = $ForMafia/MarginContainer/VBoxContainer
 
 signal value_changed(all_count)
-signal name_changed(name_arr)
+#signal name_changed(name_arr)
 
 #Переменные со всей информацией
 var all_count: int = 0
@@ -49,6 +49,8 @@ func _ready() -> void:
 	play_panel.show()
 	dalee_button.pressed.connect(dalee_pressed)
 
+#Функция которая вызывается, когда игрок меняет имя 
+#(Нужна для того, чтобы использовался только последний вариант имени)
 func app_name(player_name):
 	pl_name_glob = player_name
 
@@ -98,7 +100,7 @@ func Daleerol_pressed():
 		For_maf.show()
 		#menu_panel.show()
 		print(name_arr)
-		name_changed.emit(name_arr)
+		#name_changed.emit(name_arr)
 	else:
 		current_panel_index = current_panel_index + 1
 		show_current_panel()

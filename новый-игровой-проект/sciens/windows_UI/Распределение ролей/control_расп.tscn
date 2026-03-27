@@ -125,7 +125,6 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_slymg")
 text = "Игрок 1"
 
 [node name="ForMafia" type="Control" parent="." unique_id=923831909]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -142,6 +141,43 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_sxa1l")
+
+[node name="PanelContainer" type="PanelContainer" parent="ForMafia/Panel" unique_id=2008980915]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -107.0
+offset_top = -24.5
+offset_right = 107.0
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ForMafia/Panel/PanelContainer" unique_id=1512813912]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ForMafia/Panel/PanelContainer/VBoxContainer" unique_id=699878710]
+layout_mode = 2
+text = "Вы точно уверенны, что
+хотите убить этого игрока?"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ForMafia/Panel/PanelContainer/VBoxContainer" unique_id=1786658577]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="ForMafia/Panel/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1467717859]
+layout_mode = 2
+text = "Нет"
+
+[node name="Button2" type="Button" parent="ForMafia/Panel/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1623571720]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+text = "Да"
 
 [node name="MarginContainer" type="MarginContainer" parent="ForMafia" unique_id=939140833]
 layout_mode = 1
