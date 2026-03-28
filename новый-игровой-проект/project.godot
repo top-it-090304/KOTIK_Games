@@ -14,7 +14,13 @@ config/name="KOTIK_Games"
 config/tags=PackedStringArray("практика")
 run/main_scene="uid://dogi11w7hj4er"
 config/features=PackedStringArray("4.6", "Forward Plus")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="uid://ouyaimc1hpkj"
 config/icon="res://sprites/icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://w0dta4ufjxrr"
 
 [autoload]
 
