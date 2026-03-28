@@ -5,11 +5,14 @@
 [ext_resource type="Animation" uid="uid://da76lltko4yei" path="res://animations/main_screen.res" id="6_b2yqp"]
 [ext_resource type="Texture2D" uid="uid://dkr8xm7rsi372" path="res://sprites/Фоны/Задний фон 1.png" id="6_w1i2x"]
 [ext_resource type="Texture2D" uid="uid://b5dogo8dft0c6" path="res://sprites/Фоны/Задний фон 2.png" id="7_qfjnm"]
+[ext_resource type="Script" uid="uid://5q2v6055oakg" path="res://sciens/windows_UI/main_screen/главный_экран_настройки.gd" id="7_qof6w"]
 [ext_resource type="Theme" uid="uid://dm5ksso32lkcf" path="res://sciens/windows_UI/Стили/основные_кнопки.tres" id="7_w1i2x"]
 [ext_resource type="Texture2D" uid="uid://fnrv2uuayp1x" path="res://sprites/Фоны/Задний фон 3.png" id="8_qof6w"]
 [ext_resource type="Theme" uid="uid://bxf6wdwvnb7wu" path="res://sciens/windows_UI/Стили/new_theme_but2.tres" id="12_4yxdq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_487y7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_487y7"]
 
 [sub_resource type="Animation" id="Animation_a4ync"]
 resource_name = "Button"
@@ -318,6 +321,7 @@ offset_top = 650.0
 offset_bottom = 649.99927
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("7_qof6w")
 
 [node name="MarginContainer" type="MarginContainer" parent="Главный_экран_Настройки" unique_id=689045708]
 layout_mode = 1
@@ -340,14 +344,73 @@ size_flags_vertical = 1
 text = "Настройки"
 label_settings = ExtResource("3_qobn5")
 
-[node name="CheckBox" type="CheckBox" parent="Главный_экран_Настройки/MarginContainer/VBoxContainer" unique_id=1059632671]
+[node name="TabContainer" type="TabContainer" parent="Главный_экран_Настройки/MarginContainer/VBoxContainer" unique_id=1747277861]
+layout_mode = 2
+current_tab = 0
+tab_0/title = "Игра"
+tab_1/title = "Звук"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Главный_экран_Настройки/MarginContainer/VBoxContainer/TabContainer" unique_id=1182496489]
+layout_mode = 2
+metadata/_tab_index = 0
+metadata/_tab_name = "Игра"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Главный_экран_Настройки/MarginContainer/VBoxContainer/TabContainer/VBoxContainer2" unique_id=1497026760]
 layout_mode = 2
 
-[node name="CheckBox2" type="CheckBox" parent="Главный_экран_Настройки/MarginContainer/VBoxContainer" unique_id=1028594779]
+[node name="VBoxContainer" type="VBoxContainer" parent="Главный_экран_Настройки/MarginContainer/VBoxContainer/TabContainer" unique_id=1558064855]
+visible = false
 layout_mode = 2
+metadata/_tab_index = 1
+metadata/_tab_name = "Звук"
 
-[node name="CheckBox3" type="CheckBox" parent="Главный_экран_Настройки/MarginContainer/VBoxContainer" unique_id=1378295332]
+[node name="HBoxContainer" type="HBoxContainer" parent="Главный_экран_Настройки/MarginContainer/VBoxContainer/TabContainer/VBoxContainer" unique_id=42256057]
 layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="Главный_экран_Настройки/MarginContainer/VBoxContainer/TabContainer/VBoxContainer/HBoxContainer" unique_id=293314051]
+layout_mode = 2
+text = "Громкость музыки"
+label_settings = SubResource("LabelSettings_487y7")
+
+[node name="music_volume" type="HSlider" parent="Главный_экран_Настройки/MarginContainer/VBoxContainer/TabContainer/VBoxContainer/HBoxContainer" unique_id=493412849]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+value = 50.0
+tick_count = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Главный_экран_Настройки/MarginContainer/VBoxContainer/TabContainer/VBoxContainer" unique_id=1322587646]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="Главный_экран_Настройки/MarginContainer/VBoxContainer/TabContainer/VBoxContainer/HBoxContainer2" unique_id=208057411]
+layout_mode = 2
+text = "Громкость эфектов"
+
+[node name="effects_volum" type="HSlider" parent="Главный_экран_Настройки/MarginContainer/VBoxContainer/TabContainer/VBoxContainer/HBoxContainer2" unique_id=138215514]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = -80.0
+max_value = 6.0
+value = -38.0
+tick_count = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Главный_экран_Настройки/MarginContainer/VBoxContainer/TabContainer/VBoxContainer" unique_id=2139218470]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="Главный_экран_Настройки/MarginContainer/VBoxContainer/TabContainer/VBoxContainer/HBoxContainer3" unique_id=511151693]
+layout_mode = 2
+text = "Громкость диктора"
+
+[node name="dictor_volum" type="HSlider" parent="Главный_экран_Настройки/MarginContainer/VBoxContainer/TabContainer/VBoxContainer/HBoxContainer3" unique_id=461415646]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+value = 50.0
+tick_count = 2
 
 [node name="Back" type="Button" parent="Главный_экран_Настройки/MarginContainer" unique_id=2142485955]
 layout_mode = 2
@@ -378,4 +441,7 @@ limit_bottom = 600
 [connection signal="pressed" from="Fons/TextureRect3/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Fons/TextureRect3/options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Fons/TextureRect3/quit" to="." method="_on_quit_pressed"]
+[connection signal="value_changed" from="Главный_экран_Настройки/MarginContainer/VBoxContainer/TabContainer/VBoxContainer/HBoxContainer/music_volume" to="Главный_экран_Настройки" method="_on_music_volume_value_changed"]
+[connection signal="value_changed" from="Главный_экран_Настройки/MarginContainer/VBoxContainer/TabContainer/VBoxContainer/HBoxContainer2/effects_volum" to="Главный_экран_Настройки" method="_on_effects_volum_value_changed"]
+[connection signal="value_changed" from="Главный_экран_Настройки/MarginContainer/VBoxContainer/TabContainer/VBoxContainer/HBoxContainer3/dictor_volum" to="Главный_экран_Настройки" method="_on_dictor_volum_value_changed"]
 [connection signal="pressed" from="Главный_экран_Настройки/MarginContainer/Back" to="." method="_on_back_pressed"]

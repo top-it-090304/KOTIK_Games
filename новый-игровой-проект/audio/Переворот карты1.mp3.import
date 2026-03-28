@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cn24kmjms26rx"
+path="res://.godot/imported/Переворот карты1.mp3-63fc17dde5204a8023ac180ffe83ff24.mp3str"
+
+[deps]
+
+source_file="res://audio/Переворот карты1.mp3"
+dest_files=["res://.godot/imported/Переворот карты1.mp3-63fc17dde5204a8023ac180ffe83ff24.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

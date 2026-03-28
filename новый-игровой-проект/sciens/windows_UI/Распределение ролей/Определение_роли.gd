@@ -3,7 +3,7 @@ extends Panel
 @onready var card_animation = $AnimationPlayer
 @onready var button = $MarginContainer/VBoxContainer/Button2
 @onready var lineedit = $MarginContainer/VBoxContainer/LineEdit
-@onready var audio = $AudioStreamPlayer
+@onready var audio = $Speaker
 var turned_over = false
 var n: String = " "
 
@@ -23,11 +23,11 @@ func _on_button_2_pressed() -> void:
 	#changing_thе_image(2)
 	if turned_over == false:
 		card_animation.play("forward")
-		audio.playing = true
+		audio.sound_efect("upheaval")
 		turned_over = true
 	elif turned_over == true:
 		card_animation.play_backwards("back")
-		audio.playing = true
+		audio.sound_efect("upheaval")
 		turned_over = false
 	
 

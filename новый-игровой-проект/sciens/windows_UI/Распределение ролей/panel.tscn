@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://d10qpigmwfvrt" path="res://sprites/Карточки/Мафия.png" id="6_6cg88"]
 [ext_resource type="Texture2D" uid="uid://to78ujs5525t" path="res://sprites/Карточки/Любовница.png" id="7_gcnhb"]
 [ext_resource type="Texture2D" uid="uid://d2b4l32wgeq7w" path="res://sprites/Карточки/Доктор.png" id="8_xp5vq"]
+[ext_resource type="PackedScene" uid="uid://bvsrc7anpxvr8" path="res://sciens/speaker/speaker.tscn" id="12_88a3v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sw6da"]
 bg_color = Color(0.0896, 0.09883999, 0.14, 1)
@@ -100,10 +101,16 @@ position = Vector2(126.5, 268)
 scale = Vector2(1e-05, 0.314)
 sprite_frames = SubResource("SpriteFrames_trvlx")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1313147842]
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1517206722]
 libraries/ = ExtResource("2_sw6da")
+
+[node name="Speaker" parent="." unique_id=1066772267 instance=ExtResource("12_88a3v")]
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [connection signal="editing_toggled" from="MarginContainer/VBoxContainer/LineEdit" to="." method="_on_line_edit_editing_toggled"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

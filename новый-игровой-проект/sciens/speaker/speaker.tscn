@@ -1,52 +1,6 @@
 [gd_scene format=3 uid="uid://bvsrc7anpxvr8"]
 
 [ext_resource type="Script" uid="uid://360ae8jadxr2" path="res://sciens/speaker/speaker.gd" id="1_8tnqe"]
-[ext_resource type="AudioStream" uid="uid://bxxhep2fy0t8a" path="res://audio/Фразы/City_wake_up.mp3" id="2_anyxt"]
-[ext_resource type="AudioStream" uid="uid://c6xsfefw7k1nt" path="res://audio/Фразы/Mafia_wake_up.mp3" id="3_bctpm"]
-
-[sub_resource type="Animation" id="Animation_l08dr"]
-resource_name = "Speaker_fraze"
-length = 1.8333334
-tracks/0/type = "audio"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AudioStreamPlayer")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("2_anyxt")
-}],
-"times": PackedFloat32Array(0.03333336)
-}
-tracks/0/use_blend = false
-
-[sub_resource type="Animation" id="Animation_pbkt7"]
-resource_name = "Mafia_wake_up"
-length = 7.366667
-tracks/0/type = "audio"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AudioStreamPlayer")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("3_bctpm")
-}],
-"times": PackedFloat32Array(0)
-}
-tracks/0/use_blend = true
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_7jw2y"]
-_data = {
-&"City_falling_sleep": SubResource("Animation_l08dr"),
-&"Mafia_wake_up": SubResource("Animation_pbkt7")
-}
 
 [node name="Speaker" type="Control" unique_id=1066772267]
 layout_mode = 3
@@ -57,7 +11,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8tnqe")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1110196374]
+[node name="Speaker" type="AudioStreamPlayer" parent="." unique_id=1110196374]
+bus = &"dictor"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=539130839]
-libraries/ = SubResource("AnimationLibrary_7jw2y")
+[node name="Efect" type="AudioStreamPlayer" parent="." unique_id=1117030330]
+bus = &"Efects"
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=524359641]
+bus = &"music"
