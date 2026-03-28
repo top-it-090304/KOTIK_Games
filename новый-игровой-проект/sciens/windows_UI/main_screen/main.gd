@@ -1,14 +1,11 @@
 extends Control
 
 
-@onready var play_panel = $"Главный_экран_1"
-@onready var settings_panel = $"Главный_экран_Настройки"
+@onready var animation = $AnimationPlayer
 
 
 
-func hide_all_panels():
-	play_panel.hide()
-	settings_panel.hide()
+
 
 
 func _on_play_pressed() -> void:
@@ -16,9 +13,11 @@ func _on_play_pressed() -> void:
 
 
 func _on_options_pressed() -> void:
-	hide_all_panels()
-	settings_panel.show()
-
+	animation.play("action2")
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_back_pressed() -> void:
+	animation.play_backwards("action2")

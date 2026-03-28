@@ -1,21 +1,15 @@
 [gd_scene format=3 uid="uid://dogi11w7hj4er"]
 
 [ext_resource type="Script" uid="uid://cphbed5gwnwpg" path="res://sciens/windows_UI/main_screen/main.gd" id="1_wvf6q"]
-[ext_resource type="Texture2D" uid="uid://j1eae5au0pbm" path="res://sprites/фре.png" id="2_b2yqp"]
 [ext_resource type="LabelSettings" uid="uid://b3g53xgid2gt5" path="res://sciens/windows_UI/Стили/Загаловок.tres" id="3_qobn5"]
-[ext_resource type="FontFile" uid="uid://dqqpnwqlql3ow" path="res://Text_stule/Playwrite/static/PlaywriteAT-Italic.ttf" id="5_w1i2x"]
 [ext_resource type="Animation" uid="uid://da76lltko4yei" path="res://animations/main_screen.res" id="6_b2yqp"]
+[ext_resource type="Texture2D" uid="uid://dkr8xm7rsi372" path="res://sprites/Фоны/Задний фон 1.png" id="6_w1i2x"]
+[ext_resource type="Texture2D" uid="uid://b5dogo8dft0c6" path="res://sprites/Фоны/Задний фон 2.png" id="7_qfjnm"]
+[ext_resource type="Theme" uid="uid://dm5ksso32lkcf" path="res://sciens/windows_UI/Стили/основные_кнопки.tres" id="7_w1i2x"]
+[ext_resource type="Texture2D" uid="uid://fnrv2uuayp1x" path="res://sprites/Фоны/Задний фон 3.png" id="8_qof6w"]
 [ext_resource type="Theme" uid="uid://bxf6wdwvnb7wu" path="res://sciens/windows_UI/Стили/new_theme_but2.tres" id="12_4yxdq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_487y7"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_qfjnm"]
-font = ExtResource("5_w1i2x")
-font_size = 51
-outline_size = 10
-outline_color = Color(0, 0, 0, 1)
-shadow_size = 43
-shadow_color = Color(1, 1, 1, 1)
 
 [sub_resource type="Animation" id="Animation_a4ync"]
 resource_name = "Button"
@@ -36,7 +30,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Главный_экран_1/MarginContainer/VBoxContainer2/play:position:x")
+tracks/1/path = NodePath("Fons/TextureRect3/play:position:x")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -47,7 +41,7 @@ tracks/1/keys = {
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Главный_экран_1/MarginContainer/VBoxContainer2/quit:position:x")
+tracks/2/path = NodePath("Fons/TextureRect3/quit:position:x")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -55,12 +49,147 @@ tracks/2/keys = {
 "points": PackedFloat32Array(0, -0.23333333, 0, 0.23333333, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CameraMove:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Fons/TextureRect:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Fons/TextureRect2:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Fons/TextureRect3:position:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CameraMove/Camera2D:position:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_b2yqp"]
+resource_name = "action"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CameraMove:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(0, -0.2499952, 1.9568177, 0.3, -2.3482265, 300, -0.13333333, -1.0881958, 0, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fons/TextureRect:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(-300, -0.25, 0, 0.25, 0, 0, -0.083333336, -50, 0, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fons/TextureRect2:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(-67.705, -0.25, 0, 0.25, 0, 130, -0.083333336, -11.284167, 0, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Fons/TextureRect3:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(151.07, -0.25, 0, 0.25, 0, 262.87, -0.083333336, 25.178335, 0, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_qfjnm"]
+resource_name = "action2"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CameraMove/Camera2D:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.3, -340.1056, 650, -0.19999999, -199.17859, 0, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fons/TextureRect:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 2, 2),
+"points": PackedFloat32Array(0, 0, 0, 0, 0, -88.69, -0.13333334, -3.6759949, 0, 0, 0, -0.061111115, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.13333334, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_w1i2x"]
+resource_name = "new_animation"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qobn5"]
 _data = {
 &"Button": SubResource("Animation_a4ync"),
 &"RESET": SubResource("Animation_wvf6q"),
-&"main_screen": ExtResource("6_b2yqp")
+&"action": SubResource("Animation_b2yqp"),
+&"action2": SubResource("Animation_qfjnm"),
+&"main_screen": ExtResource("6_b2yqp"),
+&"new_animation": SubResource("Animation_w1i2x")
 }
 
 [node name="Главный_экран" type="Control" unique_id=646969502]
@@ -72,33 +201,100 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wvf6q")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1330521519]
-modulate = Color(0.71044844, 0.6552133, 0.53463954, 1)
+[node name="Fons" type="Control" parent="." unique_id=457274575]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_b2yqp")
-expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="Fons" unique_id=1321863652]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_w1i2x")
+expand_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="Fons" unique_id=419839883]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 386.33716
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_qfjnm")
+expand_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="Fons" unique_id=1050388896]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -300.0
+offset_bottom = 686.3368
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_qof6w")
+expand_mode = 5
+
+[node name="play" type="Button" parent="Fons/TextureRect3" unique_id=1791864295]
+material = SubResource("ShaderMaterial_487y7")
+layout_mode = 0
+offset_top = 152.13
+offset_right = 148.0
+offset_bottom = 204.13
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme = ExtResource("12_4yxdq")
+text = "  Играть"
+
+[node name="options" type="Button" parent="Fons/TextureRect3" unique_id=1633385000]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 213.13
+offset_right = 200.0
+offset_bottom = 265.13
+size_flags_horizontal = 0
+theme = ExtResource("12_4yxdq")
+text = "Настройки"
+
+[node name="quit" type="Button" parent="Fons/TextureRect3" unique_id=1490381813]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -218.03827
+offset_right = -11.0
+offset_bottom = -166.03827
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme = ExtResource("12_4yxdq")
+text = "  Выйти"
 
 [node name="Главный_экран_1" type="Panel" parent="." unique_id=901090603]
 self_modulate = Color(0, 0, 0, 0)
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 1.0
 grow_horizontal = 2
-grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Главный_экран_1" unique_id=1226652847]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 1.0
+offset_bottom = 141.0
 grow_horizontal = 2
-grow_vertical = 2
 theme_override_constants/margin_left = 9
 theme_override_constants/margin_top = 11
 theme_override_constants/margin_right = 9
@@ -113,37 +309,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 tab_stops = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="Главный_экран_1/MarginContainer" unique_id=2028229254]
-layout_mode = 2
-size_flags_vertical = 8
-
-[node name="play" type="Button" parent="Главный_экран_1/MarginContainer/VBoxContainer2" unique_id=1791864295]
-material = SubResource("ShaderMaterial_487y7")
-layout_mode = 2
-size_flags_vertical = 8
-theme = ExtResource("12_4yxdq")
-theme_override_font_sizes/font_size = 40
-text = "Играть"
-
-[node name="options" type="Button" parent="Главный_экран_1/MarginContainer/VBoxContainer2" unique_id=1633385000]
-layout_mode = 2
-theme = ExtResource("12_4yxdq")
-theme_override_font_sizes/font_size = 40
-text = "Настройки"
-
-[node name="quit" type="Button" parent="Главный_экран_1/MarginContainer/VBoxContainer2" unique_id=1490381813]
-layout_mode = 2
-size_flags_vertical = 8
-theme = ExtResource("12_4yxdq")
-theme_override_font_sizes/font_size = 40
-text = "Выйти"
-
 [node name="Главный_экран_Настройки" type="Panel" parent="." unique_id=1850849650]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 650.0
+offset_bottom = 649.99927
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -166,7 +338,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 1
 text = "Настройки"
-label_settings = SubResource("LabelSettings_qfjnm")
+label_settings = ExtResource("3_qobn5")
 
 [node name="CheckBox" type="CheckBox" parent="Главный_экран_Настройки/MarginContainer/VBoxContainer" unique_id=1059632671]
 layout_mode = 2
@@ -177,11 +349,33 @@ layout_mode = 2
 [node name="CheckBox3" type="CheckBox" parent="Главный_экран_Настройки/MarginContainer/VBoxContainer" unique_id=1378295332]
 layout_mode = 2
 
+[node name="Back" type="Button" parent="Главный_экран_Настройки/MarginContainer" unique_id=2142485955]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme = ExtResource("7_w1i2x")
+text = "Назад"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1824378787]
 libraries/ = SubResource("AnimationLibrary_qobn5")
-autoplay = &"main_screen"
+autoplay = &"action"
 speed_scale = 0.562
 
-[connection signal="pressed" from="Главный_экран_1/MarginContainer/VBoxContainer2/play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Главный_экран_1/MarginContainer/VBoxContainer2/options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="Главный_экран_1/MarginContainer/VBoxContainer2/quit" to="." method="_on_quit_pressed"]
+[node name="CameraMove" type="Control" parent="." unique_id=1970113798]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+
+[node name="Camera2D" type="Camera2D" parent="CameraMove" unique_id=943330730]
+limit_enabled = false
+limit_left = 0
+limit_top = 0
+limit_right = 300
+limit_bottom = 600
+
+[connection signal="pressed" from="Fons/TextureRect3/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Fons/TextureRect3/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Fons/TextureRect3/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Главный_экран_Настройки/MarginContainer/Back" to="." method="_on_back_pressed"]

@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://c5v2eartl5xfu"]
 
 [ext_resource type="Script" uid="uid://3vfbswg5p635" path="res://sciens/windows_UI/Распределение ролей/Определение_роли.gd" id="1_ukqid"]
-[ext_resource type="Theme" uid="uid://bxf6wdwvnb7wu" path="res://sciens/windows_UI/Стили/new_theme_but2.tres" id="2_8hxei"]
 [ext_resource type="Texture2D" uid="uid://bdqad7sy2jpg5" path="res://sprites/Карточки/Некто.png" id="2_cef3j"]
 [ext_resource type="AnimationLibrary" uid="uid://cw358ktr02ej7" path="res://animations/card/card.res" id="2_sw6da"]
+[ext_resource type="Theme" uid="uid://dm5ksso32lkcf" path="res://sciens/windows_UI/Стили/основные_кнопки.tres" id="3_sw6da"]
 [ext_resource type="Texture2D" uid="uid://d34soxfc37u2p" path="res://sprites/Карточки/Шериф.png" id="4_88a3v"]
 [ext_resource type="Texture2D" uid="uid://b04wgwcxdnosl" path="res://sprites/Карточки/Дон_Мафия.png" id="4_ukqid"]
 [ext_resource type="Texture2D" uid="uid://bxve4l0nqh5sw" path="res://sprites/Карточки/Мирный.png" id="5_kd564"]
@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://d2b4l32wgeq7w" path="res://sprites/Карточки/Доктор.png" id="8_xp5vq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sw6da"]
-bg_color = Color(0.38, 0.16327335, 0.1596, 1)
+bg_color = Color(0.0896, 0.09883999, 0.14, 1)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_mn0c8"]
 diffuse_texture = ExtResource("5_u6t2v")
@@ -75,7 +75,7 @@ theme_override_constants/separation = 46
 [node name="LineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer" unique_id=1535852713]
 layout_mode = 2
 theme_override_font_sizes/font_size = 33
-placeholder_text = "Ввидите Имя"
+placeholder_text = "Введете Имя"
 alignment = 1
 max_length = 15
 
@@ -86,7 +86,7 @@ flat = true
 
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=616679375]
 layout_mode = 2
-theme = ExtResource("2_8hxei")
+theme = ExtResource("3_sw6da")
 theme_override_font_sizes/font_size = 35
 text = "Следующий"
 

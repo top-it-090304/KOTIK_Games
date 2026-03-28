@@ -5,10 +5,10 @@
 [resource]
 line_spacing = 167.175
 font = ExtResource("1_8ve8o")
-font_size = 72
-font_color = Color(0.8314563, 0.6338926, 0.48571965, 1)
+font_size = 50
+font_color = Color(0.2041079, 0.21909213, 0.27902907, 1)
 outline_size = 12
-outline_color = Color(0.30533516, 0.19224842, 0.154274, 1)
+outline_color = Color(0.12594877, 0.12594877, 0.16854364, 1)
 shadow_size = 24
-shadow_color = Color(1, 0.93283224, 0.85776234, 1)
+shadow_color = Color(0.9314193, 0.9075014, 0.67642653, 1)
 shadow_offset = Vector2(1, 0.5)
