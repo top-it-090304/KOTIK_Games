@@ -182,18 +182,35 @@ func duplicate_menu_maf():
 		menu_maf_dub.append(new_menu_panel_M)
 	
 	mafia_kill()
-		
+
 
 func mafia_kill():
+	maf_chec.visible = false
 	for i in range(all_count):
 		if rol_arr_2[i] != 2 and rol_arr_2[i] != 5:
 			var current = menu_maf_dub[i]
 			current.text = name_arr[i]
+			current.pressed.connect(mafia_check)
 			menu_maf_dub[i].visible = true
 
+@onready var maf_chec = $ForMafia/MarginContainer2
+@onready var color_rect = $ForMafia/ColorRect
 
+func mafia_check():
+	color_rect.visible = true
+	maf_chec.visible = true
+	maf_chec.grab_focus()
+	var but_not = maf_chec.get_node("PanelContainer/VBoxContainer/HBoxContainer/Button")
+	var but_yes = maf_chec.get_node("PanelContainer/VBoxContainer/HBoxContainer/Button2")
+	but_not.pressed.connect(mafia_check_not)
+	but_yes.pressed.connect(mafia_check_yes)
 
+func mafia_check_not():
+	maf_chec.visible = false
+	color_rect.visible = false
 
+func mafia_check_yes():
+	For_maf.hide()
 
 
 
