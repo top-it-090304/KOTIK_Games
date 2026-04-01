@@ -37,6 +37,40 @@ corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_slymg"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e5n5q"]
+bg_color = Color(0.87380886, 0.21954143, 0.2691756, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wg8vd"]
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ioh67"]
+bg_color = Color(0.24313726, 0, 0.08627451, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_e5n5q"]
+
 [node name="Control1" type="Control" unique_id=397175873]
 layout_mode = 3
 anchors_preset = 15
@@ -177,6 +211,16 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 
+[node name="Button" type="Button" parent="ForMafia/MarginContainer" unique_id=2063526087]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_e5n5q")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_wg8vd")
+disabled = true
+text = "Сделать выбор"
+
 [node name="ColorRect" type="ColorRect" parent="ForMafia" unique_id=368288746]
 visible = false
 layout_mode = 1
@@ -205,6 +249,7 @@ process_mode = 3
 layout_mode = 2
 size_flags_vertical = 4
 mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_ioh67")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ForMafia/MarginContainer2/PanelContainer" unique_id=1512813912]
 layout_mode = 2
@@ -212,28 +257,19 @@ layout_mode = 2
 [node name="Label" type="Label" parent="ForMafia/MarginContainer2/PanelContainer/VBoxContainer" unique_id=699878710]
 layout_mode = 2
 theme = ExtResource("6_wg8vd")
-text = "Вы уверенны, что хотите
- убить этого игрока?"
+text = "Игрок:"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ForMafia/MarginContainer2/PanelContainer/VBoxContainer" unique_id=1786658577]
+[node name="Label2" type="Label" parent="ForMafia/MarginContainer2/PanelContainer/VBoxContainer" unique_id=1589756498]
 layout_mode = 2
-
-[node name="Button" type="Button" parent="ForMafia/MarginContainer2/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1467717859]
-layout_mode = 2
-theme = ExtResource("6_wg8vd")
-text = "Нет"
-
-[node name="Button2" type="Button" parent="ForMafia/MarginContainer2/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1623571720]
-layout_mode = 2
-size_flags_horizontal = 10
-size_flags_vertical = 4
-theme = ExtResource("6_wg8vd")
-text = "Да"
+text = "Мафия засыпает"
+horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="ForMafia" unique_id=166093597]
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 16.0
 theme = ExtResource("6_wg8vd")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_e5n5q")
 text = "Игорок 1"

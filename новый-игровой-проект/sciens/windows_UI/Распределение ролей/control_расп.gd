@@ -170,22 +170,26 @@ func show_all_menu_panel():
 
 var menu_maf_dub = []
 
+var my_button_group = ButtonGroup.new()
+
+#Делаем дубликаты кнопок для Мафии (Кого они могут убить)
 func duplicate_menu_maf():
 	# Скрываем оригинальную панель (она будет шаблоном)
 	menu_panel_M.visible = false
-	
+	my_button_group.allow_unpress = true
 	# Создаем панели для каждого игрока
 	for i in range(all_count):
 		var new_menu_panel_M = menu_panel_M.duplicate()
 		new_menu_panel_M.visible = false
+		new_menu_panel_M.button_group = my_button_group
 		where_label_M.add_child(new_menu_panel_M)
 		menu_maf_dub.append(new_menu_panel_M)
 	
 	mafia_kill()
 
-
+#Загружаем кнопки для Мафии (Кого они могут убить)
 func mafia_kill():
-	maf_chec.visible = false
+	#maf_chec.visible = false
 	for i in range(all_count):
 		if rol_arr_2[i] != 2 and rol_arr_2[i] != 5:
 			var current = menu_maf_dub[i]
@@ -193,24 +197,34 @@ func mafia_kill():
 			current.pressed.connect(mafia_check)
 			menu_maf_dub[i].visible = true
 
+
+@onready var ForMafia: Button = $ForMafia/MarginContainer/Button
+
+#Работа с кнопкой СДЕЛАТЬ ВЫБОР
+func mafia_check():
+	var pressed_node = my_button_group.get_pressed_button()
+	if pressed_node != null:
+		ForMafia.disabled = false
+		ForMafia.pressed.connect(mafia_after)
+	else:
+		ForMafia.disabled = true
+
+
 @onready var maf_chec = $ForMafia/MarginContainer2
 @onready var color_rect = $ForMafia/ColorRect
+@onready var mafia_after_kill = $ForMafia/MarginContainer2/PanelContainer/VBoxContainer/Label
 
-func mafia_check():
+#Информация для мафии после сделаного выбора
+func mafia_after():
+	var selected_button = my_button_group.get_pressed_button()
+	if selected_button:
+		var player_name = selected_button.text
+		mafia_after_kill.text = "Игрок: '" + player_name + "' убит"
+	
 	color_rect.visible = true
 	maf_chec.visible = true
-	maf_chec.grab_focus()
-	var but_not = maf_chec.get_node("PanelContainer/VBoxContainer/HBoxContainer/Button")
-	var but_yes = maf_chec.get_node("PanelContainer/VBoxContainer/HBoxContainer/Button2")
-	but_not.pressed.connect(mafia_check_not)
-	but_yes.pressed.connect(mafia_check_yes)
+	
 
-func mafia_check_not():
-	maf_chec.visible = false
-	color_rect.visible = false
-
-func mafia_check_yes():
-	For_maf.hide()
 
 
 
