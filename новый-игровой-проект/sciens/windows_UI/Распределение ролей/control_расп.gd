@@ -6,6 +6,7 @@ extends Control
 @onready var panel = $Panel
 @onready var menu_panel = $Menu
 @onready var For_maf = $ForMafia
+@onready var For_doc = $ForDoctor
 
 @onready var dalee_button: Button = $Play/MarginContainer/VBoxContainer/HBoxContainer2/Button2
 
@@ -216,20 +217,104 @@ func mafia_check():
 
 #Информация для мафии после сделаного выбора
 func mafia_after():
+	color_rect.visible = true
+	maf_chec.visible = true
 	var selected_button = my_button_group.get_pressed_button()
 	if selected_button:
 		var player_name = selected_button.text
 		mafia_after_kill.text = "Игрок: '" + player_name + "' убит"
+		get_tree().paused = true
+		await get_tree().create_timer(5.0, true).timeout
+		get_tree().paused = false
+		For_maf.hide()
+		For_doc.show()
+		duplicate_menu_doc()
 	
-	color_rect.visible = true
-	maf_chec.visible = true
+
+	
+
+
+
+#ДЛЯ ДОКТОРА
+@onready var menu_panel_D: Button = $ForDoctor/Button
+@onready var where_label_D = $ForDoctor/MarginContainer/VBoxContainer
+
+var menu_doc_dub = []
+
+var my_button_group_doc = ButtonGroup.new()
+
+#Делаем дубликаты кнопок для Мафии (Кого они могут убить)
+func duplicate_menu_doc():
+	# Скрываем оригинальную панель (она будет шаблоном)
+	menu_panel_D.visible = false
+	my_button_group_doc.allow_unpress = true
+	# Создаем панели для каждого игрока
+	for i in range(all_count):
+		var new_menu_panel_D = menu_panel_D.duplicate()
+		new_menu_panel_D.visible = false
+		new_menu_panel_D.button_group = my_button_group_doc
+		where_label_D.add_child(new_menu_panel_D)
+		menu_doc_dub.append(new_menu_panel_D)
+	
+	doctor_heal()
+
+#Загружаем кнопки для Мафии (Кого они могут убить)
+func doctor_heal():
+	#maf_chec.visible = false
+	for i in range(all_count):
+		if rol_arr_2[i] == 4:
+			var current = menu_doc_dub[i]
+			current.text = name_arr[i] + " (Себя)"
+			current.pressed.connect(doctor_check)
+			menu_doc_dub[i].visible = true
+		else:
+			var current = menu_doc_dub[i]
+			current.text = name_arr[i]
+			current.pressed.connect(doctor_check)
+			menu_doc_dub[i].visible = true
+
+
+@onready var ForDoctor: Button = $ForDoctor/MarginContainer/Button
+
+#Работа с кнопкой СДЕЛАТЬ ВЫБОР
+func doctor_check():
+	var pressed_node = my_button_group_doc.get_pressed_button()
+	if pressed_node != null:
+		ForDoctor.disabled = false
+		ForDoctor.pressed.connect(doctor_after)
+	else:
+		ForDoctor.disabled = true
+
+
+@onready var doc_chec = $ForDoctor/MarginContainer2
+@onready var color_rect_doc = $ForDoctor/ColorRect
+@onready var doc_after_heal = $ForDoctor/MarginContainer2/PanelContainer/VBoxContainer/Label
+
+#Информация для мафии после сделаного выбора
+func doctor_after():
+	var selected_button = my_button_group_doc.get_pressed_button()
+	if selected_button:
+		var player_name = selected_button.text
+		doc_after_heal.text = "'" + player_name + "'"
+	
+	color_rect_doc.visible = true
+	doc_chec.visible = true
+
 	
 
 
 
 
 
-	
+
+
+
+
+
+
+
+
+
 
 func Vvod():
 	print(all_count)
