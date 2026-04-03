@@ -119,7 +119,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(2, 2),
-"points": PackedFloat32Array(0, -0.2499952, 1.9568177, 0.3, -2.3482265, 300, -0.13333333, -1.0881958, 0, 0),
+"points": PackedFloat32Array(0, -0.24639767, -117.046745, 0.3, 142.50955, 300, -0.19999999, 1.2744751, 0, 0),
 "times": PackedFloat32Array(0, 0.5)
 }
 tracks/1/type = "bezier"
@@ -130,7 +130,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(2, 2),
-"points": PackedFloat32Array(-300, -0.25, 0, 0.25, 0, 0, -0.083333336, -50, 0, 0),
+"points": PackedFloat32Array(-300, -0.24998587, -7.3480983, 0.23333333, 6.858612, 0, -0.19999999, 1.5263052, 0, 0),
 "times": PackedFloat32Array(0, 0.5)
 }
 tracks/2/type = "bezier"
@@ -141,7 +141,7 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(2, 2),
-"points": PackedFloat32Array(-67.705, -0.25, 0, 0.25, 0, 130, -0.083333336, -11.284167, 0, 0),
+"points": PackedFloat32Array(-67.705, -0.24993582, -15.656169, 0.23333333, 14.616177, 130, -0.19999999, 1.078476, 0, 0),
 "times": PackedFloat32Array(0, 0.5)
 }
 tracks/3/type = "bezier"
@@ -152,7 +152,7 @@ tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "handle_modes": PackedInt32Array(2, 2),
-"points": PackedFloat32Array(151.07, -0.25, 0, 0.25, 0, 262.87, -0.083333336, 25.178335, 0, 0),
+"points": PackedFloat32Array(151.07, -0.24999483, -4.4364066, 0.23333333, 4.140732, 262.87, -0.19999999, -0.9692383, 0, 0),
 "times": PackedFloat32Array(0, 0.5)
 }
 
@@ -167,7 +167,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(0, -0.25, 0, 0.3, -340.1056, 650, -0.19999999, -199.17859, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.3, -340.1056, 650, -0.19999999, -4.3858643, 0, 0),
 "times": PackedFloat32Array(0, 0.5)
 }
 tracks/1/type = "bezier"
@@ -178,7 +178,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(2, 2, 2),
-"points": PackedFloat32Array(0, 0, 0, 0, 0, -88.69, -0.13333334, -3.6759949, 0, 0, 0, -0.061111115, 0, 0, 0),
+"points": PackedFloat32Array(0, 0, 0, 0, 0, -88.69, -0.06666667, -9.462875, 0, 0, 0, -0.099999994, 2.3561816, 0, 0),
 "times": PackedFloat32Array(0, 0.13333334, 0.5)
 }
 
@@ -227,7 +227,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = 386.33716
+offset_bottom = 386.3401
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_qfjnm")
@@ -240,7 +240,7 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_top = -300.0
-offset_bottom = 686.3368
+offset_bottom = 686.3418
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("8_qof6w")
