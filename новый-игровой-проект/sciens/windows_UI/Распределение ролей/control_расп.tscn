@@ -89,6 +89,7 @@ visible = false
 layout_mode = 1
 
 [node name="Menu" type="Control" parent="." unique_id=966096972]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -266,6 +267,129 @@ text = "Мафия засыпает"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="ForMafia" unique_id=166093597]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 16.0
+theme = ExtResource("6_wg8vd")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_e5n5q")
+text = "Игорок 1"
+
+[node name="ForDoctor" type="Control" parent="." unique_id=233860107]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_v5n23")
+
+[node name="Panel" type="Panel" parent="ForDoctor" unique_id=1977854407]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sxa1l")
+
+[node name="MarginContainer" type="MarginContainer" parent="ForDoctor" unique_id=691831766]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ForDoctor/MarginContainer" unique_id=412472837]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 8
+
+[node name="PanelContainer" type="PanelContainer" parent="ForDoctor/MarginContainer/VBoxContainer" unique_id=655746604]
+custom_minimum_size = Vector2(200, 35)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_ive8x")
+
+[node name="Label" type="Label" parent="ForDoctor/MarginContainer/VBoxContainer/PanelContainer" unique_id=700391723]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("6_wg8vd")
+text = "Доктор
+делает свой выбор"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="ForDoctor/MarginContainer/VBoxContainer" unique_id=1387675794]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="ForDoctor/MarginContainer" unique_id=370773138]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_e5n5q")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_wg8vd")
+disabled = true
+text = "Сделать выбор"
+
+[node name="ColorRect" type="ColorRect" parent="ForDoctor" unique_id=536262112]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.47058824, 0.023529412, 0.023529412, 0.68235296)
+
+[node name="MarginContainer2" type="MarginContainer" parent="ForDoctor" unique_id=203838533]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="PanelContainer" type="PanelContainer" parent="ForDoctor/MarginContainer2" unique_id=1150350078]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_ioh67")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ForDoctor/MarginContainer2/PanelContainer" unique_id=868488094]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="ForDoctor/MarginContainer2/PanelContainer/VBoxContainer" unique_id=1605393186]
+layout_mode = 2
+text = "Вы вылечили игрока:"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="ForDoctor/MarginContainer2/PanelContainer/VBoxContainer" unique_id=520755837]
+layout_mode = 2
+theme = ExtResource("6_wg8vd")
+text = "Игрок"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="ForDoctor/MarginContainer2/PanelContainer/VBoxContainer" unique_id=517312505]
+layout_mode = 2
+text = "Доктор засыпает"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="ForDoctor" unique_id=760983376]
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 16.0
