@@ -7,6 +7,7 @@ extends Control
 @onready var menu_panel = $Menu
 @onready var For_maf = $ForMafia
 @onready var For_doc = $ForDoctor
+@onready var For_don = $ForDon
 
 @onready var dalee_button: Button = $Play/MarginContainer/VBoxContainer/HBoxContainer2/Button2
 
@@ -296,16 +297,90 @@ func doctor_after():
 	if selected_button:
 		var player_name = selected_button.text
 		doc_after_heal.text = "'" + player_name + "'"
-	
 	color_rect_doc.visible = true
 	doc_chec.visible = true
+	get_tree().paused = true
+	await get_tree().create_timer(5.0, true).timeout
+	get_tree().paused = false
+	For_maf.hide()
+	For_don.show()
+	duplicate_menu_don()
 
 	
 
+#ДЛЯ ДОНА
+@onready var menu_panel_Don: Button = $ForDon/Button
+@onready var where_label_Don = $ForDon/MarginContainer/VBoxContainer
+
+var menu_don_dub = []
+
+var my_button_group_don = ButtonGroup.new()
+
+#Делаем дубликаты кнопок для Мафии (Кого они могут убить)
+func duplicate_menu_don():
+	# Скрываем оригинальную панель (она будет шаблоном)
+	menu_panel_Don.visible = false
+	my_button_group_don.allow_unpress = true
+	# Создаем панели для каждого игрока
+	for i in range(all_count):
+		var new_menu_panel_Don = menu_panel_Don.duplicate()
+		new_menu_panel_Don.visible = false
+		new_menu_panel_Don.button_group = my_button_group_don
+		where_label_Don.add_child(new_menu_panel_Don)
+		menu_don_dub.append(new_menu_panel_Don)
+	
+	don_test()
+
+#Загружаем кнопки для Мафии (Кого они могут убить)
+func don_test():
+	#maf_chec.visible = false
+	for i in range(all_count):
+		if rol_arr_2[i] != 2 and rol_arr_2[i] != 5:
+			var current = menu_don_dub[i]
+			current.text = name_arr[i]
+			current.pressed.connect(don_check)
+			menu_don_dub[i].visible = true
 
 
+@onready var ForDon: Button = $ForDon/MarginContainer/Button
+
+#Работа с кнопкой СДЕЛАТЬ ВЫБОР
+func don_check():
+	var pressed_node = my_button_group_don.get_pressed_button()
+	if pressed_node != null:
+		ForDon.disabled = false
+		ForDon.pressed.connect(don_after)
+	else:
+		ForDon.disabled = true
 
 
+@onready var don_chec = $ForDon/MarginContainer2
+@onready var color_rect_don = $ForDon/ColorRect
+@onready var don_after_test = $ForDon/MarginContainer2/PanelContainer/VBoxContainer/Label
+@onready var don_after_test2 = $ForDon/MarginContainer2/PanelContainer/VBoxContainer/Label3
+@onready var ForDon_sleep: Button = $ForDon/MarginContainer2/PanelContainer/VBoxContainer/Button
+@onready var don_go_sleep1 = $ForDon/MarginContainer2/PanelContainer
+@onready var don_go_sleep2 = $ForDon/MarginContainer2/PanelContainer2
+
+#Информация для мафии после сделаного выбора
+func don_after():
+	var selected_button = my_button_group_don.get_pressed_button()
+	if selected_button:
+		var player_name = selected_button.text
+		don_after_test.text = "Игрок: '" + player_name + "'"
+		var i = name_arr.find(player_name)
+		if rol_arr_2[i] == 0:
+			don_after_test2.text = "ЯВЛЯЕТСЯ шерифом"
+		else:
+			don_after_test2.text = "НЕ является шерифом"
+	ForDon_sleep.pressed.connect(don_sleep)
+	color_rect_don.visible = true
+	don_chec.visible = true
+
+
+func don_sleep():
+	don_go_sleep1.visible = false
+	don_go_sleep2.visible = true
 
 
 

@@ -71,6 +71,18 @@ corner_radius_bottom_left = 8
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_e5n5q"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xqyvc"]
+bg_color = Color(0.4030914, 0.6778467, 0.401121, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8934015, 0.8079801, 0.23277858, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
 [node name="Control1" type="Control" unique_id=397175873]
 layout_mode = 3
 anchors_preset = 15
@@ -390,6 +402,146 @@ text = "Доктор засыпает"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="ForDoctor" unique_id=760983376]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 16.0
+theme = ExtResource("6_wg8vd")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_e5n5q")
+text = "Игорок 1"
+
+[node name="ForDon" type="Control" parent="." unique_id=683900148]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_v5n23")
+
+[node name="Panel" type="Panel" parent="ForDon" unique_id=1980707971]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sxa1l")
+
+[node name="MarginContainer" type="MarginContainer" parent="ForDon" unique_id=22674246]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ForDon/MarginContainer" unique_id=2027721451]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 8
+
+[node name="PanelContainer" type="PanelContainer" parent="ForDon/MarginContainer/VBoxContainer" unique_id=1860511884]
+custom_minimum_size = Vector2(200, 35)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_ive8x")
+
+[node name="Label" type="Label" parent="ForDon/MarginContainer/VBoxContainer/PanelContainer" unique_id=462522512]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("6_wg8vd")
+text = "Дон
+делает свой выбор"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="ForDon/MarginContainer/VBoxContainer" unique_id=1850772233]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="ForDon/MarginContainer" unique_id=1212733058]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_e5n5q")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_wg8vd")
+disabled = true
+text = "Сделать выбор"
+
+[node name="ColorRect" type="ColorRect" parent="ForDon" unique_id=1744706890]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.47058824, 0.023529412, 0.023529412, 0.68235296)
+
+[node name="MarginContainer2" type="MarginContainer" parent="ForDon" unique_id=328201766]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="PanelContainer" type="PanelContainer" parent="ForDon/MarginContainer2" unique_id=306294895]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_ioh67")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ForDon/MarginContainer2/PanelContainer" unique_id=162736186]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ForDon/MarginContainer2/PanelContainer/VBoxContainer" unique_id=1039776734]
+layout_mode = 2
+theme = ExtResource("6_wg8vd")
+text = "Игрок"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="ForDon/MarginContainer2/PanelContainer/VBoxContainer" unique_id=1246295276]
+layout_mode = 2
+text = "ЯВЛЯЕТСЯ"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="ForDon/MarginContainer2/PanelContainer/VBoxContainer" unique_id=1358500725]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="ForDon/MarginContainer2/PanelContainer/VBoxContainer" unique_id=772313413]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_xqyvc")
+text = "Лечь спать"
+
+[node name="PanelContainer2" type="PanelContainer" parent="ForDon/MarginContainer2" unique_id=23236036]
+visible = false
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_ioh67")
+
+[node name="Label" type="Label" parent="ForDon/MarginContainer2/PanelContainer2" unique_id=494554181]
+layout_mode = 2
+text = "Дон засыпает"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="ForDon" unique_id=2051829234]
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 16.0
