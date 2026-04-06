@@ -9,6 +9,7 @@ extends Control
 @onready var For_doc = $ForDoctor
 @onready var For_don = $ForDon
 @onready var For_sh = $ForSh
+@onready var For_af = $After_night
 
 @onready var dalee_button: Button = $Play/MarginContainer/VBoxContainer/HBoxContainer2/Button2
 
@@ -168,12 +169,15 @@ func show_all_menu_panel():
 		menu_name.text = name_arr[i]
 		menu_player_dub[i].visible = true
 
+####################################################################################################
 
 #ГЕМПЛЕЙ ДЛЯ МАФИИ
 
 var menu_maf_dub = []
 
 var my_button_group = ButtonGroup.new()
+
+var index_dead_player
 
 #Делаем дубликаты кнопок для Мафии (Кого они могут убить)
 func duplicate_menu_maf():
@@ -200,7 +204,6 @@ func mafia_kill():
 			current.pressed.connect(mafia_check)
 			menu_maf_dub[i].visible = true
 
-
 @onready var ForMafia: Button = $ForMafia/MarginContainer/Button
 
 #Работа с кнопкой СДЕЛАТЬ ВЫБОР
@@ -211,7 +214,6 @@ func mafia_check():
 		ForMafia.pressed.connect(mafia_after)
 	else:
 		ForMafia.disabled = true
-
 
 @onready var maf_chec = $ForMafia/MarginContainer2
 @onready var color_rect = $ForMafia/ColorRect
@@ -224,6 +226,7 @@ func mafia_after():
 	var selected_button = my_button_group.get_pressed_button()
 	if selected_button:
 		var player_name = selected_button.text
+		index_dead_player = name_arr.find(player_name)
 		mafia_after_kill.text = "Игрок: '" + player_name + "' убит"
 		get_tree().paused = true
 		await get_tree().create_timer(5.0, true).timeout
@@ -231,11 +234,10 @@ func mafia_after():
 		For_maf.hide()
 		For_doc.show()
 		duplicate_menu_doc()
-	
-
-	
 
 
+
+####################################################################################################
 
 #ДЛЯ ДОКТОРА
 @onready var menu_panel_D: Button = $ForDoctor/Button
@@ -244,6 +246,8 @@ func mafia_after():
 var menu_doc_dub = []
 
 var my_button_group_doc = ButtonGroup.new()
+
+var index_heal_player
 
 #Делаем дубликаты кнопок для Мафии (Кого они могут убить)
 func duplicate_menu_doc():
@@ -298,18 +302,25 @@ func doctor_after():
 	if selected_button:
 		var player_name = selected_button.text
 		doc_after_heal.text = "'" + player_name + "'"
+		if "Себя" in player_name:
+			player_name = player_name.left(-7)
+		index_heal_player = name_arr.find(player_name)
 	color_rect_doc.visible = true
 	doc_chec.visible = true
 	get_tree().paused = true
 	await get_tree().create_timer(5.0, true).timeout
 	get_tree().paused = false
-	For_maf.hide()
+	For_doc.hide()
+	#Для теста
 	For_don.show()
 	duplicate_menu_don()
+	#after_night()
 
 	
-###############################################################################################
+####################################################################################################
+
 #ДЛЯ ДОНА
+
 @onready var menu_panel_Don: Button = $ForDon/Button
 @onready var where_label_Don = $ForDon/MarginContainer/VBoxContainer
 
@@ -317,7 +328,7 @@ var menu_don_dub = []
 
 var my_button_group_don = ButtonGroup.new()
 
-#Делаем дубликаты кнопок для Мафии (Кого они могут убить)
+#Делаем дубликаты кнопок для Дона (Кого он может проверить на шерифа)
 func duplicate_menu_don():
 	# Скрываем оригинальную панель (она будет шаблоном)
 	menu_panel_Don.visible = false
@@ -332,7 +343,7 @@ func duplicate_menu_don():
 	
 	don_test()
 
-#Загружаем кнопки для Мафии (Кого они могут убить)
+#Загружаем кнопки для Дона (Кого он может проверить на шерифа)
 func don_test():
 	#maf_chec.visible = false
 	for i in range(all_count):
@@ -363,7 +374,7 @@ func don_check():
 @onready var don_go_sleep1 = $ForDon/MarginContainer2/PanelContainer
 @onready var don_go_sleep2 = $ForDon/MarginContainer2/PanelContainer2
 
-#Информация для мафии после сделаного выбора
+#Информация для Дона после сделаного выбора
 func don_after():
 	var selected_button = my_button_group_don.get_pressed_button()
 	if selected_button:
@@ -378,7 +389,7 @@ func don_after():
 	color_rect_don.visible = true
 	don_chec.visible = true
 
-
+#Остановка после нажатия кнопки ЛЕЧЬ СПАТЬ
 func don_sleep():
 	don_go_sleep1.visible = false
 	don_go_sleep2.visible = true
@@ -391,8 +402,10 @@ func don_sleep():
 
 
 
-###############################################################################################
-#ДЛЯ Шерифа
+####################################################################################################
+
+#ДЛЯ ШЕРИФА
+
 @onready var menu_panel_Sh: Button = $ForSh/Button
 @onready var where_label_Sh = $ForSh/MarginContainer/VBoxContainer
 
@@ -465,6 +478,124 @@ func sh_after():
 func sh_sleep():
 	sh_go_sleep1.visible = false
 	sh_go_sleep2.visible = true
+	get_tree().paused = true
+	await get_tree().create_timer(5.0, true).timeout
+	get_tree().paused = false
+	For_sh.hide()
+	after_night()
+
+
+####################################################################################################
+
+var dead_name
+var heal_name
+
+func after_night():
+	dead_name = name_arr[index_dead_player]
+	heal_name = name_arr[index_heal_player]
+	if index_heal_player != index_dead_player:
+		all_count = all_count - 1
+		name_arr.remove_at(index_dead_player)
+	For_af.show()
+	duplicate_menu_af()
+	
+
+@onready var menu_panel_Af: Button = $After_night/Button
+@onready var where_label_Af = $After_night/MarginContainer/VBoxContainer
+@onready var choice_Af = $After_night/MarginContainer
+
+var menu_af_dub = []
+
+var my_button_group_af = ButtonGroup.new()
+
+#Делаем дубликаты кнопок для Мафии (Кого они могут убить)
+func duplicate_menu_af():
+	# Скрываем оригинальную панель (она будет шаблоном)
+	menu_panel_Af.visible = false
+	my_button_group_af.allow_unpress = true
+	# Создаем панели для каждого игрока
+	for i in range(all_count):
+		var new_menu_panel_Af = menu_panel_Af.duplicate()
+		new_menu_panel_Af.visible = false
+		new_menu_panel_Af.button_group = my_button_group_af
+		where_label_Af.add_child(new_menu_panel_Af)
+		menu_af_dub.append(new_menu_panel_Af)
+	
+	af_test()
+
+#Загружаем кнопки для Мафии (Кого они могут убить)
+func af_test():
+	#maf_chec.visible = false
+	for i in range(all_count):
+		var current = menu_af_dub[i]
+		current.text = name_arr[i]
+		current.pressed.connect(af_check)
+		menu_af_dub[i].visible = true
+	info_after_night()
+
+@onready var ForAf: Button = $After_night/MarginContainer/Button
+
+#Работа с кнопкой СДЕЛАТЬ ВЫБОР
+func af_check():
+	var pressed_node = my_button_group_af.get_pressed_button()
+	if pressed_node != null:
+		ForAf.disabled = false
+		ForAf.pressed.connect(af_after)
+	else:
+		ForAf.disabled = true
+
+
+@onready var af_chec = $After_night/MarginContainer2
+@onready var color_rect_af = $After_night/ColorRect
+@onready var af_after_test = $After_night/MarginContainer2/PanelContainer/VBoxContainer/Label
+@onready var af_after_test2 = $After_night/MarginContainer2/PanelContainer/VBoxContainer/Label3
+@onready var ForAf_sleep: Button = $After_night/MarginContainer2/PanelContainer/VBoxContainer/Button
+@onready var af_go_sleep1 = $After_night/MarginContainer2/PanelContainer
+@onready var af_go_sleep2 = $After_night/MarginContainer2/PanelContainer2
+
+#Информация для мафии после сделаного выбора
+func af_after():
+	var selected_button = my_button_group_af.get_pressed_button()
+	if selected_button:
+		var player_name = selected_button.text
+		af_after_test.text = "Игрок: '" + player_name + "'"
+		#var i = name_arr.find(player_name)
+		af_after_test2.text = "Исключён"
+	ForAf_sleep.pressed.connect(af_sleep)
+	color_rect_af.visible = true
+	af_chec.visible = true
+	af_go_sleep1.visible = true
+
+func af_sleep():
+	af_go_sleep1.visible = false
+	af_go_sleep2.visible = true
+
+
+@onready var dead_person = $After_night/MarginContainer2/PanelContainer3/VBoxContainer/Label
+@onready var heal_person = $After_night/MarginContainer2/PanelContainer3/VBoxContainer/Label2
+@onready var info_person = $After_night/MarginContainer2/PanelContainer3
+@onready var info_dalee: Button = $After_night/MarginContainer2/PanelContainer3/VBoxContainer/Button
+
+func info_after_night():
+	af_chec.visible = true
+	color_rect_af.visible = true
+	info_person.visible = true
+	dead_person.text = "Игрок: '" + dead_name + "' убит"
+	heal_person.text = "Игрок: '" + heal_name + "' вылечен"
+	info_dalee.pressed.connect(after_show_info)
+
+func after_show_info():
+	color_rect_af.visible = false
+	info_person.visible = false
+	af_chec.visible = false
+	#color_rect_af.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	#menu_panel_Af.visible = true
+	choice_Af.visible = true
+
+
+
+
+
 
 
 
