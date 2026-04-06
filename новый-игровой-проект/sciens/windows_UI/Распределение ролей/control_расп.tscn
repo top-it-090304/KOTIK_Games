@@ -549,3 +549,143 @@ theme = ExtResource("6_wg8vd")
 toggle_mode = true
 button_group = SubResource("ButtonGroup_e5n5q")
 text = "Игорок 1"
+
+[node name="ForSh" type="Control" parent="." unique_id=1616007370]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_v5n23")
+
+[node name="Panel" type="Panel" parent="ForSh" unique_id=16334743]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sxa1l")
+
+[node name="MarginContainer" type="MarginContainer" parent="ForSh" unique_id=2082257165]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ForSh/MarginContainer" unique_id=1362408963]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 8
+
+[node name="PanelContainer" type="PanelContainer" parent="ForSh/MarginContainer/VBoxContainer" unique_id=553461681]
+custom_minimum_size = Vector2(200, 35)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_ive8x")
+
+[node name="Label" type="Label" parent="ForSh/MarginContainer/VBoxContainer/PanelContainer" unique_id=239341103]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("6_wg8vd")
+text = "Шериф
+делает свой выбор"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="ForSh/MarginContainer/VBoxContainer" unique_id=1665999179]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="ForSh/MarginContainer" unique_id=1145515314]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_e5n5q")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_wg8vd")
+disabled = true
+text = "Сделать выбор"
+
+[node name="ColorRect" type="ColorRect" parent="ForSh" unique_id=1276100787]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.47058824, 0.023529412, 0.023529412, 0.68235296)
+
+[node name="MarginContainer2" type="MarginContainer" parent="ForSh" unique_id=486920289]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="PanelContainer" type="PanelContainer" parent="ForSh/MarginContainer2" unique_id=224377199]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_ioh67")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ForSh/MarginContainer2/PanelContainer" unique_id=718064771]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ForSh/MarginContainer2/PanelContainer/VBoxContainer" unique_id=1159690655]
+layout_mode = 2
+theme = ExtResource("6_wg8vd")
+text = "Игрок"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="ForSh/MarginContainer2/PanelContainer/VBoxContainer" unique_id=368724678]
+layout_mode = 2
+text = "ЯВЛЯЕТСЯ"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="ForSh/MarginContainer2/PanelContainer/VBoxContainer" unique_id=242440524]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="ForSh/MarginContainer2/PanelContainer/VBoxContainer" unique_id=1415349477]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_xqyvc")
+text = "Лечь спать"
+
+[node name="PanelContainer2" type="PanelContainer" parent="ForSh/MarginContainer2" unique_id=1804584496]
+visible = false
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_ioh67")
+
+[node name="Label" type="Label" parent="ForSh/MarginContainer2/PanelContainer2" unique_id=1890044570]
+layout_mode = 2
+text = "Шериф засыпает"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="ForSh" unique_id=1958202129]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 16.0
+theme = ExtResource("6_wg8vd")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_e5n5q")
+text = "Игорок 1"

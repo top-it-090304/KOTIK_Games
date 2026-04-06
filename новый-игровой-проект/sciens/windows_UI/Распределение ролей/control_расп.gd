@@ -8,6 +8,7 @@ extends Control
 @onready var For_maf = $ForMafia
 @onready var For_doc = $ForDoctor
 @onready var For_don = $ForDon
+@onready var For_sh = $ForSh
 
 @onready var dalee_button: Button = $Play/MarginContainer/VBoxContainer/HBoxContainer2/Button2
 
@@ -307,7 +308,7 @@ func doctor_after():
 	duplicate_menu_don()
 
 	
-
+###############################################################################################
 #ДЛЯ ДОНА
 @onready var menu_panel_Don: Button = $ForDon/Button
 @onready var where_label_Don = $ForDon/MarginContainer/VBoxContainer
@@ -381,10 +382,89 @@ func don_after():
 func don_sleep():
 	don_go_sleep1.visible = false
 	don_go_sleep2.visible = true
+	get_tree().paused = true
+	await get_tree().create_timer(5.0, true).timeout
+	get_tree().paused = false
+	For_don.hide()
+	For_sh.show()
+	duplicate_menu_sh()
 
 
 
+###############################################################################################
+#ДЛЯ Шерифа
+@onready var menu_panel_Sh: Button = $ForSh/Button
+@onready var where_label_Sh = $ForSh/MarginContainer/VBoxContainer
 
+var menu_sh_dub = []
+
+var my_button_group_sh = ButtonGroup.new()
+
+#Делаем дубликаты кнопок для Мафии (Кого они могут убить)
+func duplicate_menu_sh():
+	# Скрываем оригинальную панель (она будет шаблоном)
+	menu_panel_Sh.visible = false
+	my_button_group_sh.allow_unpress = true
+	# Создаем панели для каждого игрока
+	for i in range(all_count):
+		var new_menu_panel_Sh = menu_panel_Don.duplicate()
+		new_menu_panel_Sh.visible = false
+		new_menu_panel_Sh.button_group = my_button_group_sh
+		where_label_Sh.add_child(new_menu_panel_Sh)
+		menu_sh_dub.append(new_menu_panel_Sh)
+	
+	sh_test()
+
+#Загружаем кнопки для Мафии (Кого они могут убить)
+func sh_test():
+	#maf_chec.visible = false
+	for i in range(all_count):
+		if rol_arr_2[i] != 0:
+			var current = menu_sh_dub[i]
+			current.text = name_arr[i]
+			current.pressed.connect(sh_check)
+			menu_sh_dub[i].visible = true
+
+
+@onready var ForSh: Button = $ForSh/MarginContainer/Button
+
+#Работа с кнопкой СДЕЛАТЬ ВЫБОР
+func sh_check():
+	var pressed_node = my_button_group_sh.get_pressed_button()
+	if pressed_node != null:
+		ForSh.disabled = false
+		ForSh.pressed.connect(sh_after)
+	else:
+		ForSh.disabled = true
+
+
+@onready var sh_chec = $ForSh/MarginContainer2
+@onready var color_rect_sh = $ForSh/ColorRect
+@onready var sh_after_test = $ForSh/MarginContainer2/PanelContainer/VBoxContainer/Label
+@onready var sh_after_test2 = $ForSh/MarginContainer2/PanelContainer/VBoxContainer/Label3
+@onready var ForSh_sleep: Button = $ForSh/MarginContainer2/PanelContainer/VBoxContainer/Button
+@onready var sh_go_sleep1 = $ForSh/MarginContainer2/PanelContainer
+@onready var sh_go_sleep2 = $ForSh/MarginContainer2/PanelContainer2
+
+#Информация для мафии после сделаного выбора
+func sh_after():
+	var selected_button = my_button_group_sh.get_pressed_button()
+	if selected_button:
+		var player_name = selected_button.text
+		sh_after_test.text = "Игрок: '" + player_name + "'"
+		var i = name_arr.find(player_name)
+		if rol_arr_2[i] == 2 or rol_arr_2[i] == 5:
+			sh_after_test2.text = "ЯВЛЯЕТСЯ мафией"
+		else:
+			sh_after_test2.text = "НЕ является мафией"
+	ForSh_sleep.pressed.connect(sh_sleep)
+	color_rect_sh.visible = true
+	sh_chec.visible = true
+
+
+func sh_sleep():
+	sh_go_sleep1.visible = false
+	sh_go_sleep2.visible = true
 
 
 
