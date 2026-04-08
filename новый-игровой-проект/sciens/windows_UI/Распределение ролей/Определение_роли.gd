@@ -11,6 +11,7 @@ signal new_name_pl(n)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$MarginContainer/VBoxContainer/AnimatedSprite2D.visible = false
+	lineedit.text_changed.connect(_on_line_edit_text_changed)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
@@ -32,8 +33,11 @@ func _on_button_2_pressed() -> void:
 	
 
 
-func _on_line_edit_editing_toggled(_toggled_on: bool) -> void:
-	n = lineedit.text
+#func _on_line_edit_editing_toggled(_toggled_on: bool) -> void:
+	#n = lineedit.text
+	#new_name_pl.emit(n)
+	##print(n)
+
+func _on_line_edit_text_changed(_pl_name):
+	n = _pl_name
 	new_name_pl.emit(n)
-	print(n)
-	
