@@ -36,27 +36,6 @@ corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_slymg"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e5n5q"]
-bg_color = Color(0.87380886, 0.21954143, 0.2691756, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wg8vd"]
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ioh67"]
 bg_color = Color(0.24313726, 0, 0.08627451, 1)
 border_width_left = 2
@@ -321,9 +300,7 @@ custom_minimum_size = Vector2(200, 30)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-theme_override_styles/normal = SubResource("StyleBoxFlat_e5n5q")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_wg8vd")
-disabled = true
+theme = ExtResource("6_wg8vd")
 text = "Сделать выбор"
 
 [node name="ColorRect" type="ColorRect" parent="ForMafia" unique_id=368288746]
@@ -440,8 +417,7 @@ custom_minimum_size = Vector2(200, 30)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-theme_override_styles/normal = SubResource("StyleBoxFlat_e5n5q")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_wg8vd")
+theme = ExtResource("6_wg8vd")
 disabled = true
 text = "Сделать выбор"
 
@@ -564,9 +540,7 @@ custom_minimum_size = Vector2(200, 30)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-theme_override_styles/normal = SubResource("StyleBoxFlat_e5n5q")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_wg8vd")
-disabled = true
+theme = ExtResource("6_wg8vd")
 text = "Сделать выбор"
 
 [node name="ColorRect" type="ColorRect" parent="ForDon" unique_id=1744706890]
@@ -705,8 +679,7 @@ custom_minimum_size = Vector2(200, 30)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-theme_override_styles/normal = SubResource("StyleBoxFlat_e5n5q")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_wg8vd")
+theme = ExtResource("6_wg8vd")
 disabled = true
 text = "Сделать выбор"
 
@@ -846,8 +819,7 @@ custom_minimum_size = Vector2(200, 30)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-theme_override_styles/normal = SubResource("StyleBoxFlat_e5n5q")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_wg8vd")
+theme = ExtResource("6_wg8vd")
 disabled = true
 text = "Сделать выбор"
 
@@ -903,7 +875,7 @@ layout_mode = 2
 [node name="Button" type="Button" parent="After_night/MarginContainer2/PanelContainer/VBoxContainer" unique_id=32495112]
 custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_xqyvc")
+theme = ExtResource("6_wg8vd")
 text = "Далее"
 
 [node name="PanelContainer2" type="PanelContainer" parent="After_night/MarginContainer2" unique_id=1676544145]
