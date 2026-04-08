@@ -1,8 +1,8 @@
 [gd_resource type="Theme" format=3 uid="uid://cx0e6ps1ynwnf"]
 
-[sub_resource type="FontVariation" id="FontVariation_8x55y"]
+[ext_resource type="FontFile" uid="uid://cq54mn4f1j5vr" path="res://Text_stule/Playwrite/PlaywriteAT-Italic-VariableFont_wght.ttf" id="1_lvgwg"]
 
 [resource]
-Label/colors/font_color = Color(0.7529412, 0.7529412, 0.7529412, 1)
-Label/font_sizes/font_size = 16
-Label/fonts/font = SubResource("FontVariation_8x55y")
+Label/colors/font_color = Color(0.043428198, 0.05685492, 0.15276003, 1)
+Label/font_sizes/font_size = 18
+Label/fonts/font = ExtResource("1_lvgwg")

@@ -87,6 +87,7 @@ flat = true
 
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=616679375]
 layout_mode = 2
+focus_mode = 0
 theme = ExtResource("3_sw6da")
 theme_override_font_sizes/font_size = 35
 text = "Следующий"

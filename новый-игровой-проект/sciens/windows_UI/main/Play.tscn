@@ -3,25 +3,20 @@
 [ext_resource type="Script" uid="uid://cf1cyk78ek0ap" path="res://sciens/windows_UI/main/Play.gd" id="1_wevfn"]
 [ext_resource type="Script" uid="uid://cpm38840v4at" path="res://sciens/windows_UI/main/h_box_мафия.gd" id="2_2x2xx"]
 [ext_resource type="Script" uid="uid://biyxg0px0ciyv" path="res://sciens/windows_UI/main/margin_container.gd" id="2_4ad8q"]
+[ext_resource type="Texture2D" uid="uid://dkr8xm7rsi372" path="res://sprites/Фоны/Задний фон 1.png" id="3_ah64q"]
 [ext_resource type="Theme" uid="uid://cx0e6ps1ynwnf" path="res://sciens/windows_UI/Стили/tektst.tres" id="3_h278r"]
-[ext_resource type="Texture2D" uid="uid://j1eae5au0pbm" path="res://sprites/фре.png" id="3_xj8yt"]
-[ext_resource type="Theme" uid="uid://bxf6wdwvnb7wu" path="res://sciens/windows_UI/Стили/new_theme_but2.tres" id="3_xkv1l"]
-[ext_resource type="Script" uid="uid://b7hyrvnx45o2u" path="res://sciens/windows_UI/main/h_box_дон.gd" id="4_4qv0n"]
-[ext_resource type="Script" uid="uid://dgfy7om1kottd" path="res://sciens/windows_UI/main/h_box_мирный.gd" id="5_pq57i"]
+[ext_resource type="Script" uid="uid://vd26qrt788ls" path="res://sciens/windows_UI/main/h_box_дон.gd" id="4_4qv0n"]
+[ext_resource type="Texture2D" uid="uid://b5dogo8dft0c6" path="res://sprites/Фоны/Задний фон 2.png" id="4_kkqd1"]
+[ext_resource type="Script" uid="uid://cm7qpvdtnw8ly" path="res://sciens/windows_UI/main/h_box_мирный.gd" id="5_pq57i"]
 [ext_resource type="Script" uid="uid://d35twrrpde4rd" path="res://sciens/windows_UI/main/h_box_доктор.gd" id="6_f0q8f"]
-[ext_resource type="Script" uid="uid://dlq3o7snjwaxn" path="res://sciens/windows_UI/main/h_box_шериф.gd" id="7_awowo"]
+[ext_resource type="Theme" uid="uid://cnw3imrwgiwfw" path="res://sciens/windows_UI/Стили/Кнопка_выбора.tres" id="6_w6tmh"]
+[ext_resource type="Script" uid="uid://cqxgc52jrqiaa" path="res://sciens/windows_UI/main/h_box_шериф.gd" id="7_awowo"]
+[ext_resource type="Theme" uid="uid://dwj7i2bwr6qbc" path="res://sciens/windows_UI/Стили/аccent_text.tres" id="7_jibvd"]
+[ext_resource type="StyleBox" uid="uid://bu4f2dyvrx0wb" path="res://sciens/windows_UI/Стили/style_for_panelkis.tres" id="8_hwxkn"]
+[ext_resource type="Theme" uid="uid://dm5ksso32lkcf" path="res://sciens/windows_UI/Стили/основные_кнопки.tres" id="10_wsnh3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ad8q"]
-bg_color = Color(0.039215688, 0.039215688, 0.039215688, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xj8yt"]
-bg_color = Color(0, 0, 0, 0.80784315)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2x2xx"]
-bg_color = Color(0, 0, 0, 0.80784315)
-border_width_top = 1
-border_width_bottom = 1
-border_color = Color(0.2901961, 0.015686275, 0.015686275, 1)
+bg_color = Color(0, 0, 0, 0.29411766)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rc2ji"]
 bg_color = Color(0, 0, 0, 0.80784315)
@@ -36,7 +31,39 @@ grow_vertical = 2
 theme = ExtResource("3_h278r")
 script = ExtResource("1_wevfn")
 
-[node name="Panel" type="Panel" parent="." unique_id=75271525]
+[node name="Control" type="Control" parent="." unique_id=212608843]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=432523249]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ah64q")
+expand_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="Control" unique_id=70437249]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 68.543
+offset_bottom = 454.87708
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_kkqd1")
+expand_mode = 5
+
+[node name="Panel" type="Panel" parent="Control" unique_id=75271525]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -45,16 +72,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_4ad8q")
-
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1571629375]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_xj8yt")
-expand_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=142700411]
 layout_mode = 1
@@ -71,24 +88,24 @@ script = ExtResource("2_4ad8q")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=313969419]
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 10
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=791319621]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_xj8yt")
+theme = ExtResource("6_w6tmh")
 
 [node name="title" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer" unique_id=1921102319]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme = ExtResource("3_h278r")
+theme = ExtResource("7_jibvd")
 text = "Выберите количество ролей"
 horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="Мафия" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=680318223]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_2x2xx")
+theme_override_styles/panel = ExtResource("8_hwxkn")
 
 [node name="HBox_Мафия" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Мафия" unique_id=1501519160]
 custom_minimum_size = Vector2(0, 44)
@@ -99,40 +116,36 @@ script = ExtResource("2_2x2xx")
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Мафия/HBox_Мафия" unique_id=2018892319]
 layout_mode = 2
 size_flags_horizontal = 0
-text = "Мафия:"
-
-[node name="Разделитель 1" type="Control" parent="MarginContainer/VBoxContainer/Мафия/HBox_Мафия" unique_id=1371051026]
-custom_minimum_size = Vector2(14, 0)
-layout_mode = 2
+text = " Мафия:"
 
 [node name="count_label" type="Label" parent="MarginContainer/VBoxContainer/Мафия/HBox_Мафия" unique_id=1116488214]
 layout_mode = 2
 size_flags_horizontal = 6
 text = "1"
 
-[node name="Разделитель 2" type="Control" parent="MarginContainer/VBoxContainer/Мафия/HBox_Мафия" unique_id=836680566]
-custom_minimum_size = Vector2(35, 0)
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Мафия/HBox_Мафия" unique_id=783548981]
 layout_mode = 2
+theme_override_constants/separation = 8
 
-[node name="minus_button" type="Button" parent="MarginContainer/VBoxContainer/Мафия/HBox_Мафия" unique_id=796816815]
+[node name="minus_button" type="Button" parent="MarginContainer/VBoxContainer/Мафия/HBox_Мафия/HBoxContainer" unique_id=796816815]
 custom_minimum_size = Vector2(35, 35)
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
-theme = ExtResource("3_xkv1l")
+theme = ExtResource("10_wsnh3")
 text = "-"
 
-[node name="plus_button" type="Button" parent="MarginContainer/VBoxContainer/Мафия/HBox_Мафия" unique_id=1243913466]
+[node name="plus_button" type="Button" parent="MarginContainer/VBoxContainer/Мафия/HBox_Мафия/HBoxContainer" unique_id=1243913466]
 custom_minimum_size = Vector2(35, 35)
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
-theme = ExtResource("3_xkv1l")
+theme = ExtResource("10_wsnh3")
 text = "+"
 
 [node name="Мирный житель" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=1803750556]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_2x2xx")
+theme_override_styles/panel = ExtResource("8_hwxkn")
 
 [node name="HBox_Мирный" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Мирный житель" unique_id=40559486]
 custom_minimum_size = Vector2(0, 44)
@@ -144,19 +157,27 @@ script = ExtResource("5_pq57i")
 layout_mode = 2
 size_flags_horizontal = 0
 theme = ExtResource("3_h278r")
-text = "Мирный житель:"
+text = " Мирный:"
+
+[node name="Разделитель 1" type="Control" parent="MarginContainer/VBoxContainer/Мирный житель/HBox_Мирный" unique_id=1981116408]
+custom_minimum_size = Vector2(14, 0)
+layout_mode = 2
 
 [node name="count_label" type="Label" parent="MarginContainer/VBoxContainer/Мирный житель/HBox_Мирный" unique_id=225498895]
 layout_mode = 2
 size_flags_horizontal = 6
 text = "2"
 
+[node name="Разделитель 2" type="Control" parent="MarginContainer/VBoxContainer/Мирный житель/HBox_Мирный" unique_id=1277902193]
+custom_minimum_size = Vector2(35, 0)
+layout_mode = 2
+
 [node name="minus_button" type="Button" parent="MarginContainer/VBoxContainer/Мирный житель/HBox_Мирный" unique_id=56422414]
 custom_minimum_size = Vector2(35, 35)
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
-theme = ExtResource("3_xkv1l")
+theme = ExtResource("10_wsnh3")
 text = "-"
 
 [node name="plus_button" type="Button" parent="MarginContainer/VBoxContainer/Мирный житель/HBox_Мирный" unique_id=1710032771]
@@ -164,12 +185,12 @@ custom_minimum_size = Vector2(35, 35)
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
-theme = ExtResource("3_xkv1l")
+theme = ExtResource("10_wsnh3")
 text = "+"
 
 [node name="Дон" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=1341421511]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_2x2xx")
+theme_override_styles/panel = ExtResource("8_hwxkn")
 
 [node name="HBox_Дон" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Дон" unique_id=1754535520]
 custom_minimum_size = Vector2(0, 44)
@@ -180,7 +201,7 @@ script = ExtResource("4_4qv0n")
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Дон/HBox_Дон" unique_id=465152482]
 layout_mode = 2
 size_flags_horizontal = 0
-text = "Дон:"
+text = " Дон:"
 
 [node name="Разделитель 1" type="Control" parent="MarginContainer/VBoxContainer/Дон/HBox_Дон" unique_id=1879042559]
 custom_minimum_size = Vector2(38, 0)
@@ -200,7 +221,7 @@ custom_minimum_size = Vector2(35, 35)
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
-theme = ExtResource("3_xkv1l")
+theme = ExtResource("10_wsnh3")
 text = "-"
 
 [node name="plus_button" type="Button" parent="MarginContainer/VBoxContainer/Дон/HBox_Дон" unique_id=2076949708]
@@ -208,23 +229,23 @@ custom_minimum_size = Vector2(35, 35)
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
-theme = ExtResource("3_xkv1l")
+theme = ExtResource("10_wsnh3")
 text = "+"
 
 [node name="Доктор" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=2038379900]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_2x2xx")
+theme_override_styles/panel = ExtResource("8_hwxkn")
 
 [node name="HBox_Доктор" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Доктор" unique_id=893033469]
 custom_minimum_size = Vector2(0, 44)
 layout_mode = 2
-theme_override_constants/separation = 7
+theme_override_constants/separation = 4
 script = ExtResource("6_f0q8f")
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Доктор/HBox_Доктор" unique_id=1826366225]
 layout_mode = 2
 size_flags_horizontal = 0
-text = "Доктор:"
+text = " Доктор:"
 
 [node name="Разделитель 1" type="Control" parent="MarginContainer/VBoxContainer/Доктор/HBox_Доктор" unique_id=1390615546]
 custom_minimum_size = Vector2(14, 0)
@@ -244,7 +265,7 @@ custom_minimum_size = Vector2(35, 35)
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
-theme = ExtResource("3_xkv1l")
+theme = ExtResource("10_wsnh3")
 text = "-"
 
 [node name="plus_button" type="Button" parent="MarginContainer/VBoxContainer/Доктор/HBox_Доктор" unique_id=197618993]
@@ -252,12 +273,12 @@ custom_minimum_size = Vector2(35, 35)
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
-theme = ExtResource("3_xkv1l")
+theme = ExtResource("10_wsnh3")
 text = "+"
 
 [node name="Шериф" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=1798323580]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_2x2xx")
+theme_override_styles/panel = ExtResource("8_hwxkn")
 
 [node name="HBox_Шериф" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Шериф" unique_id=579149057]
 custom_minimum_size = Vector2(0, 44)
@@ -268,7 +289,7 @@ script = ExtResource("7_awowo")
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Шериф/HBox_Шериф" unique_id=757835546]
 layout_mode = 2
 size_flags_horizontal = 0
-text = "Шериф:"
+text = " Шериф:"
 
 [node name="Разделитель 1" type="Control" parent="MarginContainer/VBoxContainer/Шериф/HBox_Шериф" unique_id=351137873]
 custom_minimum_size = Vector2(13, 0)
@@ -288,7 +309,7 @@ custom_minimum_size = Vector2(35, 35)
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
-theme = ExtResource("3_xkv1l")
+theme = ExtResource("10_wsnh3")
 text = "-"
 
 [node name="plus_button" type="Button" parent="MarginContainer/VBoxContainer/Шериф/HBox_Шериф" unique_id=1774004195]
@@ -296,7 +317,7 @@ custom_minimum_size = Vector2(35, 35)
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
-theme = ExtResource("3_xkv1l")
+theme = ExtResource("10_wsnh3")
 text = "+"
 
 [node name="PanelContainer2" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=1782022415]
@@ -308,15 +329,13 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer2/HBoxContainer" unique_id=789751159]
 layout_mode = 2
+theme = ExtResource("7_jibvd")
 text = "Общее количество игроков: "
 
 [node name="Count" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer2/HBoxContainer" unique_id=1984039121]
 layout_mode = 2
+theme = ExtResource("7_jibvd")
 text = "3"
-
-[node name="Control" type="Control" parent="MarginContainer/VBoxContainer" unique_id=951624415]
-custom_minimum_size = Vector2(0, 60)
-layout_mode = 2
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=403365536]
 layout_mode = 2
@@ -325,7 +344,7 @@ size_flags_vertical = 8
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=464530573]
 custom_minimum_size = Vector2(60, 35)
 layout_mode = 2
-theme = ExtResource("3_xkv1l")
+theme = ExtResource("10_wsnh3")
 text = "Назад"
 
 [node name="Button2" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=597072632]
@@ -333,7 +352,7 @@ custom_minimum_size = Vector2(60, 35)
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
-theme = ExtResource("3_xkv1l")
+theme = ExtResource("10_wsnh3")
 text = "Далее"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/Button" to="." method="_on_button_pressed"]

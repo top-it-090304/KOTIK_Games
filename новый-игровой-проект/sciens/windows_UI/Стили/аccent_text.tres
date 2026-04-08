@@ -1,0 +1,10 @@
+[gd_resource type="Theme" format=3 uid="uid://dwj7i2bwr6qbc"]
+
+[ext_resource type="FontFile" uid="uid://2ymi0d58gn3r" path="res://Text_stule/Playwrite_AT/static/PlaywriteAT-Italic.ttf" id="1_8bor7"]
+
+[resource]
+default_font = ExtResource("1_8bor7")
+default_font_size = 19
+Label/colors/font_color = Color(0.84320605, 0.8487934, 0.9208969, 1)
+Label/colors/font_outline_color = Color(0.41579995, 0.4630266, 0.77, 0)
+Label/constants/outline_size = 4

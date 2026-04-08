@@ -2,26 +2,25 @@
 
 [ext_resource type="PackedScene" uid="uid://dv32f8gd4y1jg" path="res://sciens/windows_UI/main/Play.tscn" id="1_n5gs3"]
 [ext_resource type="Script" uid="uid://bsbri68bqil5s" path="res://sciens/windows_UI/Распределение ролей/control_расп.gd" id="1_sxa1l"]
+[ext_resource type="Texture2D" uid="uid://dkr8xm7rsi372" path="res://sprites/Фоны/Задний фон 1.png" id="2_ioh67"]
 [ext_resource type="Script" uid="uid://e6dplgl8srbn" path="res://sciens/windows_UI/Распределение ролей/menu.gd" id="3_v5n23"]
+[ext_resource type="Texture2D" uid="uid://b5dogo8dft0c6" path="res://sprites/Фоны/Задний фон 2.png" id="3_xqyvc"]
 [ext_resource type="Theme" uid="uid://cx0e6ps1ynwnf" path="res://sciens/windows_UI/Стили/tektst.tres" id="4_ive8x"]
 [ext_resource type="PackedScene" uid="uid://c5v2eartl5xfu" path="res://sciens/windows_UI/Распределение ролей/panel.tscn" id="5_slymg"]
 [ext_resource type="Theme" uid="uid://dm5ksso32lkcf" path="res://sciens/windows_UI/Стили/основные_кнопки.tres" id="6_wg8vd"]
+[ext_resource type="Texture2D" uid="uid://cqbplhyixukgp" path="res://sprites/Фоны/Задний фон 1 день.png" id="9_nk2wa"]
+[ext_resource type="Texture2D" uid="uid://cvb7ge5pyiyof" path="res://sprites/Фоны/Задний фон 2 день.png" id="10_4uu0p"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sxa1l"]
 bg_color = Color(0.039215688, 0.039215688, 0.039215688, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ive8x"]
-bg_color = Color(0.8510876, 0.768821, 0.37911937, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0.5019608, 0.03137255, 0.03137255, 1)
-border_blend = true
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+bg_color = Color(0.38431373, 0.4, 0.54901963, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5n23"]
 bg_color = Color(0.7019608, 0.5921569, 0, 0.8117647)
@@ -115,6 +114,74 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sxa1l")
 
+[node name="Night" type="Control" parent="." unique_id=752560229]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Night" unique_id=2144005846]
+self_modulate = Color(0.528, 0.5496, 0.6, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ioh67")
+expand_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="Night" unique_id=594702785]
+self_modulate = Color(0.2604, 0.27901998, 0.42, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 117.718
+offset_bottom = 504.05298
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_xqyvc")
+expand_mode = 5
+
+[node name="Day" type="Control" parent="." unique_id=249678775]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Day" unique_id=225598733]
+modulate = Color(0.83, 0.83, 0.83, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 386.33337
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_nk2wa")
+expand_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="Day" unique_id=1295216196]
+self_modulate = Color(0.75, 0.75, 0.75, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 112.663
+offset_bottom = 498.99646
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_4uu0p")
+expand_mode = 5
+
 [node name="Panel" parent="." unique_id=1544003752 instance=ExtResource("5_slymg")]
 visible = false
 layout_mode = 1
@@ -134,6 +201,7 @@ grow_vertical = 2
 script = ExtResource("3_v5n23")
 
 [node name="Panel" type="Panel" parent="Menu" unique_id=734876090]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -194,7 +262,6 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_slymg")
 text = "Игрок 1"
 
 [node name="ForMafia" type="Control" parent="." unique_id=923831909]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -204,6 +271,7 @@ grow_vertical = 2
 script = ExtResource("3_v5n23")
 
 [node name="Panel" type="Panel" parent="ForMafia" unique_id=243060774]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -229,8 +297,12 @@ layout_mode = 2
 size_flags_vertical = 0
 theme_override_constants/separation = 8
 
+[node name="Control" type="Control" parent="ForMafia/MarginContainer/VBoxContainer" unique_id=1114153416]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
 [node name="PanelContainer" type="PanelContainer" parent="ForMafia/MarginContainer/VBoxContainer" unique_id=754281662]
-custom_minimum_size = Vector2(200, 35)
+custom_minimum_size = Vector2(231.835, 35.535)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -238,15 +310,11 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_ive8x")
 
 [node name="Label" type="Label" parent="ForMafia/MarginContainer/VBoxContainer/PanelContainer" unique_id=381750422]
 layout_mode = 2
-size_flags_horizontal = 4
 theme = ExtResource("6_wg8vd")
+theme_override_colors/font_color = Color(0.11372549, 0.1254902, 0.23137255, 1)
 text = "Мафия
 делает свой выбор"
 horizontal_alignment = 1
-
-[node name="Control" type="Control" parent="ForMafia/MarginContainer/VBoxContainer" unique_id=1114153416]
-custom_minimum_size = Vector2(0, 10)
-layout_mode = 2
 
 [node name="Button" type="Button" parent="ForMafia/MarginContainer" unique_id=2063526087]
 custom_minimum_size = Vector2(200, 30)
@@ -322,6 +390,7 @@ grow_vertical = 2
 script = ExtResource("3_v5n23")
 
 [node name="Panel" type="Panel" parent="ForDoctor" unique_id=1977854407]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -445,6 +514,7 @@ grow_vertical = 2
 script = ExtResource("3_v5n23")
 
 [node name="Panel" type="Panel" parent="ForDon" unique_id=1980707971]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -585,6 +655,7 @@ grow_vertical = 2
 script = ExtResource("3_v5n23")
 
 [node name="Panel" type="Panel" parent="ForSh" unique_id=16334743]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -725,6 +796,7 @@ grow_vertical = 2
 script = ExtResource("3_v5n23")
 
 [node name="Panel" type="Panel" parent="After_night" unique_id=1775324799]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

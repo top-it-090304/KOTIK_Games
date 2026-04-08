@@ -497,6 +497,7 @@ func after_night():
 		all_count = all_count - 1
 		name_arr.remove_at(index_dead_player)
 	For_af.show()
+	$Day.show()
 	duplicate_menu_af()
 	
 
