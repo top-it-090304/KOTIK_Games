@@ -9,8 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://c5v2eartl5xfu" path="res://sciens/windows_UI/Распределение ролей/panel.tscn" id="5_slymg"]
 [ext_resource type="Theme" uid="uid://dm5ksso32lkcf" path="res://sciens/windows_UI/Стили/основные_кнопки.tres" id="6_wg8vd"]
 [ext_resource type="Texture2D" uid="uid://cqbplhyixukgp" path="res://sprites/Фоны/Задний фон 1 день.png" id="9_nk2wa"]
+[ext_resource type="LabelSettings" uid="uid://dgt0sqv7gb6fd" path="res://sciens/windows_UI/Стили/Акцентный_текст_1.tres" id="9_umkeg"]
 [ext_resource type="Texture2D" uid="uid://cvb7ge5pyiyof" path="res://sprites/Фоны/Задний фон 2 день.png" id="10_4uu0p"]
 [ext_resource type="Theme" uid="uid://cnw3imrwgiwfw" path="res://sciens/windows_UI/Стили/Кнопка_выбора.tres" id="11_4uu0p"]
+[ext_resource type="StyleBox" uid="uid://38mye8n88v3k" path="res://sciens/windows_UI/Стили/Вон_там_у_егора_каторая_для_паузы_между_действиями.tres" id="12_0rw8h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_umkeg"]
 bg_color = Color(0, 0, 0, 0.3137255)
@@ -54,53 +56,7 @@ corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_slymg"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ioh67"]
-bg_color = Color(0.24313726, 0, 0.08627451, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
 [sub_resource type="ButtonGroup" id="ButtonGroup_e5n5q"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xqyvc"]
-bg_color = Color(0.4030914, 0.6778467, 0.401121, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.8934015, 0.8079801, 0.23277858, 1)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nk2wa"]
-bg_color = Color(0.69805783, 0.5936464, 0.17623413, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.7549476, 0.85703564, 0.3410657, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4uu0p"]
-bg_color = Color(0.85737944, 0.44521743, 0.6172111, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
 
 [node name="Control1" type="Control" unique_id=397175873]
 layout_mode = 3
@@ -243,6 +199,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_ive8x")
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Мафия делает свой выбор"
+label_settings = ExtResource("9_umkeg")
 
 [node name="Control" type="Control" parent="Menu/MarginContainer/VBoxContainer" unique_id=810695934]
 custom_minimum_size = Vector2(0, 10)
@@ -264,8 +221,10 @@ theme = ExtResource("4_ive8x")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxEmpty_slymg")
 text = "Игрок 1"
+label_settings = ExtResource("9_umkeg")
 
 [node name="ForMafia" type="Control" parent="." unique_id=923831909]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -318,6 +277,7 @@ theme = ExtResource("6_wg8vd")
 theme_override_colors/font_color = Color(0.11372549, 0.1254902, 0.23137255, 1)
 text = "Мафия
 делает свой выбор"
+label_settings = ExtResource("9_umkeg")
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="ForMafia/MarginContainer" unique_id=2063526087]
@@ -336,7 +296,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.47058824, 0.023529412, 0.023529412, 0.68235296)
+color = Color(0.49319527, 0.5619419, 0.5894406, 0.49803922)
 
 [node name="MarginContainer2" type="MarginContainer" parent="ForMafia" unique_id=1237015811]
 visible = false
@@ -356,7 +316,7 @@ process_mode = 3
 layout_mode = 2
 size_flags_vertical = 4
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_ioh67")
+theme_override_styles/panel = ExtResource("12_0rw8h")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ForMafia/MarginContainer2/PanelContainer" unique_id=1512813912]
 layout_mode = 2
@@ -365,11 +325,13 @@ layout_mode = 2
 layout_mode = 2
 theme = ExtResource("6_wg8vd")
 text = "Игрок:"
+label_settings = ExtResource("9_umkeg")
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="ForMafia/MarginContainer2/PanelContainer/VBoxContainer" unique_id=1589756498]
 layout_mode = 2
 text = "Мафия засыпает"
+label_settings = ExtResource("9_umkeg")
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="ForMafia" unique_id=166093597]
@@ -431,6 +393,7 @@ size_flags_horizontal = 4
 theme = ExtResource("6_wg8vd")
 text = "Доктор
 делает свой выбор"
+label_settings = ExtResource("9_umkeg")
 horizontal_alignment = 1
 
 [node name="Control" type="Control" parent="ForDoctor/MarginContainer/VBoxContainer" unique_id=1387675794]
@@ -454,7 +417,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.47058824, 0.023529412, 0.023529412, 0.68235296)
+color = Color(0.49411765, 0.56078434, 0.5882353, 0.49803922)
 
 [node name="MarginContainer2" type="MarginContainer" parent="ForDoctor" unique_id=203838533]
 visible = false
@@ -474,7 +437,7 @@ process_mode = 3
 layout_mode = 2
 size_flags_vertical = 4
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_ioh67")
+theme_override_styles/panel = ExtResource("12_0rw8h")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ForDoctor/MarginContainer2/PanelContainer" unique_id=868488094]
 layout_mode = 2
@@ -482,24 +445,27 @@ layout_mode = 2
 [node name="Label3" type="Label" parent="ForDoctor/MarginContainer2/PanelContainer/VBoxContainer" unique_id=1605393186]
 layout_mode = 2
 text = "Вы вылечили игрока:"
+label_settings = ExtResource("9_umkeg")
 horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="ForDoctor/MarginContainer2/PanelContainer/VBoxContainer" unique_id=520755837]
 layout_mode = 2
 theme = ExtResource("6_wg8vd")
 text = "Игрок"
+label_settings = ExtResource("9_umkeg")
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="ForDoctor/MarginContainer2/PanelContainer/VBoxContainer" unique_id=517312505]
 layout_mode = 2
 text = "Доктор засыпает"
+label_settings = ExtResource("9_umkeg")
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="ForDoctor" unique_id=760983376]
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 16.0
-theme = ExtResource("6_wg8vd")
+theme = ExtResource("11_4uu0p")
 toggle_mode = true
 button_group = SubResource("ButtonGroup_e5n5q")
 text = "Игорок 1"
@@ -554,6 +520,7 @@ size_flags_horizontal = 4
 theme = ExtResource("6_wg8vd")
 text = "Дон
 делает свой выбор"
+label_settings = ExtResource("9_umkeg")
 horizontal_alignment = 1
 
 [node name="Control" type="Control" parent="ForDon/MarginContainer/VBoxContainer" unique_id=1850772233]
@@ -576,7 +543,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.47058824, 0.023529412, 0.023529412, 0.68235296)
+color = Color(0.49411765, 0.56078434, 0.5882353, 0.49803922)
 
 [node name="MarginContainer2" type="MarginContainer" parent="ForDon" unique_id=328201766]
 visible = false
@@ -596,7 +563,7 @@ process_mode = 3
 layout_mode = 2
 size_flags_vertical = 4
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_ioh67")
+theme_override_styles/panel = ExtResource("12_0rw8h")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ForDon/MarginContainer2/PanelContainer" unique_id=162736186]
 layout_mode = 2
@@ -605,11 +572,13 @@ layout_mode = 2
 layout_mode = 2
 theme = ExtResource("6_wg8vd")
 text = "Игрок"
+label_settings = ExtResource("9_umkeg")
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="ForDon/MarginContainer2/PanelContainer/VBoxContainer" unique_id=1246295276]
 layout_mode = 2
 text = "ЯВЛЯЕТСЯ"
+label_settings = ExtResource("9_umkeg")
 horizontal_alignment = 1
 
 [node name="Control" type="Control" parent="ForDon/MarginContainer2/PanelContainer/VBoxContainer" unique_id=1358500725]
@@ -619,7 +588,7 @@ layout_mode = 2
 [node name="Button" type="Button" parent="ForDon/MarginContainer2/PanelContainer/VBoxContainer" unique_id=772313413]
 custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_xqyvc")
+theme = ExtResource("6_wg8vd")
 text = "Лечь спать"
 
 [node name="PanelContainer2" type="PanelContainer" parent="ForDon/MarginContainer2" unique_id=23236036]
@@ -627,18 +596,19 @@ visible = false
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_ioh67")
+theme_override_styles/panel = ExtResource("12_0rw8h")
 
 [node name="Label" type="Label" parent="ForDon/MarginContainer2/PanelContainer2" unique_id=494554181]
 layout_mode = 2
 text = "Дон засыпает"
+label_settings = ExtResource("9_umkeg")
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="ForDon" unique_id=2051829234]
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 16.0
-theme = ExtResource("6_wg8vd")
+theme = ExtResource("11_4uu0p")
 toggle_mode = true
 button_group = SubResource("ButtonGroup_e5n5q")
 text = "Игорок 1"
@@ -693,6 +663,7 @@ size_flags_horizontal = 4
 theme = ExtResource("6_wg8vd")
 text = "Шериф
 делает свой выбор"
+label_settings = ExtResource("9_umkeg")
 horizontal_alignment = 1
 
 [node name="Control" type="Control" parent="ForSh/MarginContainer/VBoxContainer" unique_id=1665999179]
@@ -716,7 +687,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.47058824, 0.023529412, 0.023529412, 0.68235296)
+color = Color(0.49411765, 0.56078434, 0.5882353, 0.49803922)
 
 [node name="MarginContainer2" type="MarginContainer" parent="ForSh" unique_id=486920289]
 visible = false
@@ -736,7 +707,7 @@ process_mode = 3
 layout_mode = 2
 size_flags_vertical = 4
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_ioh67")
+theme_override_styles/panel = ExtResource("12_0rw8h")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ForSh/MarginContainer2/PanelContainer" unique_id=718064771]
 layout_mode = 2
@@ -745,11 +716,13 @@ layout_mode = 2
 layout_mode = 2
 theme = ExtResource("6_wg8vd")
 text = "Игрок"
+label_settings = ExtResource("9_umkeg")
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="ForSh/MarginContainer2/PanelContainer/VBoxContainer" unique_id=368724678]
 layout_mode = 2
 text = "ЯВЛЯЕТСЯ"
+label_settings = ExtResource("9_umkeg")
 horizontal_alignment = 1
 
 [node name="Control" type="Control" parent="ForSh/MarginContainer2/PanelContainer/VBoxContainer" unique_id=242440524]
@@ -759,7 +732,7 @@ layout_mode = 2
 [node name="Button" type="Button" parent="ForSh/MarginContainer2/PanelContainer/VBoxContainer" unique_id=1415349477]
 custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_xqyvc")
+theme = ExtResource("6_wg8vd")
 text = "Лечь спать"
 
 [node name="PanelContainer2" type="PanelContainer" parent="ForSh/MarginContainer2" unique_id=1804584496]
@@ -767,18 +740,19 @@ visible = false
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_ioh67")
+theme_override_styles/panel = ExtResource("12_0rw8h")
 
 [node name="Label" type="Label" parent="ForSh/MarginContainer2/PanelContainer2" unique_id=1890044570]
 layout_mode = 2
 text = "Шериф засыпает"
+label_settings = ExtResource("9_umkeg")
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="ForSh" unique_id=1958202129]
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 16.0
-theme = ExtResource("6_wg8vd")
+theme = ExtResource("11_4uu0p")
 toggle_mode = true
 button_group = SubResource("ButtonGroup_e5n5q")
 text = "Игорок 1"
@@ -804,6 +778,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_sxa1l")
 
 [node name="MarginContainer" type="MarginContainer" parent="After_night" unique_id=916454563]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -816,6 +791,7 @@ theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="After_night/MarginContainer" unique_id=1895784772]
+visible = false
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_constants/separation = 8
@@ -825,7 +801,7 @@ custom_minimum_size = Vector2(200, 35)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_ive8x")
+theme_override_styles/panel = ExtResource("12_0rw8h")
 
 [node name="Label" type="Label" parent="After_night/MarginContainer/VBoxContainer/PanelContainer" unique_id=78755016]
 layout_mode = 2
@@ -833,6 +809,7 @@ size_flags_horizontal = 4
 theme = ExtResource("6_wg8vd")
 text = "Игроки выбирают,
 кто будет исключён"
+label_settings = ExtResource("9_umkeg")
 horizontal_alignment = 1
 
 [node name="Control" type="Control" parent="After_night/MarginContainer/VBoxContainer" unique_id=272927316]
@@ -849,14 +826,13 @@ disabled = true
 text = "Сделать выбор"
 
 [node name="ColorRect" type="ColorRect" parent="After_night" unique_id=1560541725]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.47058824, 0.023529412, 0.023529412, 0.68235296)
+color = Color(0.49411765, 0.56078434, 0.5882353, 0.49803922)
 
 [node name="MarginContainer2" type="MarginContainer" parent="After_night" unique_id=1417770643]
 visible = false
@@ -877,7 +853,7 @@ visible = false
 layout_mode = 2
 size_flags_vertical = 4
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_ioh67")
+theme_override_styles/panel = ExtResource("12_0rw8h")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="After_night/MarginContainer2/PanelContainer" unique_id=1208298365]
 layout_mode = 2
@@ -886,11 +862,14 @@ layout_mode = 2
 layout_mode = 2
 theme = ExtResource("6_wg8vd")
 text = "Убит"
+label_settings = ExtResource("9_umkeg")
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="After_night/MarginContainer2/PanelContainer/VBoxContainer" unique_id=1727932511]
 layout_mode = 2
+theme = ExtResource("6_wg8vd")
 text = "Вылечили"
+label_settings = ExtResource("9_umkeg")
 horizontal_alignment = 1
 
 [node name="Control" type="Control" parent="After_night/MarginContainer2/PanelContainer/VBoxContainer" unique_id=396424025]
@@ -908,11 +887,12 @@ visible = false
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_ioh67")
+theme_override_styles/panel = ExtResource("12_0rw8h")
 
 [node name="Label" type="Label" parent="After_night/MarginContainer2/PanelContainer2" unique_id=467132819]
 layout_mode = 2
 text = "Город засыпает"
+label_settings = ExtResource("9_umkeg")
 horizontal_alignment = 1
 
 [node name="PanelContainer3" type="PanelContainer" parent="After_night/MarginContainer2" unique_id=1817220448]
@@ -920,7 +900,7 @@ visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_nk2wa")
+theme_override_styles/panel = ExtResource("12_0rw8h")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="After_night/MarginContainer2/PanelContainer3" unique_id=1909621139]
 layout_mode = 2
@@ -928,16 +908,18 @@ layout_mode = 2
 [node name="Label" type="Label" parent="After_night/MarginContainer2/PanelContainer3/VBoxContainer" unique_id=1583329991]
 layout_mode = 2
 text = "Убит"
+label_settings = ExtResource("9_umkeg")
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="After_night/MarginContainer2/PanelContainer3/VBoxContainer" unique_id=140952879]
 layout_mode = 2
 text = "Вылечили"
+label_settings = ExtResource("9_umkeg")
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="After_night/MarginContainer2/PanelContainer3/VBoxContainer" unique_id=1437107903]
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_4uu0p")
+theme = ExtResource("6_wg8vd")
 text = "Далее"
 
 [node name="Button" type="Button" parent="After_night" unique_id=620799157]

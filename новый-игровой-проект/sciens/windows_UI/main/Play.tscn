@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://dlq3o7snjwaxn" path="res://sciens/windows_UI/main/h_box_шериф.gd" id="7_awowo"]
 [ext_resource type="Theme" uid="uid://dwj7i2bwr6qbc" path="res://sciens/windows_UI/Стили/аccent_text.tres" id="7_jibvd"]
 [ext_resource type="StyleBox" uid="uid://bu4f2dyvrx0wb" path="res://sciens/windows_UI/Стили/style_for_panelkis.tres" id="8_hwxkn"]
+[ext_resource type="LabelSettings" uid="uid://cx84npfc0nuue" path="res://sciens/windows_UI/Стили/Акцентный текст.tres" id="10_kkqd1"]
 [ext_resource type="Theme" uid="uid://dm5ksso32lkcf" path="res://sciens/windows_UI/Стили/основные_кнопки.tres" id="10_wsnh3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ad8q"]
@@ -118,12 +119,14 @@ custom_minimum_size = Vector2(85, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 text = " Мафия:"
+label_settings = ExtResource("10_kkqd1")
 
 [node name="count_label" type="Label" parent="MarginContainer/VBoxContainer/Мафия/HBox_Мафия" unique_id=1116488214]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 text = "1"
+label_settings = ExtResource("10_kkqd1")
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Мафия/HBox_Мафия" unique_id=783548981]
@@ -162,12 +165,14 @@ custom_minimum_size = Vector2(85, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 text = " Мирный:"
+label_settings = ExtResource("10_kkqd1")
 
 [node name="count_label" type="Label" parent="MarginContainer/VBoxContainer/Мирный житель/HBox_Мирный" unique_id=225498895]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 text = "2"
+label_settings = ExtResource("10_kkqd1")
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Мирный житель/HBox_Мирный" unique_id=1695570379]
@@ -205,12 +210,14 @@ custom_minimum_size = Vector2(85, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 text = " Дон:"
+label_settings = ExtResource("10_kkqd1")
 
 [node name="count_label" type="Label" parent="MarginContainer/VBoxContainer/Дон/HBox_Дон" unique_id=1569891079]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 text = "0"
+label_settings = ExtResource("10_kkqd1")
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Дон/HBox_Дон" unique_id=2016617329]
@@ -248,12 +255,14 @@ custom_minimum_size = Vector2(85, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 text = " Доктор:"
+label_settings = ExtResource("10_kkqd1")
 
 [node name="count_label" type="Label" parent="MarginContainer/VBoxContainer/Доктор/HBox_Доктор" unique_id=1659884302]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 text = "0"
+label_settings = ExtResource("10_kkqd1")
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Доктор/HBox_Доктор" unique_id=56204325]
@@ -291,12 +300,14 @@ custom_minimum_size = Vector2(85, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 text = " Шериф:"
+label_settings = ExtResource("10_kkqd1")
 
 [node name="count_label" type="Label" parent="MarginContainer/VBoxContainer/Шериф/HBox_Шериф" unique_id=167339133]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 text = "0"
+label_settings = ExtResource("10_kkqd1")
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Шериф/HBox_Шериф" unique_id=1256846622]
