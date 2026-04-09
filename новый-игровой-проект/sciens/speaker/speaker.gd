@@ -5,8 +5,11 @@ extends Control
 @onready var player_musics = $Speaker
 
 var phrases = {
-	"City_wake_up":"res://audio/Фразы/City_wake_up.mp3",
-	2:"res://audio/Фразы/Mafia_wake_up.mp3"
+	"City_wake_up":"res://audio/Фразы/MP3/City_wake_up.mp3",
+	"Doctor_falling_asleep":"res://audio/Фразы/MP3/Doctor_falling_asleep.mp3",
+	"Doctor_wake_up":"res://audio/Фразы/MP3/Doctor_wake_up.mp3",
+	"Mafia_falling_asleep":"res://audio/Фразы/MP3/Mafia_falling_asleep.mp3",
+	"Mafia_wake_up":"res://audio/Фразы/MP3/Mafia_wake_up.mp3"
 }
 
 var musics = {
@@ -19,7 +22,7 @@ var efects = {
 }
 
 func speaker_phrases(phrases_name):
-	player_speaker.stream(phrases[phrases_name])
+	player_speaker.set_stream(load(phrases[phrases_name]))
 	player_speaker.volume_db = AudioServer.get_bus_volume_db(3)
 	player_speaker.play()
 

@@ -17,6 +17,7 @@
 [ext_resource type="StyleBox" uid="uid://dn8ycw0vb7vrj" path="res://sciens/windows_UI/Стили/Вон_там_у_егора_каторая_для_паузы_между_действиями_днем.tres" id="14_ov7je"]
 [ext_resource type="LabelSettings" uid="uid://syhkflmb71d3" path="res://sciens/windows_UI/Стили/Акцентный_текст_2.tres" id="15_7p8vt"]
 [ext_resource type="Theme" uid="uid://cyvfjqsh3i5x5" path="res://sciens/windows_UI/Стили/основные_кнопки_днем.tres" id="16_7p8vt"]
+[ext_resource type="PackedScene" uid="uid://bvsrc7anpxvr8" path="res://sciens/speaker/speaker.tscn" id="18_6tuo6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_umkeg"]
 bg_color = Color(0, 0, 0, 0.3137255)
@@ -70,6 +71,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sxa1l")
+
+[node name="Speaker" parent="." unique_id=1066772267 instance=ExtResource("18_6tuo6")]
+layout_mode = 1
 
 [node name="Night" type="Control" parent="." unique_id=752560229]
 layout_mode = 1

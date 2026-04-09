@@ -10,6 +10,7 @@ extends Control
 @onready var For_don = $ForDon
 @onready var For_sh = $ForSh
 @onready var For_af = $After_night
+@onready var Speaker = $Speaker
 
 @onready var dalee_button: Button = $Play/MarginContainer/VBoxContainer/HBoxContainer2/Button2
 
@@ -223,6 +224,7 @@ func mafia_check():
 
 #Информация для мафии после сделаного выбора
 func mafia_after():
+	Speaker.speaker_phrases("Doctor_wake_up")
 	color_rect.visible = true
 	maf_chec.visible = true
 	var selected_button = my_button_group.get_pressed_button()
