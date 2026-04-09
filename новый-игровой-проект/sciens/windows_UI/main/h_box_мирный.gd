@@ -12,8 +12,8 @@ var current_players: int = 3
 signal players_count_changed(current_players)
 
 # Ссылки на узлы
-@onready var minus_button: Button = $minus_button
-@onready var plus_button: Button = $plus_button
+@onready var minus_button: Button = $HBoxContainer/minus_button
+@onready var plus_button: Button = $HBoxContainer/plus_button
 @onready var count_label: Label = $count_label
 
 func _ready():
