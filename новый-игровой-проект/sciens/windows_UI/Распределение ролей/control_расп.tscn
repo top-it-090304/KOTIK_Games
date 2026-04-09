@@ -10,6 +10,24 @@
 [ext_resource type="Theme" uid="uid://dm5ksso32lkcf" path="res://sciens/windows_UI/Стили/основные_кнопки.tres" id="6_wg8vd"]
 [ext_resource type="Texture2D" uid="uid://cqbplhyixukgp" path="res://sprites/Фоны/Задний фон 1 день.png" id="9_nk2wa"]
 [ext_resource type="Texture2D" uid="uid://cvb7ge5pyiyof" path="res://sprites/Фоны/Задний фон 2 день.png" id="10_4uu0p"]
+[ext_resource type="Theme" uid="uid://cnw3imrwgiwfw" path="res://sciens/windows_UI/Стили/Кнопка_выбора.tres" id="11_4uu0p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_umkeg"]
+bg_color = Color(0, 0, 0, 0.3137255)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0, 0, 0, 0.79607844)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+
+[sub_resource type="Theme" id="Theme_0rw8h"]
+Panel/styles/panel = SubResource("StyleBoxFlat_umkeg")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sxa1l"]
 bg_color = Color(0.039215688, 0.039215688, 0.039215688, 1)
@@ -102,7 +120,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="Night" unique_id=2144005846]
-self_modulate = Color(0.528, 0.5496, 0.6, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -113,7 +130,6 @@ texture = ExtResource("2_ioh67")
 expand_mode = 5
 
 [node name="TextureRect2" type="TextureRect" parent="Night" unique_id=594702785]
-self_modulate = Color(0.2604, 0.27901998, 0.42, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -137,7 +153,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="Day" unique_id=225598733]
-modulate = Color(0.83, 0.83, 0.83, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -149,7 +164,6 @@ texture = ExtResource("9_nk2wa")
 expand_mode = 5
 
 [node name="TextureRect2" type="TextureRect" parent="Day" unique_id=1295216196]
-self_modulate = Color(0.75, 0.75, 0.75, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -160,6 +174,17 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("10_4uu0p")
 expand_mode = 5
+
+[node name="Виньетка" type="Panel" parent="." unique_id=1242181644]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_0rw8h")
 
 [node name="Panel" parent="." unique_id=1544003752 instance=ExtResource("5_slymg")]
 visible = false
@@ -351,7 +376,7 @@ horizontal_alignment = 1
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 16.0
-theme = ExtResource("6_wg8vd")
+theme = ExtResource("11_4uu0p")
 toggle_mode = true
 button_group = SubResource("ButtonGroup_e5n5q")
 text = "Игорок 1"
