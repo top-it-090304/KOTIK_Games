@@ -335,6 +335,7 @@ label_settings = ExtResource("9_umkeg")
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="ForMafia" unique_id=166093597]
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 16.0
@@ -462,6 +463,7 @@ label_settings = ExtResource("9_umkeg")
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="ForDoctor" unique_id=760983376]
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 16.0
@@ -605,6 +607,7 @@ label_settings = ExtResource("9_umkeg")
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="ForDon" unique_id=2051829234]
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 16.0
@@ -749,6 +752,7 @@ label_settings = ExtResource("9_umkeg")
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="ForSh" unique_id=1958202129]
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 16.0
@@ -778,7 +782,6 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_sxa1l")
 
 [node name="MarginContainer" type="MarginContainer" parent="After_night" unique_id=916454563]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -791,7 +794,6 @@ theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="After_night/MarginContainer" unique_id=1895784772]
-visible = false
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_constants/separation = 8
@@ -826,6 +828,7 @@ disabled = true
 text = "Сделать выбор"
 
 [node name="ColorRect" type="ColorRect" parent="After_night" unique_id=1560541725]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -924,6 +927,7 @@ text = "Далее"
 
 [node name="Button" type="Button" parent="After_night" unique_id=620799157]
 visible = false
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 16.0
