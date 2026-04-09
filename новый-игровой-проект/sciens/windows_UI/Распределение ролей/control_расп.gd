@@ -25,6 +25,8 @@ extends Control
 
 @onready var menu_panel_M: Button = $ForMafia/Button
 
+@onready var start_night: Button = $Start/PanelContainer2/Button
+
 @onready var where_label_M = $ForMafia/MarginContainer/VBoxContainer
 
 signal value_changed(all_count)
@@ -103,8 +105,8 @@ func Daleerol_pressed():
 		hide_all_panels()
 		player_panels[current_panel_index].visible = false
 		#duplicate_menu_player()
-		duplicate_menu_maf()
-		For_maf.show()
+		$Start.show()
+		start_night.pressed.connect(first_night)
 		#menu_panel.show()
 		print(name_arr)
 		#name_changed.emit(name_arr)
@@ -112,6 +114,10 @@ func Daleerol_pressed():
 		current_panel_index = current_panel_index + 1
 		show_current_panel()
 
+func first_night():
+	$Start.hide()
+	duplicate_menu_maf()
+	For_maf.show()
 
 func duplicate_panels_for_players():
 	# Скрываем оригинальную панель (она будет шаблоном)
@@ -184,6 +190,8 @@ var index_dead_player
 
 #Делаем дубликаты кнопок для Мафии (Кого они могут убить)
 func duplicate_menu_maf():
+	menu_maf_dub = []
+	my_button_group = ButtonGroup.new()
 	# Скрываем оригинальную панель (она будет шаблоном)
 	menu_panel_M.visible = false
 	my_button_group.allow_unpress = true
@@ -236,8 +244,24 @@ func mafia_after():
 		await get_tree().create_timer(5.0, true).timeout
 		get_tree().paused = false
 		For_maf.hide()
-		For_doc.show()
-		duplicate_menu_doc()
+		color_rect.visible = false
+		maf_chec.visible = false
+		for child in where_label_M.get_children():
+			if child is Button:
+				child.queue_free()
+		if doc_count == 1:
+			For_doc.show()
+			duplicate_menu_doc()
+		else:
+			if don_count == 1:
+				For_don.show()
+				duplicate_menu_don()
+			else:
+				if sh_count == 1:
+					For_sh.show()
+					duplicate_menu_sh()
+				else:
+					after_night()
 
 
 
@@ -255,6 +279,8 @@ var index_heal_player
 
 #Делаем дубликаты кнопок для Мафии (Кого они могут убить)
 func duplicate_menu_doc():
+	menu_doc_dub = []
+	my_button_group_doc = ButtonGroup.new()
 	# Скрываем оригинальную панель (она будет шаблоном)
 	menu_panel_D.visible = false
 	my_button_group_doc.allow_unpress = true
@@ -315,9 +341,21 @@ func doctor_after():
 	await get_tree().create_timer(5.0, true).timeout
 	get_tree().paused = false
 	For_doc.hide()
-	#Для теста
-	For_don.show()
-	duplicate_menu_don()
+	color_rect_doc.visible = false
+	doc_chec.visible = false
+	for child in where_label_D.get_children():
+			if child is Button:
+				child.queue_free()
+	if don_count == 1:
+		For_don.show()
+		duplicate_menu_don()
+	else:
+		if sh_count == 1:
+			For_sh.show()
+			duplicate_menu_sh()
+		else:
+			after_night()
+
 	#after_night()
 
 	
@@ -334,6 +372,8 @@ var my_button_group_don = ButtonGroup.new()
 
 #Делаем дубликаты кнопок для Дона (Кого он может проверить на шерифа)
 func duplicate_menu_don():
+	menu_don_dub = []
+	my_button_group_don = ButtonGroup.new()
 	# Скрываем оригинальную панель (она будет шаблоном)
 	menu_panel_Don.visible = false
 	my_button_group_don.allow_unpress = true
@@ -392,6 +432,7 @@ func don_after():
 	ForDon_sleep.pressed.connect(don_sleep)
 	color_rect_don.visible = true
 	don_chec.visible = true
+	don_go_sleep1.visible = true
 
 #Остановка после нажатия кнопки ЛЕЧЬ СПАТЬ
 func don_sleep():
@@ -401,8 +442,17 @@ func don_sleep():
 	await get_tree().create_timer(5.0, true).timeout
 	get_tree().paused = false
 	For_don.hide()
-	For_sh.show()
-	duplicate_menu_sh()
+	don_go_sleep2.visible = false
+	color_rect_don.visible = false
+	don_chec.visible = false
+	for child in where_label_Don.get_children():
+			if child is Button:
+				child.queue_free()
+	if sh_count == 1:
+		For_sh.show()
+		duplicate_menu_sh()
+	else:
+		after_night()
 
 
 
@@ -419,6 +469,8 @@ var my_button_group_sh = ButtonGroup.new()
 
 #Делаем дубликаты кнопок для Мафии (Кого они могут убить)
 func duplicate_menu_sh():
+	menu_sh_dub = []
+	my_button_group_sh = ButtonGroup.new()
 	# Скрываем оригинальную панель (она будет шаблоном)
 	menu_panel_Sh.visible = false
 	my_button_group_sh.allow_unpress = true
@@ -477,6 +529,7 @@ func sh_after():
 	ForSh_sleep.pressed.connect(sh_sleep)
 	color_rect_sh.visible = true
 	sh_chec.visible = true
+	sh_go_sleep1.visible = true
 
 
 func sh_sleep():
@@ -486,6 +539,12 @@ func sh_sleep():
 	await get_tree().create_timer(5.0, true).timeout
 	get_tree().paused = false
 	For_sh.hide()
+	sh_go_sleep2.visible = false
+	color_rect_sh.visible = false
+	sh_chec.visible = false
+	for child in where_label_Sh.get_children():
+			if child is Button:
+				child.queue_free()
 	after_night()
 
 
@@ -496,14 +555,19 @@ var heal_name
 
 func after_night():
 	dead_name = name_arr[index_dead_player]
-	heal_name = name_arr[index_heal_player]
+	if doc_count == 1:
+		heal_name = name_arr[index_heal_player]
 	if index_heal_player != index_dead_player:
 		all_count = all_count - 1
 		name_arr.remove_at(index_dead_player)
-	For_af.show()
-	$Day.show()
-	duplicate_menu_af()
-	
+		rol_arr_2.remove_at(index_dead_player)
+	if (all_count - mafia_count - don_count <= mafia_count + don_count) or (mafia_count + don_count == 0):
+		$End.show()
+	else:
+		For_af.show()
+		$Day.show()
+		duplicate_menu_af()
+
 
 @onready var menu_panel_Af: Button = $After_night/Button
 @onready var where_label_Af = $After_night/MarginContainer/VBoxContainer
@@ -515,6 +579,8 @@ var my_button_group_af = ButtonGroup.new()
 
 #Делаем дубликаты кнопок для Мафии (Кого они могут убить)
 func duplicate_menu_af():
+	menu_af_dub = []
+	my_button_group_af = ButtonGroup.new()
 	# Скрываем оригинальную панель (она будет шаблоном)
 	menu_panel_Af.visible = false
 	my_button_group_af.allow_unpress = true
@@ -563,6 +629,17 @@ func af_after():
 	var selected_button = my_button_group_af.get_pressed_button()
 	if selected_button:
 		var player_name = selected_button.text
+		var index_removed_player = name_arr.find(player_name)
+		all_count = all_count - 1
+		name_arr.remove_at(index_removed_player)
+		var what_rol_dead = rol_arr_2[index_removed_player]
+		rol_arr_2.remove_at(index_removed_player)
+		if what_rol_dead == 0:
+			sh_count = sh_count - 1
+		if what_rol_dead == 4:
+			doc_count = doc_count - 1
+		if what_rol_dead == 5:
+			don_count = don_count - 1
 		af_after_test.text = "Игрок: '" + player_name + "'"
 		#var i = name_arr.find(player_name)
 		af_after_test2.text = "Исключён"
@@ -572,8 +649,27 @@ func af_after():
 	af_go_sleep1.visible = true
 
 func af_sleep():
-	af_go_sleep1.visible = false
-	af_go_sleep2.visible = true
+	if (all_count - mafia_count - don_count <= mafia_count + don_count) or (mafia_count + don_count == 0):
+		For_af.hide()
+		$End.show()
+	else:
+		af_go_sleep1.visible = false
+		af_go_sleep2.visible = true
+		get_tree().paused = true
+		await get_tree().create_timer(5.0, true).timeout
+		get_tree().paused = false
+		For_af.hide()
+		$Day.hide()
+		$Night.show()
+		af_go_sleep2.visible = false
+		color_rect_af.visible = false
+		af_chec.visible = false
+		for child in where_label_Af.get_children():
+			if child is Button:
+				child.queue_free()
+		For_maf.show()
+		duplicate_menu_maf()
+
 
 
 @onready var dead_person = $After_night/MarginContainer2/PanelContainer3/VBoxContainer/Label
@@ -586,7 +682,9 @@ func info_after_night():
 	color_rect_af.visible = true
 	info_person.visible = true
 	dead_person.text = "Игрок: '" + dead_name + "' убит"
-	heal_person.text = "Игрок: '" + heal_name + "' вылечен"
+	if doc_count == 1:
+		heal_person.text = "Игрок: '" + heal_name + "' вылечен"
+		heal_name = null
 	info_dalee.pressed.connect(after_show_info)
 
 func after_show_info():
