@@ -57,6 +57,7 @@ func _ready() -> void:
 #(Нужна для того, чтобы использовался только последний вариант имени)
 func app_name(player_name):
 	pl_name_glob = player_name
+	print("55)", pl_name_glob)
 
 func hide_all_panels():
 	play_panel.hide()
@@ -96,6 +97,7 @@ func dalee_pressed():
 
 func Daleerol_pressed():
 	name_arr.append(pl_name_glob)
+	print("1)", pl_name_glob)
 	if rand == -1:
 		hide_all_panels()
 		player_panels[current_panel_index].visible = false
