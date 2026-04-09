@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://syhkflmb71d3"]
+
+[ext_resource type="FontFile" uid="uid://bdavpitu1xtic" path="res://Text_stule/Playwrite_AT/PlaywriteAT-Italic-VariableFont_wght.ttf" id="1_wm4i5"]
+
+[resource]
+font = ExtResource("1_wm4i5")
+font_size = 18
+font_color = Color(0.8682848, 0.80912876, 0.6168716, 1)
+outline_size = 1
+outline_color = Color(0.7577994, 0.6813663, 0.5503382, 1)

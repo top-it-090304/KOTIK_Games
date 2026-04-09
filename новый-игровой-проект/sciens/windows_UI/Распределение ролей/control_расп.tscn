@@ -13,6 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://cvb7ge5pyiyof" path="res://sprites/Фоны/Задний фон 2 день.png" id="10_4uu0p"]
 [ext_resource type="Theme" uid="uid://cnw3imrwgiwfw" path="res://sciens/windows_UI/Стили/Кнопка_выбора.tres" id="11_4uu0p"]
 [ext_resource type="StyleBox" uid="uid://38mye8n88v3k" path="res://sciens/windows_UI/Стили/Вон_там_у_егора_каторая_для_паузы_между_действиями.tres" id="12_0rw8h"]
+[ext_resource type="Theme" uid="uid://ww4mnka8dogh" path="res://sciens/windows_UI/Стили/Кнопка_выбора_днем.tres" id="13_7p8vt"]
+[ext_resource type="StyleBox" uid="uid://dn8ycw0vb7vrj" path="res://sciens/windows_UI/Стили/Вон_там_у_егора_каторая_для_паузы_между_действиями_днем.tres" id="14_ov7je"]
+[ext_resource type="LabelSettings" uid="uid://syhkflmb71d3" path="res://sciens/windows_UI/Стили/Акцентный_текст_2.tres" id="15_7p8vt"]
+[ext_resource type="Theme" uid="uid://cyvfjqsh3i5x5" path="res://sciens/windows_UI/Стили/основные_кнопки_днем.tres" id="16_7p8vt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_umkeg"]
 bg_color = Color(0, 0, 0, 0.3137255)
@@ -34,14 +38,6 @@ Panel/styles/panel = SubResource("StyleBoxFlat_umkeg")
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sxa1l"]
 bg_color = Color(0.039215688, 0.039215688, 0.039215688, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ive8x"]
-bg_color = Color(0.38431373, 0.4, 0.54901963, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-corner_detail = 4
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5n23"]
 bg_color = Color(0.7019608, 0.5921569, 0, 0.8117647)
 border_width_left = 2
@@ -55,6 +51,14 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_slymg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ive8x"]
+bg_color = Color(0.38431373, 0.4, 0.54901963, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 4
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_e5n5q"]
 
@@ -193,7 +197,7 @@ custom_minimum_size = Vector2(200, 35)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_ive8x")
+theme_override_styles/panel = ExtResource("12_0rw8h")
 
 [node name="Label" type="Label" parent="Menu/MarginContainer/VBoxContainer/PanelContainer" unique_id=1731979464]
 layout_mode = 2
@@ -386,7 +390,7 @@ custom_minimum_size = Vector2(200, 35)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_ive8x")
+theme_override_styles/panel = ExtResource("12_0rw8h")
 
 [node name="Label" type="Label" parent="ForDoctor/MarginContainer/VBoxContainer/PanelContainer" unique_id=700391723]
 layout_mode = 2
@@ -514,7 +518,7 @@ custom_minimum_size = Vector2(200, 35)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_ive8x")
+theme_override_styles/panel = ExtResource("12_0rw8h")
 
 [node name="Label" type="Label" parent="ForDon/MarginContainer/VBoxContainer/PanelContainer" unique_id=462522512]
 layout_mode = 2
@@ -658,7 +662,7 @@ custom_minimum_size = Vector2(200, 35)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_ive8x")
+theme_override_styles/panel = ExtResource("12_0rw8h")
 
 [node name="Label" type="Label" parent="ForSh/MarginContainer/VBoxContainer/PanelContainer" unique_id=239341103]
 layout_mode = 2
@@ -803,7 +807,7 @@ custom_minimum_size = Vector2(200, 35)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/panel = ExtResource("12_0rw8h")
+theme_override_styles/panel = ExtResource("14_ov7je")
 
 [node name="Label" type="Label" parent="After_night/MarginContainer/VBoxContainer/PanelContainer" unique_id=78755016]
 layout_mode = 2
@@ -811,7 +815,7 @@ size_flags_horizontal = 4
 theme = ExtResource("6_wg8vd")
 text = "Игроки выбирают,
 кто будет исключён"
-label_settings = ExtResource("9_umkeg")
+label_settings = ExtResource("15_7p8vt")
 horizontal_alignment = 1
 
 [node name="Control" type="Control" parent="After_night/MarginContainer/VBoxContainer" unique_id=272927316]
@@ -823,7 +827,7 @@ custom_minimum_size = Vector2(200, 30)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-theme = ExtResource("6_wg8vd")
+theme = ExtResource("16_7p8vt")
 disabled = true
 text = "Сделать выбор"
 
@@ -835,7 +839,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.49411765, 0.56078434, 0.5882353, 0.49803922)
+color = Color(0.5882354, 0.5654943, 0.4941176, 0.49803922)
 
 [node name="MarginContainer2" type="MarginContainer" parent="After_night" unique_id=1417770643]
 visible = false
@@ -856,7 +860,7 @@ visible = false
 layout_mode = 2
 size_flags_vertical = 4
 mouse_filter = 1
-theme_override_styles/panel = ExtResource("12_0rw8h")
+theme_override_styles/panel = ExtResource("14_ov7je")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="After_night/MarginContainer2/PanelContainer" unique_id=1208298365]
 layout_mode = 2
@@ -865,14 +869,14 @@ layout_mode = 2
 layout_mode = 2
 theme = ExtResource("6_wg8vd")
 text = "Убит"
-label_settings = ExtResource("9_umkeg")
+label_settings = ExtResource("15_7p8vt")
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="After_night/MarginContainer2/PanelContainer/VBoxContainer" unique_id=1727932511]
 layout_mode = 2
 theme = ExtResource("6_wg8vd")
 text = "Вылечили"
-label_settings = ExtResource("9_umkeg")
+label_settings = ExtResource("15_7p8vt")
 horizontal_alignment = 1
 
 [node name="Control" type="Control" parent="After_night/MarginContainer2/PanelContainer/VBoxContainer" unique_id=396424025]
@@ -882,7 +886,7 @@ layout_mode = 2
 [node name="Button" type="Button" parent="After_night/MarginContainer2/PanelContainer/VBoxContainer" unique_id=32495112]
 custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
-theme = ExtResource("6_wg8vd")
+theme = ExtResource("16_7p8vt")
 text = "Далее"
 
 [node name="PanelContainer2" type="PanelContainer" parent="After_night/MarginContainer2" unique_id=1676544145]
@@ -890,12 +894,12 @@ visible = false
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_styles/panel = ExtResource("12_0rw8h")
+theme_override_styles/panel = ExtResource("14_ov7je")
 
 [node name="Label" type="Label" parent="After_night/MarginContainer2/PanelContainer2" unique_id=467132819]
 layout_mode = 2
 text = "Город засыпает"
-label_settings = ExtResource("9_umkeg")
+label_settings = ExtResource("15_7p8vt")
 horizontal_alignment = 1
 
 [node name="PanelContainer3" type="PanelContainer" parent="After_night/MarginContainer2" unique_id=1817220448]
@@ -903,7 +907,7 @@ visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/panel = ExtResource("12_0rw8h")
+theme_override_styles/panel = ExtResource("14_ov7je")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="After_night/MarginContainer2/PanelContainer3" unique_id=1909621139]
 layout_mode = 2
@@ -911,18 +915,18 @@ layout_mode = 2
 [node name="Label" type="Label" parent="After_night/MarginContainer2/PanelContainer3/VBoxContainer" unique_id=1583329991]
 layout_mode = 2
 text = "Убит"
-label_settings = ExtResource("9_umkeg")
+label_settings = ExtResource("15_7p8vt")
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="After_night/MarginContainer2/PanelContainer3/VBoxContainer" unique_id=140952879]
 layout_mode = 2
 text = "Вылечили"
-label_settings = ExtResource("9_umkeg")
+label_settings = ExtResource("15_7p8vt")
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="After_night/MarginContainer2/PanelContainer3/VBoxContainer" unique_id=1437107903]
 layout_mode = 2
-theme = ExtResource("6_wg8vd")
+theme = ExtResource("16_7p8vt")
 text = "Далее"
 
 [node name="Button" type="Button" parent="After_night" unique_id=620799157]
@@ -931,7 +935,7 @@ custom_minimum_size = Vector2(0, 30)
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 16.0
-theme = ExtResource("6_wg8vd")
+theme = ExtResource("13_7p8vt")
 toggle_mode = true
 button_group = SubResource("ButtonGroup_e5n5q")
 text = "Игорок 1"
