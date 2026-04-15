@@ -12,15 +12,17 @@
 [ext_resource type="Texture2D" uid="uid://to78ujs5525t" path="res://sprites/Карточки/Любовница.png" id="7_gcnhb"]
 [ext_resource type="Texture2D" uid="uid://d2b4l32wgeq7w" path="res://sprites/Карточки/Доктор.png" id="8_xp5vq"]
 [ext_resource type="PackedScene" uid="uid://bvsrc7anpxvr8" path="res://sciens/speaker/speaker.tscn" id="12_88a3v"]
+[ext_resource type="Texture2D" uid="uid://cicfh8it30ib7" path="res://sprites/Перевернуть.png" id="13_kd564"]
+[ext_resource type="Texture2D" uid="uid://cj6f08jyadyrh" path="res://sprites/Перевернуть2.png" id="14_6cg88"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sw6da"]
 bg_color = Color(0.0896, 0.09883999, 0.14, 1)
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_mn0c8"]
-diffuse_texture = ExtResource("5_u6t2v")
-
 [sub_resource type="CanvasTexture" id="CanvasTexture_sw6da"]
 diffuse_texture = ExtResource("2_cef3j")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_mn0c8"]
+diffuse_texture = ExtResource("5_u6t2v")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_trvlx"]
 animations = [{
@@ -56,6 +58,12 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_sw6da")
 script = ExtResource("1_ukqid")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1873619776]
+self_modulate = Color(0, 0, 0, 0.41568628)
+position = Vector2(151, 299)
+scale = Vector2(0.30500317, 0.28798753)
+texture = SubResource("CanvasTexture_sw6da")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1554782654]
 layout_mode = 1
@@ -112,6 +120,22 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="Перевернуть" type="Sprite2D" parent="." unique_id=438137698]
+self_modulate = Color(0.7490196, 0.7490196, 0.7490196, 0.9254902)
+position = Vector2(45, 321)
+scale = Vector2(0.4071303, 0.58626753)
+texture = ExtResource("13_kd564")
+flip_h = true
+
+[node name="Перевернуть3" type="Sprite2D" parent="." unique_id=1500013211]
+self_modulate = Color(0.7490196, 0.7490196, 0.7490196, 0.9254902)
+position = Vector2(247, 363)
+rotation = -3.1415925
+scale = Vector2(0.5092178, 0.58626753)
+texture = ExtResource("14_6cg88")
+flip_h = true
+flip_v = true
 
 [connection signal="editing_toggled" from="MarginContainer/VBoxContainer/LineEdit" to="." method="_on_line_edit_editing_toggled"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

@@ -344,6 +344,7 @@ theme = ExtResource("7_jibvd")
 text = "Общее количество игроков: "
 
 [node name="Count" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer2/HBoxContainer" unique_id=1984039121]
+custom_minimum_size = Vector2(47.345, 0)
 layout_mode = 2
 theme = ExtResource("7_jibvd")
 text = "3"

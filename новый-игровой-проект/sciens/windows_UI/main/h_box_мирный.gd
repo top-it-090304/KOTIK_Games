@@ -2,7 +2,7 @@ extends HBoxContainer
 
 # Экспортируемая переменная для настройки в инспекторе
 @export var min_players: int = 2
-@export var max_players: int = 9
+@export var max_players: int = 20
 @export var start_players: int = 2
 
 # Текущее количество игроков

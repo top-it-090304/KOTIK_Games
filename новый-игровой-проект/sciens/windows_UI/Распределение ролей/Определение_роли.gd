@@ -23,6 +23,8 @@ func changing_the_image(number_of_card):
 func _on_button_2_pressed() -> void:
 	#changing_thе_image(2)
 	if turned_over == false:
+		$"Перевернуть".visible = false
+		$"Перевернуть3".visible = false
 		card_animation.play("forward")
 		audio.sound_efect("upheaval")
 		turned_over = true

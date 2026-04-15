@@ -23,11 +23,11 @@ extends Control
 
 @onready var where_label = $Menu/MarginContainer/VBoxContainer
 
-@onready var menu_panel_M: Button = $ForMafia/Button
+@onready var menu_panel_M: Button = $ForMafia/ScrollContainer/VBoxContainer/Button
 
 @onready var start_night: Button = $Start/PanelContainer2/Button
 
-@onready var where_label_M = $ForMafia/MarginContainer/VBoxContainer
+@onready var where_label_M = $ForMafia/ScrollContainer/VBoxContainer
 
 signal value_changed(all_count)
 #signal name_changed(name_arr)
@@ -212,7 +212,7 @@ func mafia_kill():
 		if rol_arr_2[i] != 2 and rol_arr_2[i] != 5:
 			var current = menu_maf_dub[i]
 			current.text = name_arr[i]
-			current.pressed.connect(mafia_check)
+			current.pressed.connect(mafia_check)#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 			menu_maf_dub[i].visible = true
 
 @onready var ForMafia: Button = $ForMafia/MarginContainer/Button
@@ -565,7 +565,9 @@ func after_night():
 		$End.show()
 	else:
 		For_af.show()
+		$"Виньетка".hide()
 		$Day.show()
+		
 		duplicate_menu_af()
 
 
