@@ -268,8 +268,8 @@ func mafia_after():
 ####################################################################################################
 
 #ДЛЯ ДОКТОРА
-@onready var menu_panel_D: Button = $ForDoctor/Button
-@onready var where_label_D = $ForDoctor/MarginContainer/VBoxContainer
+@onready var menu_panel_D: Button = $ForDoctor/ScrollContainer/VBoxContainer/Button
+@onready var where_label_D = $ForDoctor/ScrollContainer/VBoxContainer
 
 var menu_doc_dub = []
 
@@ -363,8 +363,8 @@ func doctor_after():
 
 #ДЛЯ ДОНА
 
-@onready var menu_panel_Don: Button = $ForDon/Button
-@onready var where_label_Don = $ForDon/MarginContainer/VBoxContainer
+@onready var menu_panel_Don: Button = $ForDon/ScrollContainer/VBoxContainer/Button
+@onready var where_label_Don = $ForDon/ScrollContainer/VBoxContainer
 
 var menu_don_dub = []
 
@@ -460,8 +460,8 @@ func don_sleep():
 
 #ДЛЯ ШЕРИФА
 
-@onready var menu_panel_Sh: Button = $ForSh/Button
-@onready var where_label_Sh = $ForSh/MarginContainer/VBoxContainer
+@onready var menu_panel_Sh: Button = $ForSh/ScrollContainer/VBoxContainer/Button
+@onready var where_label_Sh = $ForSh/ScrollContainer/VBoxContainer
 
 var menu_sh_dub = []
 
@@ -571,8 +571,8 @@ func after_night():
 		duplicate_menu_af()
 
 
-@onready var menu_panel_Af: Button = $After_night/Button
-@onready var where_label_Af = $After_night/MarginContainer/VBoxContainer
+@onready var menu_panel_Af: Button = $After_night/ScrollContainer/VBoxContainer/Button
+@onready var where_label_Af = $After_night/ScrollContainer/VBoxContainer
 @onready var choice_Af = $After_night/MarginContainer
 
 var menu_af_dub = []
