@@ -18,11 +18,28 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sw6da"]
 bg_color = Color(0.0896, 0.09883999, 0.14, 1)
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_sw6da"]
-diffuse_texture = ExtResource("2_cef3j")
+[sub_resource type="Theme" id="Theme_6cg88"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gcnhb"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 30
+border_width_top = 30
+border_width_right = 30
+border_width_bottom = 30
+border_color = Color(0, 0, 0, 0)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="Theme" id="Theme_xp5vq"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_mn0c8"]
 diffuse_texture = ExtResource("5_u6t2v")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_sw6da"]
+diffuse_texture = ExtResource("2_cef3j")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_trvlx"]
 animations = [{
@@ -59,17 +76,34 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_sw6da")
 script = ExtResource("1_ukqid")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1873619776]
-self_modulate = Color(0, 0, 0, 0.41568628)
-position = Vector2(151, 299)
-scale = Vector2(0.30500317, 0.28798753)
-texture = SubResource("CanvasTexture_sw6da")
+[node name="Panel" type="Panel" parent="." unique_id=928965475]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 132.0
+offset_right = 281.0
+offset_bottom = 473.0
+theme = SubResource("Theme_6cg88")
+theme_override_styles/panel = SubResource("StyleBoxFlat_gcnhb")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1943685491]
+visible = false
+self_modulate = Color(0, 0, 0, 0.44313726)
+layout_mode = 0
+offset_left = 26.0
+offset_top = 146.0
+offset_right = 260.0
+offset_bottom = 470.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_xp5vq")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1554782654]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -8.5
+offset_right = 8.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 32
