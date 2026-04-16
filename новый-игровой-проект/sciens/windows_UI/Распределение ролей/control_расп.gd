@@ -23,7 +23,7 @@ extends Control
 
 @onready var where_label = $Menu/MarginContainer/VBoxContainer
 
-@onready var menu_panel_M: Button = $ForMafia/ScrollContainer/VBoxContainer/Button
+@onready var menu_panel_M: Button = $ForMafia/Button
 
 @onready var start_night: Button = $Start/PanelContainer2/Button
 

@@ -232,7 +232,6 @@ text = "Игрок 1"
 label_settings = ExtResource("9_umkeg")
 
 [node name="ForMafia" type="Control" parent="." unique_id=923831909]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -312,14 +311,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="ForMafia/ScrollContainer/VBoxContainer" unique_id=166093597]
-custom_minimum_size = Vector2(0, 30)
-layout_mode = 2
-theme = ExtResource("11_4uu0p")
-toggle_mode = true
-button_group = SubResource("ButtonGroup_e5n5q")
-text = "Игорок 1"
-
 [node name="ColorRect" type="ColorRect" parent="ForMafia" unique_id=368288746]
 visible = false
 layout_mode = 1
@@ -365,6 +356,18 @@ layout_mode = 2
 text = "Мафия засыпает"
 label_settings = ExtResource("9_umkeg")
 horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="ForMafia" unique_id=166093597]
+visible = false
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 0
+offset_top = 96.0
+offset_right = 72.0
+offset_bottom = 126.0
+theme = ExtResource("11_4uu0p")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_e5n5q")
+text = "Игорок 1"
 
 [node name="ForDoctor" type="Control" parent="." unique_id=233860107]
 visible = false
