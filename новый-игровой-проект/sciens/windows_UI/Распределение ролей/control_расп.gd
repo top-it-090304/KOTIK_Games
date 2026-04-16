@@ -642,6 +642,8 @@ func af_after():
 			doc_count = doc_count - 1
 		if what_rol_dead == 5:
 			don_count = don_count - 1
+		if what_rol_dead == 2:
+			mafia_count = mafia_count - 1
 		af_after_test.text = "Игрок: '" + player_name + "'"
 		#var i = name_arr.find(player_name)
 		af_after_test2.text = "Исключён"
