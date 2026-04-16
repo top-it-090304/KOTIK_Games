@@ -232,6 +232,7 @@ text = "Игрок 1"
 label_settings = ExtResource("9_umkeg")
 
 [node name="ForMafia" type="Control" parent="." unique_id=923831909]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -451,14 +452,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="ForDoctor/ScrollContainer/VBoxContainer" unique_id=760983376]
-custom_minimum_size = Vector2(0, 30)
-layout_mode = 2
-theme = ExtResource("11_4uu0p")
-toggle_mode = true
-button_group = SubResource("ButtonGroup_e5n5q")
-text = "Игорок 1"
-
 [node name="ColorRect" type="ColorRect" parent="ForDoctor" unique_id=536262112]
 visible = false
 layout_mode = 1
@@ -510,6 +503,18 @@ layout_mode = 2
 text = "Доктор засыпает"
 label_settings = ExtResource("9_umkeg")
 horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="ForDoctor" unique_id=760983376]
+visible = false
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 0
+offset_top = 96.0
+offset_right = 72.0
+offset_bottom = 126.0
+theme = ExtResource("11_4uu0p")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_e5n5q")
+text = "Игорок 1"
 
 [node name="ForDon" type="Control" parent="." unique_id=683900148]
 visible = false
@@ -592,14 +597,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="ForDon/ScrollContainer/VBoxContainer" unique_id=2051829234]
-custom_minimum_size = Vector2(0, 30)
-layout_mode = 2
-theme = ExtResource("11_4uu0p")
-toggle_mode = true
-button_group = SubResource("ButtonGroup_e5n5q")
-text = "Игорок 1"
-
 [node name="ColorRect" type="ColorRect" parent="ForDon" unique_id=1744706890]
 visible = false
 layout_mode = 1
@@ -668,6 +665,18 @@ layout_mode = 2
 text = "Дон засыпает"
 label_settings = ExtResource("9_umkeg")
 horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="ForDon" unique_id=2051829234]
+visible = false
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 0
+offset_top = 96.0
+offset_right = 72.0
+offset_bottom = 126.0
+theme = ExtResource("11_4uu0p")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_e5n5q")
+text = "Игорок 1"
 
 [node name="ForSh" type="Control" parent="." unique_id=1616007370]
 visible = false
@@ -751,14 +760,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="ForSh/ScrollContainer/VBoxContainer" unique_id=1958202129]
-custom_minimum_size = Vector2(0, 30)
-layout_mode = 2
-theme = ExtResource("11_4uu0p")
-toggle_mode = true
-button_group = SubResource("ButtonGroup_e5n5q")
-text = "Игорок 1"
-
 [node name="ColorRect" type="ColorRect" parent="ForSh" unique_id=1276100787]
 visible = false
 layout_mode = 1
@@ -827,6 +828,18 @@ layout_mode = 2
 text = "Шериф засыпает"
 label_settings = ExtResource("9_umkeg")
 horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="ForSh" unique_id=1958202129]
+visible = false
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 0
+offset_top = 96.0
+offset_right = 300.0
+offset_bottom = 126.0
+theme = ExtResource("11_4uu0p")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_e5n5q")
+text = "Игорок 1"
 
 [node name="After_night" type="Control" parent="." unique_id=563883058]
 visible = false
@@ -909,15 +922,6 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-
-[node name="Button" type="Button" parent="After_night/ScrollContainer/VBoxContainer" unique_id=620799157]
-visible = false
-custom_minimum_size = Vector2(0, 30)
-layout_mode = 2
-theme = ExtResource("13_7p8vt")
-toggle_mode = true
-button_group = SubResource("ButtonGroup_e5n5q")
-text = "Игорок 1"
 
 [node name="ColorRect" type="ColorRect" parent="After_night" unique_id=1560541725]
 visible = false
@@ -1016,6 +1020,18 @@ horizontal_alignment = 1
 layout_mode = 2
 theme = ExtResource("16_7p8vt")
 text = "Далее"
+
+[node name="Button" type="Button" parent="After_night" unique_id=620799157]
+visible = false
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 0
+offset_top = 96.0
+offset_right = 300.0
+offset_bottom = 126.0
+theme = ExtResource("13_7p8vt")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_e5n5q")
+text = "Игорок 1"
 
 [node name="End" type="Control" parent="." unique_id=66378296]
 visible = false
