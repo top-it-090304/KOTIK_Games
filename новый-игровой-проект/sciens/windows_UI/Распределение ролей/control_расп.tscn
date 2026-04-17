@@ -53,15 +53,20 @@ corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_slymg"]
 
+[sub_resource type="ButtonGroup" id="ButtonGroup_e5n5q"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ive8x"]
 bg_color = Color(0.38431373, 0.4, 0.54901963, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-corner_detail = 4
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_e5n5q"]
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+corner_detail = 6
 
 [node name="Control1" type="Control" unique_id=397175873]
 layout_mode = 3
@@ -266,14 +271,13 @@ theme_override_constants/margin_bottom = 20
 [node name="VBoxContainer" type="VBoxContainer" parent="ForMafia/MarginContainer" unique_id=1383126138]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_constants/separation = 8
 
 [node name="PanelContainer" type="PanelContainer" parent="ForMafia/MarginContainer/VBoxContainer" unique_id=754281662]
-custom_minimum_size = Vector2(231.835, 35.535)
+custom_minimum_size = Vector2(200, 35)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_ive8x")
+theme_override_styles/panel = ExtResource("12_0rw8h")
 
 [node name="Label" type="Label" parent="ForMafia/MarginContainer/VBoxContainer/PanelContainer" unique_id=381750422]
 layout_mode = 2
@@ -284,9 +288,18 @@ text = "Мафия
 label_settings = ExtResource("9_umkeg")
 horizontal_alignment = 1
 
-[node name="Control" type="Control" parent="ForMafia/MarginContainer/VBoxContainer" unique_id=1114153416]
+[node name="Control" type="Control" parent="ForMafia/MarginContainer/VBoxContainer" unique_id=1537429472]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ForMafia/MarginContainer/VBoxContainer" unique_id=502791562]
+custom_minimum_size = Vector2(300, 400)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ForMafia/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1965584287]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="Button" type="Button" parent="ForMafia/MarginContainer" unique_id=2063526087]
 custom_minimum_size = Vector2(200, 30)
@@ -294,23 +307,8 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 theme = ExtResource("6_wg8vd")
+disabled = true
 text = "Сделать выбор"
-
-[node name="ScrollContainer" type="ScrollContainer" parent="ForMafia" unique_id=502791562]
-custom_minimum_size = Vector2(300, 406.96)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 96.0
-offset_bottom = -70.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ForMafia/ScrollContainer" unique_id=1965584287]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 
 [node name="ColorRect" type="ColorRect" parent="ForMafia" unique_id=368288746]
 visible = false
@@ -423,9 +421,18 @@ text = "Доктор
 label_settings = ExtResource("9_umkeg")
 horizontal_alignment = 1
 
-[node name="Control" type="Control" parent="ForDoctor/MarginContainer/VBoxContainer" unique_id=1387675794]
+[node name="Control" type="Control" parent="ForDoctor/MarginContainer/VBoxContainer" unique_id=1956421256]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ForDoctor/MarginContainer/VBoxContainer" unique_id=1590844635]
+custom_minimum_size = Vector2(300, 406.96)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ForDoctor/MarginContainer/VBoxContainer/ScrollContainer" unique_id=509674395]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="Button" type="Button" parent="ForDoctor/MarginContainer" unique_id=370773138]
 custom_minimum_size = Vector2(200, 30)
@@ -435,22 +442,6 @@ size_flags_vertical = 8
 theme = ExtResource("6_wg8vd")
 disabled = true
 text = "Сделать выбор"
-
-[node name="ScrollContainer" type="ScrollContainer" parent="ForDoctor" unique_id=1590844635]
-custom_minimum_size = Vector2(300, 406.96)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 96.0
-offset_bottom = -70.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ForDoctor/ScrollContainer" unique_id=509674395]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 
 [node name="ColorRect" type="ColorRect" parent="ForDoctor" unique_id=536262112]
 visible = false
@@ -573,6 +564,15 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 
+[node name="ScrollContainer" type="ScrollContainer" parent="ForDon/MarginContainer/VBoxContainer" unique_id=207410846]
+custom_minimum_size = Vector2(300, 406.96)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ForDon/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1194658628]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
 [node name="Button" type="Button" parent="ForDon/MarginContainer" unique_id=1212733058]
 custom_minimum_size = Vector2(200, 30)
 layout_mode = 2
@@ -580,22 +580,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 theme = ExtResource("6_wg8vd")
 text = "Сделать выбор"
-
-[node name="ScrollContainer" type="ScrollContainer" parent="ForDon" unique_id=207410846]
-custom_minimum_size = Vector2(300, 406.96)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 96.0
-offset_bottom = -70.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ForDon/ScrollContainer" unique_id=1194658628]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 
 [node name="ColorRect" type="ColorRect" parent="ForDon" unique_id=1744706890]
 visible = false
@@ -735,6 +719,15 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 
+[node name="ScrollContainer" type="ScrollContainer" parent="ForSh/MarginContainer/VBoxContainer" unique_id=158624616]
+custom_minimum_size = Vector2(300, 406.96)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ForSh/MarginContainer/VBoxContainer/ScrollContainer" unique_id=806891589]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
 [node name="Button" type="Button" parent="ForSh/MarginContainer" unique_id=1145515314]
 custom_minimum_size = Vector2(200, 30)
 layout_mode = 2
@@ -743,22 +736,6 @@ size_flags_vertical = 8
 theme = ExtResource("6_wg8vd")
 disabled = true
 text = "Сделать выбор"
-
-[node name="ScrollContainer" type="ScrollContainer" parent="ForSh" unique_id=158624616]
-custom_minimum_size = Vector2(300, 406.96)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 96.0
-offset_bottom = -70.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ForSh/ScrollContainer" unique_id=806891589]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 
 [node name="ColorRect" type="ColorRect" parent="ForSh" unique_id=1276100787]
 visible = false
@@ -898,6 +875,15 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 
+[node name="ScrollContainer" type="ScrollContainer" parent="After_night/MarginContainer/VBoxContainer" unique_id=773601251]
+custom_minimum_size = Vector2(300, 406.96)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="After_night/MarginContainer/VBoxContainer/ScrollContainer" unique_id=177297882]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
 [node name="Button" type="Button" parent="After_night/MarginContainer" unique_id=1889885826]
 custom_minimum_size = Vector2(200, 30)
 layout_mode = 2
@@ -907,22 +893,6 @@ theme = ExtResource("16_7p8vt")
 disabled = true
 text = "Сделать выбор"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="After_night" unique_id=773601251]
-custom_minimum_size = Vector2(300, 406.96)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 96.0
-offset_bottom = -70.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="After_night/ScrollContainer" unique_id=177297882]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
 [node name="ColorRect" type="ColorRect" parent="After_night" unique_id=1560541725]
 visible = false
 layout_mode = 1
@@ -931,10 +901,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.5882354, 0.5654943, 0.4941176, 0.49803922)
+color = Color(0.16, 0.11687999, 0.10719999, 0.5254902)
 
 [node name="MarginContainer2" type="MarginContainer" parent="After_night" unique_id=1417770643]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -958,6 +927,7 @@ theme_override_styles/panel = ExtResource("14_ov7je")
 layout_mode = 2
 
 [node name="Label" type="Label" parent="After_night/MarginContainer2/PanelContainer/VBoxContainer" unique_id=891739236]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme = ExtResource("6_wg8vd")
 text = "Убит"
@@ -965,15 +935,12 @@ label_settings = ExtResource("15_7p8vt")
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="After_night/MarginContainer2/PanelContainer/VBoxContainer" unique_id=1727932511]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme = ExtResource("6_wg8vd")
 text = "Вылечили"
 label_settings = ExtResource("15_7p8vt")
 horizontal_alignment = 1
-
-[node name="Control" type="Control" parent="After_night/MarginContainer2/PanelContainer/VBoxContainer" unique_id=396424025]
-custom_minimum_size = Vector2(0, 15)
-layout_mode = 2
 
 [node name="Button" type="Button" parent="After_night/MarginContainer2/PanelContainer/VBoxContainer" unique_id=32495112]
 custom_minimum_size = Vector2(0, 35)

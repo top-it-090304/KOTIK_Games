@@ -27,7 +27,7 @@ extends Control
 
 @onready var start_night: Button = $Start/PanelContainer2/Button
 
-@onready var where_label_M = $ForMafia/ScrollContainer/VBoxContainer
+@onready var where_label_M = $ForMafia/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer
 
 signal value_changed(all_count)
 #signal name_changed(name_arr)
@@ -269,7 +269,7 @@ func mafia_after():
 
 #ДЛЯ ДОКТОРА
 @onready var menu_panel_D: Button = $ForDoctor/Button
-@onready var where_label_D = $ForDoctor/ScrollContainer/VBoxContainer
+@onready var where_label_D = $ForDoctor/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer
 
 var menu_doc_dub = []
 
@@ -364,7 +364,7 @@ func doctor_after():
 #ДЛЯ ДОНА
 
 @onready var menu_panel_Don: Button = $ForDon/Button
-@onready var where_label_Don = $ForDon/ScrollContainer/VBoxContainer
+@onready var where_label_Don = $ForDon/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer
 
 var menu_don_dub = []
 
@@ -461,7 +461,7 @@ func don_sleep():
 #ДЛЯ ШЕРИФА
 
 @onready var menu_panel_Sh: Button = $ForSh/Button
-@onready var where_label_Sh = $ForSh/ScrollContainer/VBoxContainer
+@onready var where_label_Sh = $ForSh/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer
 
 var menu_sh_dub = []
 
@@ -572,7 +572,7 @@ func after_night():
 
 
 @onready var menu_panel_Af: Button = $After_night/Button
-@onready var where_label_Af = $After_night/ScrollContainer/VBoxContainer
+@onready var where_label_Af = $After_night/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer
 @onready var choice_Af = $After_night/MarginContainer
 
 var menu_af_dub = []
@@ -654,6 +654,7 @@ func af_after():
 
 func af_sleep():
 	if (all_count - mafia_count - don_count <= mafia_count + don_count) or (mafia_count + don_count == 0):
+		$Day.hide()
 		For_af.hide()
 		$End.show()
 	else:
