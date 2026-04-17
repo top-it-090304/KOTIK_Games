@@ -12,8 +12,8 @@ var current_players_D: int = 1
 signal players_count_changed(current_players_D)
 
 # Ссылки на узлы
-@onready var minus_button: Button = $HBoxContainer/minus_button
-@onready var plus_button: Button = $HBoxContainer/plus_button
+@onready var check_button: Button = $CheckButton
+
 @onready var count_label: Label = $count_label
 
 func _ready():
@@ -22,30 +22,29 @@ func _ready():
 	update_display()
 	
 	# Подключаем сигналы кнопок
-	minus_button.pressed.connect(_on_minus_pressed)
-	plus_button.pressed.connect(_on_plus_pressed)
-	
+
+	check_button.pressed.connect(_on_check_up)
+
 	# Обновляем состояние кнопок
-	update_buttons_state()
 
-func _on_minus_pressed():
-	if current_players_D > min_players:
-		current_players_D -= 1
-		update_display()
-		update_buttons_state()
-		players_count_changed.emit(current_players_D)
 
-func _on_plus_pressed():
-	if current_players_D < max_players:
+
+
+func _on_check_up():
+	if check_button.button_pressed == true:
+		print("on")
 		current_players_D += 1
 		update_display()
-		update_buttons_state()
 		players_count_changed.emit(current_players_D)
+	elif check_button.button_pressed == false:
+		print("off")
+		current_players_D -= 1
+		update_display()
+		players_count_changed.emit(current_players_D)
+
+
+
+
 
 func update_display():
 	count_label.text = str(current_players_D)
-
-func update_buttons_state():
-	# Делаем кнопки неактивными при достижении границ
-	minus_button.disabled = current_players_D <= min_players
-	plus_button.disabled = current_players_D >= max_players

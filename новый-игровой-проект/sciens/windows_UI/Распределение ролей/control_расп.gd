@@ -562,7 +562,7 @@ func after_night():
 		name_arr.remove_at(index_dead_player)
 		rol_arr_2.remove_at(index_dead_player)
 	if (all_count - mafia_count - don_count <= mafia_count + don_count) :
-		$End/PanelContainer2/Label.text = "Мафия победила"
+		$End/VBoxContainer/PanelContainer2/Label.text = "Мафия победила"
 		$End.show()
 	elif(mafia_count + don_count == 0):
 		$End/PanelContainer2/Label.text = "Мирные жители победили"
@@ -724,3 +724,7 @@ func Vvod():
 	print(doc_count)
 	print(mir_count)
 	print(sh_count)
+
+
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://sciens/windows_UI/main_screen/menu_container.tscn")

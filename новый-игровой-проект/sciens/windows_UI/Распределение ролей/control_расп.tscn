@@ -57,15 +57,11 @@ corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ive8x"]
 bg_color = Color(0.38431373, 0.4, 0.54901963, 1)
-border_width_left = 20
-border_width_top = 20
-border_width_right = 20
-border_width_bottom = 20
 border_color = Color(0.8, 0.8, 0.8, 0)
-corner_radius_top_left = 25
-corner_radius_top_right = 25
-corner_radius_bottom_right = 25
-corner_radius_bottom_left = 25
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 corner_detail = 6
 
 [node name="Control1" type="Control" unique_id=397175873]
@@ -1009,25 +1005,28 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelContainer2" type="PanelContainer" parent="End" unique_id=1081724680]
-custom_minimum_size = Vector2(231.835, 35.535)
+[node name="VBoxContainer" type="VBoxContainer" parent="End" unique_id=832246399]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -115.9175
-offset_top = -31.5
-offset_right = 115.9175
-offset_bottom = 31.5
+offset_left = -132.5
+offset_top = -43.0
+offset_right = 132.5
+offset_bottom = 43.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="End/VBoxContainer" unique_id=1081724680]
+custom_minimum_size = Vector2(265.21, 86.23)
+layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_ive8x")
 
-[node name="Label" type="Label" parent="End/PanelContainer2" unique_id=803665767]
+[node name="Label" type="Label" parent="End/VBoxContainer/PanelContainer2" unique_id=803665767]
 layout_mode = 2
 theme = ExtResource("6_wg8vd")
 theme_override_colors/font_color = Color(0.11372549, 0.1254902, 0.23137255, 1)
@@ -1035,6 +1034,11 @@ text = "Игра окончена
 Кто победил выясните сами"
 label_settings = ExtResource("9_umkeg")
 horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="End/VBoxContainer" unique_id=1986391151]
+layout_mode = 2
+theme = ExtResource("6_wg8vd")
+text = "Закончить игру"
 
 [node name="Start" type="Control" parent="." unique_id=433459643]
 visible = false
@@ -1080,3 +1084,5 @@ layout_mode = 2
 size_flags_vertical = 8
 theme = ExtResource("11_4uu0p")
 text = "Перейти к ночи"
+
+[connection signal="pressed" from="End/VBoxContainer/Button" to="." method="_on_button_pressed"]

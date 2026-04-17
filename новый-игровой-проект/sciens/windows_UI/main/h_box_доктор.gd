@@ -6,46 +6,45 @@ extends HBoxContainer
 @export var start_players: int = 0
 
 # Текущее количество игроков
-var current_players: int = 0
+var current_players_D: int = 1
 
 # Сигнал для отправки количества игроков в другие скрипты
-signal players_count_changed(current_players)
+signal players_count_changed(current_players_D)
 
 # Ссылки на узлы
-@onready var minus_button: Button = $HBoxContainer/minus_button
-@onready var plus_button: Button = $HBoxContainer/plus_button
+@onready var check_button: Button = $CheckButton
+
 @onready var count_label: Label = $count_label
 
 func _ready():
 	# Устанавливаем начальное значение
-	current_players = clamp(start_players, min_players, max_players)
+	current_players_D = clamp(start_players, min_players, max_players)
 	update_display()
 	
 	# Подключаем сигналы кнопок
-	minus_button.pressed.connect(_on_minus_pressed)
-	plus_button.pressed.connect(_on_plus_pressed)
-	
+
+	check_button.pressed.connect(_on_check_up)
+
 	# Обновляем состояние кнопок
-	update_buttons_state()
 
-func _on_minus_pressed():
-	if current_players > min_players:
-		current_players -= 1
-		update_display()
-		update_buttons_state()
-		players_count_changed.emit(current_players)
 
-func _on_plus_pressed():
-	if current_players < max_players:
-		current_players += 1
+
+
+func _on_check_up():
+	if check_button.button_pressed == true:
+		print("on")
+		current_players_D += 1
 		update_display()
-		update_buttons_state()
-		players_count_changed.emit(current_players)
+		players_count_changed.emit(current_players_D)
+	elif check_button.button_pressed == false:
+		print("off")
+		current_players_D -= 1
+		update_display()
+		players_count_changed.emit(current_players_D)
+
+
+
+
 
 func update_display():
-	count_label.text = str(current_players)
-
-func update_buttons_state():
-	# Делаем кнопки неактивными при достижении границ
-	minus_button.disabled = current_players <= min_players
-	plus_button.disabled = current_players >= max_players
+	count_label.text = str(current_players_D)
