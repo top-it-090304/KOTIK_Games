@@ -561,7 +561,12 @@ func after_night():
 		all_count = all_count - 1
 		name_arr.remove_at(index_dead_player)
 		rol_arr_2.remove_at(index_dead_player)
-	if (all_count - mafia_count - don_count <= mafia_count + don_count) or (mafia_count + don_count == 0):
+	if (all_count - mafia_count - don_count <= mafia_count + don_count) :
+		$End/PanelContainer2/Label.text = "Мафия победила"
+		$End.show()
+	elif(mafia_count + don_count == 0):
+		$End/PanelContainer2/Label.text = "Мирные жители победили"
+		print("This")
 		$End.show()
 	else:
 		For_af.show()
@@ -653,9 +658,11 @@ func af_after():
 	af_go_sleep1.visible = true
 
 func af_sleep():
-	if (all_count - mafia_count - don_count <= mafia_count + don_count) or (mafia_count + don_count == 0):
-		$Day.hide()
+	if  (mafia_count + don_count == 0):
+		$End/PanelContainer2/Label.text = "Мирные жители победили"
+		print("This")
 		For_af.hide()
+		$Day.hide()
 		$End.show()
 	else:
 		af_go_sleep1.visible = false
