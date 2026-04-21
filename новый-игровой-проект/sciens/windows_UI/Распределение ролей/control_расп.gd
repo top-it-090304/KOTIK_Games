@@ -565,7 +565,7 @@ func after_night():
 		$End/VBoxContainer/PanelContainer2/Label.text = "Мафия победила"
 		$End.show()
 	elif(mafia_count + don_count == 0):
-		$End/PanelContainer2/Label.text = "Мирные жители победили"
+		$End/VBoxContainer/PanelContainer2/Label.text = "Мирные жители победили"
 		print("This")
 		$End.show()
 	else:
@@ -659,7 +659,7 @@ func af_after():
 
 func af_sleep():
 	if  (mafia_count + don_count == 0):
-		$End/PanelContainer2/Label.text = "Мирные жители победили"
+		$End/VBoxContainer/PanelContainer2/Label.text = "Мирные жители победили"
 		print("This")
 		For_af.hide()
 		$Day.hide()
