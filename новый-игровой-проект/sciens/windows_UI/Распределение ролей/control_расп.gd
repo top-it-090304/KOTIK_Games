@@ -664,6 +664,12 @@ func af_sleep():
 		For_af.hide()
 		$Day.hide()
 		$End.show()
+	elif (all_count - mafia_count - don_count <= mafia_count + don_count) :
+		$End/VBoxContainer/PanelContainer2/Label.text = "Мафия победила"
+		print("This")
+		For_af.hide()
+		$Day.hide()
+		$End.show()
 	else:
 		af_go_sleep1.visible = false
 		af_go_sleep2.visible = true

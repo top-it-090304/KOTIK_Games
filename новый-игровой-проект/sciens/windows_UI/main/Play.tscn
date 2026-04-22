@@ -20,7 +20,7 @@
 bg_color = Color(0, 0, 0, 0.29411766)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rc2ji"]
-bg_color = Color(0, 0, 0, 0.80784315)
+bg_color = Color(0, 0, 0, 0)
 
 [node name="Play" type="Control" unique_id=813698499]
 layout_mode = 3
@@ -130,7 +130,7 @@ horizontal_alignment = 1
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Мафия/HBox_Мафия" unique_id=783548981]
 custom_minimum_size = Vector2(82.19, 0)
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 10
 theme_override_constants/separation = 8
 
 [node name="minus_button" type="Button" parent="MarginContainer/VBoxContainer/Мафия/HBox_Мафия/HBoxContainer" unique_id=796816815]
@@ -312,7 +312,7 @@ text = "3"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=403365536]
 layout_mode = 2
-size_flags_vertical = 8
+size_flags_vertical = 10
 
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=464530573]
 custom_minimum_size = Vector2(60, 35)
