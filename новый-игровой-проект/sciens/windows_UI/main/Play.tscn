@@ -81,8 +81,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 26
+theme_override_constants/margin_left = 26
+theme_override_constants/margin_top = 59
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 26
 script = ExtResource("2_4ad8q")
@@ -117,14 +117,12 @@ script = ExtResource("2_2x2xx")
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Мафия/HBox_Мафия" unique_id=2018892319]
 custom_minimum_size = Vector2(82.19, 0)
 layout_mode = 2
-size_flags_horizontal = 4
 text = " Мафия:"
 label_settings = ExtResource("10_kkqd1")
 
 [node name="count_label" type="Label" parent="MarginContainer/VBoxContainer/Мафия/HBox_Мафия" unique_id=1116488214]
-custom_minimum_size = Vector2(82.19, 0)
+custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
-size_flags_horizontal = 6
 text = "1"
 label_settings = ExtResource("10_kkqd1")
 horizontal_alignment = 1
@@ -169,7 +167,7 @@ text = " Мирный:"
 label_settings = ExtResource("10_kkqd1")
 
 [node name="count_label" type="Label" parent="MarginContainer/VBoxContainer/Мирный житель/HBox_Мирный" unique_id=225498895]
-custom_minimum_size = Vector2(82.19, 0)
+custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 size_flags_horizontal = 6
 text = "2"
@@ -215,7 +213,7 @@ text = " Дон:"
 label_settings = ExtResource("10_kkqd1")
 
 [node name="count_label" type="Label" parent="MarginContainer/VBoxContainer/Дон/HBox_Дон" unique_id=1569891079]
-custom_minimum_size = Vector2(82.19, 0)
+custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 size_flags_horizontal = 6
 text = "0"
@@ -223,7 +221,7 @@ label_settings = ExtResource("10_kkqd1")
 horizontal_alignment = 1
 
 [node name="CheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer/Дон/HBox_Дон" unique_id=1824014671]
-custom_minimum_size = Vector2(82.19, 0)
+custom_minimum_size = Vector2(80.095, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("10_wsnh3")
@@ -247,7 +245,7 @@ text = " Доктор:"
 label_settings = ExtResource("10_kkqd1")
 
 [node name="count_label" type="Label" parent="MarginContainer/VBoxContainer/Доктор/HBox_Доктор" unique_id=1659884302]
-custom_minimum_size = Vector2(82.19, 0)
+custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 size_flags_horizontal = 6
 text = "0"
@@ -255,7 +253,7 @@ label_settings = ExtResource("10_kkqd1")
 horizontal_alignment = 1
 
 [node name="CheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer/Доктор/HBox_Доктор" unique_id=1594631971]
-custom_minimum_size = Vector2(82.19, 0)
+custom_minimum_size = Vector2(80.095, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("10_wsnh3")
@@ -279,7 +277,7 @@ text = " Шериф:"
 label_settings = ExtResource("10_kkqd1")
 
 [node name="count_label" type="Label" parent="MarginContainer/VBoxContainer/Шериф/HBox_Шериф" unique_id=167339133]
-custom_minimum_size = Vector2(82.19, 0)
+custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 size_flags_horizontal = 6
 text = "0"
@@ -287,7 +285,7 @@ label_settings = ExtResource("10_kkqd1")
 horizontal_alignment = 1
 
 [node name="CheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer/Шериф/HBox_Шериф" unique_id=1698753511]
-custom_minimum_size = Vector2(82.19, 0)
+custom_minimum_size = Vector2(80.095, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("10_wsnh3")
