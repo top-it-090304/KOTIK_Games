@@ -358,6 +358,25 @@ metadata/_tab_name = "Игра"
 [node name="HBoxContainer" type="HBoxContainer" parent="Главный_экран_Настройки/MarginContainer/VBoxContainer/TabContainer/VBoxContainer2" unique_id=1497026760]
 layout_mode = 2
 
+[node name="Label" type="Label" parent="Главный_экран_Настройки/MarginContainer/VBoxContainer/TabContainer/VBoxContainer2/HBoxContainer" unique_id=229297731]
+custom_minimum_size = Vector2(141.41, 0)
+layout_mode = 2
+text = "Соотношение "
+
+[node name="MenuButton" type="MenuButton" parent="Главный_экран_Настройки/MarginContainer/VBoxContainer/TabContainer/VBoxContainer2/HBoxContainer" unique_id=1490201683]
+custom_minimum_size = Vector2(126.09, 0)
+layout_mode = 2
+text = "Варианты"
+flat = false
+switch_on_hover = true
+item_count = 3
+popup/item_0/text = "keep"
+popup/item_0/id = 0
+popup/item_1/text = "ignore"
+popup/item_1/id = 1
+popup/item_2/text = "keep_width"
+popup/item_2/id = 2
+
 [node name="VBoxContainer" type="VBoxContainer" parent="Главный_экран_Настройки/MarginContainer/VBoxContainer/TabContainer" unique_id=1558064855]
 visible = false
 layout_mode = 2
@@ -441,6 +460,7 @@ limit_bottom = 600
 [connection signal="pressed" from="Fons/TextureRect3/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Fons/TextureRect3/options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Fons/TextureRect3/quit" to="." method="_on_quit_pressed"]
+[connection signal="about_to_popup" from="Главный_экран_Настройки/MarginContainer/VBoxContainer/TabContainer/VBoxContainer2/HBoxContainer/MenuButton" to="Главный_экран_Настройки" method="_on_menu_button_about_to_popup"]
 [connection signal="value_changed" from="Главный_экран_Настройки/MarginContainer/VBoxContainer/TabContainer/VBoxContainer/HBoxContainer/music_volume" to="Главный_экран_Настройки" method="_on_music_volume_value_changed"]
 [connection signal="value_changed" from="Главный_экран_Настройки/MarginContainer/VBoxContainer/TabContainer/VBoxContainer/HBoxContainer2/effects_volum" to="Главный_экран_Настройки" method="_on_effects_volum_value_changed"]
 [connection signal="value_changed" from="Главный_экран_Настройки/MarginContainer/VBoxContainer/TabContainer/VBoxContainer/HBoxContainer3/dictor_volum" to="Главный_экран_Настройки" method="_on_dictor_volum_value_changed"]

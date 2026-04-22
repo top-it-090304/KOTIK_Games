@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://dxur8bnjtfw3u"]
+
+[ext_resource type="Script" uid="uid://u3ovp54d6j2l" path="res://sciens/Экран опций/экран_опций.gd" id="1_ij4xf"]
+[ext_resource type="Texture2D" uid="uid://ct7effs278but" path="res://sprites/кннк/Кнопка опций/Normal.svg" id="2_ndh1t"]
+[ext_resource type="Texture2D" uid="uid://bus4b3aimgpxh" path="res://sprites/кннк/Кнопка опций/Presd.svg" id="3_60k4h"]
+[ext_resource type="LabelSettings" uid="uid://b3g53xgid2gt5" path="res://sciens/windows_UI/Стили/Загаловок.tres" id="4_rbuhc"]
+[ext_resource type="Theme" uid="uid://dm5ksso32lkcf" path="res://sciens/windows_UI/Стили/основные_кнопки.tres" id="5_ahkap"]
+[ext_resource type="Texture2D" uid="uid://cnes1dgt8ohhp" path="res://sprites/кннк/Кнопка опций/Back_Normal.svg" id="6_ef2nh"]
+[ext_resource type="Texture2D" uid="uid://dgt0nbmknpbbi" path="res://sprites/кннк/Кнопка опций/Back_Presd.svg" id="7_fyyeu"]
+
+[sub_resource type="Theme" id="Theme_tdp82"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vrn77"]
+bg_color = Color(0.0755338, 0.074624024, 0.12119275, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Экран_опций" type="Control" unique_id=190090853]
+layout_mode = 3
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_ij4xf")
+
+[node name="open_options_menu" type="TextureButton" parent="." unique_id=1913568895]
+visibility_layer = 2
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 0
+offset_left = 256.0
+offset_top = 7.0
+offset_right = 291.665
+offset_bottom = 42.0
+size_flags_horizontal = 8
+texture_normal = ExtResource("2_ndh1t")
+texture_pressed = ExtResource("3_60k4h")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1872439148]
+visibility_layer = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel" type="Panel" parent="MarginContainer" unique_id=1307420730]
+layout_mode = 2
+theme = SubResource("Theme_tdp82")
+theme_override_styles/panel = SubResource("StyleBoxFlat_vrn77")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer" unique_id=1038909371]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer" unique_id=332554412]
+custom_minimum_size = Vector2(0, -9.005)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer" unique_id=1069333103]
+custom_minimum_size = Vector2(0, 97.025)
+layout_mode = 2
+text = "Опций"
+label_settings = ExtResource("4_rbuhc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer" unique_id=1971182251]
+layout_mode = 2
+
+[node name="end_game" type="Button" parent="MarginContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1346627184]
+custom_minimum_size = Vector2(163.62, 37.135)
+layout_mode = 2
+theme = ExtResource("5_ahkap")
+text = "Закончить игру"
+
+[node name="close_options_menu" type="TextureButton" parent="MarginContainer/MarginContainer/VBoxContainer" unique_id=2074800283]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 10
+texture_normal = ExtResource("6_ef2nh")
+texture_pressed = ExtResource("7_fyyeu")
+ignore_texture_size = true
+stretch_mode = 4
+
+[connection signal="pressed" from="open_options_menu" to="." method="_on_open_options_menu_pressed"]
+[connection signal="pressed" from="MarginContainer/MarginContainer/VBoxContainer/VBoxContainer/end_game" to="." method="_on_end_game_pressed"]
+[connection signal="pressed" from="MarginContainer/MarginContainer/VBoxContainer/close_options_menu" to="." method="_on_close_options_menu_pressed"]

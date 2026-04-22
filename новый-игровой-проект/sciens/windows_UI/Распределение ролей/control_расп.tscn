@@ -18,6 +18,7 @@
 [ext_resource type="LabelSettings" uid="uid://syhkflmb71d3" path="res://sciens/windows_UI/Стили/Акцентный_текст_2.tres" id="15_7p8vt"]
 [ext_resource type="Theme" uid="uid://cyvfjqsh3i5x5" path="res://sciens/windows_UI/Стили/основные_кнопки_днем.tres" id="16_7p8vt"]
 [ext_resource type="PackedScene" uid="uid://bvsrc7anpxvr8" path="res://sciens/speaker/speaker.tscn" id="18_6tuo6"]
+[ext_resource type="PackedScene" uid="uid://dxur8bnjtfw3u" path="res://sciens/Экран опций/экран_опций.tscn" id="19_y7sb5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_umkeg"]
 bg_color = Color(0, 0, 0, 0.3137255)
@@ -141,6 +142,7 @@ texture = ExtResource("10_4uu0p")
 expand_mode = 5
 
 [node name="Виньетка" type="Panel" parent="." unique_id=1242181644]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1084,5 +1086,11 @@ layout_mode = 2
 size_flags_vertical = 8
 theme = ExtResource("11_4uu0p")
 text = "Перейти к ночи"
+
+[node name="Экран_опций" parent="." unique_id=764931924 instance=ExtResource("19_y7sb5")]
+layout_mode = 1
+anchors_preset = 0
+offset_top = 1.0
+offset_bottom = 1.0
 
 [connection signal="pressed" from="End/VBoxContainer/Button" to="." method="_on_button_pressed"]
