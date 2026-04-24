@@ -249,13 +249,13 @@ func mafia_after():
 		for child in where_label_M.get_children():
 			if child is Button:
 				child.queue_free()
-		if doc_count == 1:
-			For_doc.show()
-			duplicate_menu_doc()
-		else:
-			if don_count == 1:
+		if don_count == 1:
 				For_don.show()
 				duplicate_menu_don()
+		else:
+			if doc_count == 1:
+				For_doc.show()
+				duplicate_menu_doc()
 			else:
 				if sh_count == 1:
 					For_sh.show()
@@ -346,15 +346,11 @@ func doctor_after():
 	for child in where_label_D.get_children():
 			if child is Button:
 				child.queue_free()
-	if don_count == 1:
-		For_don.show()
-		duplicate_menu_don()
+	if sh_count == 1:
+		For_sh.show()
+		duplicate_menu_sh()
 	else:
-		if sh_count == 1:
-			For_sh.show()
-			duplicate_menu_sh()
-		else:
-			after_night()
+		after_night()
 
 	#after_night()
 
@@ -448,11 +444,15 @@ func don_sleep():
 	for child in where_label_Don.get_children():
 			if child is Button:
 				child.queue_free()
-	if sh_count == 1:
-		For_sh.show()
-		duplicate_menu_sh()
+	if doc_count == 1:
+		For_doc.show()
+		duplicate_menu_doc()
 	else:
-		after_night()
+		if sh_count == 1:
+			For_sh.show()
+			duplicate_menu_sh()
+		else:
+			after_night()
 
 
 
