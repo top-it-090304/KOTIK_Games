@@ -2,6 +2,8 @@
 
 [ext_resource type="FontFile" uid="uid://dcgwajyaljq5j" path="res://Text_stule/SN_Pro/static/SNPro-Black.ttf" id="1_15wu5"]
 [ext_resource type="FontFile" uid="uid://cvfwc466nw3sd" path="res://Text_stule/SN_Pro/static/SNPro-ExtraBold.ttf" id="2_h8awc"]
+[ext_resource type="Texture2D" uid="uid://clhsopo861q3i" path="res://sprites/кннк/Кнопка опций/CheckButton_Presd.svg" id="2_lkch8"]
+[ext_resource type="Texture2D" uid="uid://dmdmracpql0mp" path="res://sprites/кннк/Кнопка опций/CheckButton_Normal.svg" id="3_sj8xf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j0qyn"]
 content_margin_left = 4.0
@@ -138,9 +140,10 @@ Button/styles/hover = SubResource("StyleBoxFlat_15wu5")
 Button/styles/hover_pressed = SubResource("StyleBoxFlat_42sqn")
 Button/styles/normal = SubResource("StyleBoxFlat_lkch8")
 Button/styles/pressed = SubResource("StyleBoxFlat_42sqn")
-CheckButton/colors/button_checked_color = Color(0.11372549, 0.1254902, 0.23137255, 1)
-CheckButton/colors/button_unchecked_color = Color(0.11372549, 0.1254902, 0.23137255, 1)
-CheckButton/icons/unchecked_disabled_mirrored = null
+CheckButton/colors/button_checked_color = Color(1, 1, 1, 1)
+CheckButton/colors/button_unchecked_color = Color(1, 1, 1, 1)
+CheckButton/icons/checked = ExtResource("2_lkch8")
+CheckButton/icons/unchecked = ExtResource("3_sj8xf")
 CheckButton/styles/disabled = SubResource("StyleBoxFlat_j0qyn")
 CheckButton/styles/focus = SubResource("StyleBoxFlat_h8awc")
 CheckButton/styles/hover = SubResource("StyleBoxFlat_sj8xf")

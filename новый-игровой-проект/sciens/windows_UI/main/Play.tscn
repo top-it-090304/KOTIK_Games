@@ -221,7 +221,6 @@ label_settings = ExtResource("10_kkqd1")
 horizontal_alignment = 1
 
 [node name="CheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer/Дон/HBox_Дон" unique_id=1824014671]
-custom_minimum_size = Vector2(80.095, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("10_wsnh3")
@@ -253,11 +252,13 @@ label_settings = ExtResource("10_kkqd1")
 horizontal_alignment = 1
 
 [node name="CheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer/Доктор/HBox_Доктор" unique_id=1594631971]
-custom_minimum_size = Vector2(80.095, 0)
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 4
 theme = ExtResource("10_wsnh3")
 action_mode = 0
+icon_alignment = 1
+expand_icon = true
 
 [node name="Шериф" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=1798323580]
 layout_mode = 2
@@ -290,6 +291,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("10_wsnh3")
 action_mode = 0
+expand_icon = true
 
 [node name="PanelContainer2" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=1782022415]
 custom_minimum_size = Vector2(260.215, 0)

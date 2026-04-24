@@ -371,10 +371,14 @@ flat = false
 switch_on_hover = true
 item_count = 3
 popup/item_0/text = "keep"
+popup/item_0/checkable = 2
 popup/item_0/id = 0
 popup/item_1/text = "ignore"
+popup/item_1/checkable = 2
+popup/item_1/checked = true
 popup/item_1/id = 1
 popup/item_2/text = "keep_width"
+popup/item_2/checkable = 2
 popup/item_2/id = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Главный_экран_Настройки/MarginContainer/VBoxContainer/TabContainer" unique_id=1558064855]

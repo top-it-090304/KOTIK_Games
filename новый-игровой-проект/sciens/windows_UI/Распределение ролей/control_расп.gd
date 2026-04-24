@@ -149,7 +149,7 @@ func show_current_panel():
 	player_panels[current_panel_index].changing_the_image(a)
 	player_panels[current_panel_index].visible = true
 	var p = player_panels[current_panel_index]
-	var but = p.get_node("MarginContainer/VBoxContainer/Button")
+	var but = p.get_node("MarginContainer/VBoxContainer/HBoxContainer/Button")
 	p.new_name_pl.connect(app_name)
 	but.pressed.connect(Daleerol_pressed)
 	

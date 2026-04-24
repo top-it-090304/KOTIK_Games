@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://d10qpigmwfvrt" path="res://sprites/Карточки/Мафия.png" id="6_6cg88"]
 [ext_resource type="Texture2D" uid="uid://to78ujs5525t" path="res://sprites/Карточки/Любовница.png" id="7_gcnhb"]
 [ext_resource type="Texture2D" uid="uid://d2b4l32wgeq7w" path="res://sprites/Карточки/Доктор.png" id="8_xp5vq"]
+[ext_resource type="Texture2D" uid="uid://cnes1dgt8ohhp" path="res://sprites/кннк/Кнопка опций/Back_Normal.svg" id="10_xp5vq"]
+[ext_resource type="Texture2D" uid="uid://dgt0nbmknpbbi" path="res://sprites/кннк/Кнопка опций/Back_Presd.svg" id="11_trvlx"]
 [ext_resource type="PackedScene" uid="uid://bvsrc7anpxvr8" path="res://sciens/speaker/speaker.tscn" id="12_88a3v"]
 [ext_resource type="Texture2D" uid="uid://cicfh8it30ib7" path="res://sprites/Перевернуть.png" id="13_kd564"]
 [ext_resource type="Texture2D" uid="uid://cj6f08jyadyrh" path="res://sprites/Перевернуть2.png" id="14_6cg88"]
@@ -113,22 +115,32 @@ layout_mode = 2
 icon = SubResource("CanvasTexture_mn0c8")
 flat = true
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=616679375]
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/VBoxContainer" unique_id=1035581182]
+position = Vector2(141.33586, 268.154)
+scale = Vector2(0.26845708, 0.27)
+texture = SubResource("CanvasTexture_sw6da")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MarginContainer/VBoxContainer" unique_id=1383644770]
+position = Vector2(141.33586, 268.154)
+scale = Vector2(1e-05, 0.314)
+sprite_frames = SubResource("SpriteFrames_trvlx")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1984397050]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=841829745]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture_normal = ExtResource("10_xp5vq")
+texture_pressed = ExtResource("11_trvlx")
+stretch_mode = 0
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=616679375]
 layout_mode = 2
 focus_mode = 0
 theme = ExtResource("3_sw6da")
 theme_override_font_sizes/font_size = 35
 text = "Следующий"
-
-[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/VBoxContainer" unique_id=1035581182]
-position = Vector2(126.5, 268)
-scale = Vector2(0.26845708, 0.27)
-texture = SubResource("CanvasTexture_sw6da")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MarginContainer/VBoxContainer" unique_id=1383644770]
-position = Vector2(126.5, 268)
-scale = Vector2(1e-05, 0.314)
-sprite_frames = SubResource("SpriteFrames_trvlx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1517206722]
 libraries/ = ExtResource("2_sw6da")
