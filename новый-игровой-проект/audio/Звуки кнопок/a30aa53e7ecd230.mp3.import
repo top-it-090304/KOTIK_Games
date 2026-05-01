@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bi26v6v0fxv68"
+path="res://.godot/imported/a30aa53e7ecd230.mp3-8565efa66a1c25f42059185b071a8149.mp3str"
+
+[deps]
+
+source_file="res://audio/Звуки кнопок/a30aa53e7ecd230.mp3"
+dest_files=["res://.godot/imported/a30aa53e7ecd230.mp3-8565efa66a1c25f42059185b071a8149.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

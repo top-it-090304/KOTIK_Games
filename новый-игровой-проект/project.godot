@@ -24,6 +24,7 @@ buses/default_bus_layout="uid://w0dta4ufjxrr"
 
 [autoload]
 
+"ГлавныйЭкранНастройки"="*uid://5q2v6055oakg"
 HighLevelNetworkHandler="*uid://cih4k3aciy3qm"
 
 [display]
@@ -67,3 +68,10 @@ D={
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
 textures/vram_compression/import_etc2_astc=true
+
+[shader_globals]
+
+volume={
+"type": "bool",
+"value": true
+}

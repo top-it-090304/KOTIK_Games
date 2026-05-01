@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b4bqcunu23xf3"
+path="res://.godot/imported/f6d54e81f69d38d.mp3-3b505cc633f9e1c27e8c0ca82e2e5e19.mp3str"
+
+[deps]
+
+source_file="res://audio/Звуки кнопок/f6d54e81f69d38d.mp3"
+dest_files=["res://.godot/imported/f6d54e81f69d38d.mp3-3b505cc633f9e1c27e8c0ca82e2e5e19.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

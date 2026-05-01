@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ds8152hya57r1"
+path="res://.godot/imported/helloy.mp3-9b6d323272b015c2810bcdbeca27db5c.mp3str"
+
+[deps]
+
+source_file="res://audio/Фразы/Пред началом игры/helloy.mp3"
+dest_files=["res://.godot/imported/helloy.mp3-9b6d323272b015c2810bcdbeca27db5c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
