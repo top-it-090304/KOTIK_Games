@@ -232,7 +232,7 @@ func mafia_check():
 
 #Информация для мафии после сделаного выбора
 func mafia_after():
-	Speaker.speaker_phrases("Doctor_wake_up")
+	Speaker.speaker_phrases("helloy")
 	color_rect.visible = true
 	maf_chec.visible = true
 	var selected_button = my_button_group.get_pressed_button()

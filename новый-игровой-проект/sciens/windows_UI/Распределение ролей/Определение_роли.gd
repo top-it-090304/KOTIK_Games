@@ -1,5 +1,5 @@
 extends Panel
-
+@onready var Speaker = $Speaker
 @onready var card_animation = $AnimationPlayer
 @onready var button = $MarginContainer/VBoxContainer/Button2
 @onready var lineedit = $MarginContainer/VBoxContainer/LineEdit
@@ -21,6 +21,7 @@ func changing_the_image(number_of_card):
 
 
 func _on_button_2_pressed() -> void:
+	Speaker.sound_efect("B1")
 	#changing_thе_image(2)
 	if turned_over == false:
 		$"Перевернуть".visible = false

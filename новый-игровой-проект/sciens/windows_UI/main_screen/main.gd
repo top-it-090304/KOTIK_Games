@@ -18,6 +18,7 @@ func _on_options_pressed() -> void:
 	animation.play("action2")
 
 func _on_quit_pressed() -> void:
+	Speaker.sound_efect("B1")
 	get_tree().quit()
 
 

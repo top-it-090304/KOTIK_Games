@@ -147,11 +147,6 @@ libraries/ = ExtResource("2_sw6da")
 
 [node name="Speaker" parent="." unique_id=1066772267 instance=ExtResource("12_88a3v")]
 layout_mode = 1
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
 
 [node name="Перевернуть" type="Sprite2D" parent="." unique_id=438137698]
 self_modulate = Color(0.7490196, 0.7490196, 0.7490196, 0.9254902)
@@ -168,6 +163,9 @@ scale = Vector2(0.5092178, 0.58626753)
 texture = ExtResource("14_6cg88")
 flip_h = true
 flip_v = true
+
+[node name="Speaker2" parent="." unique_id=962744579 instance=ExtResource("12_88a3v")]
+layout_mode = 0
 
 [connection signal="editing_toggled" from="MarginContainer/VBoxContainer/LineEdit" to="." method="_on_line_edit_editing_toggled"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

@@ -1089,7 +1089,6 @@ text = "Перейти к ночи"
 
 [node name="Экран_опций" parent="." unique_id=764931924 instance=ExtResource("19_y7sb5")]
 layout_mode = 1
-anchors_preset = 0
 offset_top = 1.0
 offset_bottom = 1.0
 grow_horizontal = 1
