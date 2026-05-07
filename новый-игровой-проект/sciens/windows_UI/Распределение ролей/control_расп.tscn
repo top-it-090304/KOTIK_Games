@@ -16,9 +16,20 @@
 [ext_resource type="Theme" uid="uid://ww4mnka8dogh" path="res://sciens/windows_UI/Стили/Кнопка_выбора_днем.tres" id="13_7p8vt"]
 [ext_resource type="StyleBox" uid="uid://dn8ycw0vb7vrj" path="res://sciens/windows_UI/Стили/Вон_там_у_егора_каторая_для_паузы_между_действиями_днем.tres" id="14_ov7je"]
 [ext_resource type="LabelSettings" uid="uid://syhkflmb71d3" path="res://sciens/windows_UI/Стили/Акцентный_текст_2.tres" id="15_7p8vt"]
+[ext_resource type="AudioStream" uid="uid://cyjpg4jmer271" path="res://audio/Фразы/Мафия/mafia_waking_up.mp3" id="15_hhiyd"]
 [ext_resource type="Theme" uid="uid://cyvfjqsh3i5x5" path="res://sciens/windows_UI/Стили/основные_кнопки_днем.tres" id="16_7p8vt"]
+[ext_resource type="AudioStream" uid="uid://cbo5tcsowmjgq" path="res://audio/Фразы/Мафия/mafia_falling_asleep.mp3" id="16_67wcr"]
+[ext_resource type="AudioStream" uid="uid://ckr11akv80o35" path="res://audio/Фразы/Доктор/doctor_waking_up.mp3" id="17_557rg"]
 [ext_resource type="PackedScene" uid="uid://bvsrc7anpxvr8" path="res://sciens/speaker/speaker.tscn" id="18_6tuo6"]
+[ext_resource type="AudioStream" uid="uid://b4pqe1s2ae66p" path="res://audio/Фразы/Доктор/doctor_falling_asleep.mp3" id="18_jl4s6"]
+[ext_resource type="AudioStream" uid="uid://c3073owqhqhbk" path="res://audio/Фразы/Дон/don_waking_up.mp3" id="19_d75iq"]
 [ext_resource type="PackedScene" uid="uid://dxur8bnjtfw3u" path="res://sciens/Экран опций/экран_опций.tscn" id="19_y7sb5"]
+[ext_resource type="AudioStream" uid="uid://cyx4ebqxso65q" path="res://audio/Фразы/Дон/don_faling_sleap.mp3" id="20_vy41r"]
+[ext_resource type="AudioStream" uid="uid://b0xddf7kjdfrd" path="res://audio/Фразы/Шериф/sherif_waking_up.mp3" id="21_i2wf2"]
+[ext_resource type="AudioStream" uid="uid://mi0a402dwque" path="res://audio/Фразы/Шериф/sherif_falling_asleep.mp3" id="22_xnnym"]
+[ext_resource type="AudioStream" uid="uid://b7pj4maph66o0" path="res://audio/Фразы/День/good_morning.mp3" id="27_hkom0"]
+[ext_resource type="AudioStream" uid="uid://4ghecfy2hejw" path="res://audio/Фразы/День/faling_sleep.mp3" id="28_4migy"]
+[ext_resource type="AudioStream" uid="uid://dsixuxvn327w" path="res://audio/Фразы/Пред началом игры/city_falling_asleep.mp3" id="29_bvot0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_umkeg"]
 bg_color = Color(0, 0, 0, 0.3137255)
@@ -366,6 +377,12 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_e5n5q")
 text = "Игорок 1"
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="ForMafia" unique_id=127325713]
+stream = ExtResource("15_hhiyd")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="ForMafia" unique_id=395412117]
+stream = ExtResource("16_67wcr")
+
 [node name="ForDoctor" type="Control" parent="." unique_id=233860107]
 visible = false
 layout_mode = 1
@@ -504,6 +521,12 @@ theme = ExtResource("11_4uu0p")
 toggle_mode = true
 button_group = SubResource("ButtonGroup_e5n5q")
 text = "Игорок 1"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="ForDoctor" unique_id=565491147]
+stream = ExtResource("17_557rg")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="ForDoctor" unique_id=1819116003]
+stream = ExtResource("18_jl4s6")
 
 [node name="ForDon" type="Control" parent="." unique_id=683900148]
 visible = false
@@ -660,6 +683,12 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_e5n5q")
 text = "Игорок 1"
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="ForDon" unique_id=1447999169]
+stream = ExtResource("19_d75iq")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="ForDon" unique_id=462787612]
+stream = ExtResource("20_vy41r")
+
 [node name="ForSh" type="Control" parent="." unique_id=1616007370]
 visible = false
 layout_mode = 1
@@ -815,6 +844,12 @@ theme = ExtResource("11_4uu0p")
 toggle_mode = true
 button_group = SubResource("ButtonGroup_e5n5q")
 text = "Игорок 1"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="ForSh" unique_id=2034460902]
+stream = ExtResource("21_i2wf2")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="ForSh" unique_id=1616273106]
+stream = ExtResource("22_xnnym")
 
 [node name="After_night" type="Control" parent="." unique_id=563883058]
 visible = false
@@ -998,6 +1033,12 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_e5n5q")
 text = "Игорок 1"
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="After_night" unique_id=1526422321]
+stream = ExtResource("27_hkom0")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="After_night" unique_id=352869852]
+stream = ExtResource("28_4migy")
+
 [node name="End" type="Control" parent="." unique_id=66378296]
 visible = false
 layout_mode = 1
@@ -1086,6 +1127,9 @@ layout_mode = 2
 size_flags_vertical = 8
 theme = ExtResource("11_4uu0p")
 text = "Перейти к ночи"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Start" unique_id=1021089647]
+stream = ExtResource("29_bvot0")
 
 [node name="Экран_опций" parent="." unique_id=764931924 instance=ExtResource("19_y7sb5")]
 layout_mode = 1

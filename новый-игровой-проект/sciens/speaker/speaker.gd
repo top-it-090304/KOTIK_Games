@@ -34,10 +34,10 @@ var efects = {
 
 
 
-func speaker_phrases(phrases_name):
-	player_speaker.set_stream(load(phrases[phrases_name]))
-	player_speaker.volume_db = ГлавныйЭкранНастройки.dictor_volum
-	player_speaker.play()
+#func speaker_phrases(phrases_name):
+	#player_speaker.set_stream(load(phrases[phrases_name]))
+	#player_speaker.volume_db = ГлавныйЭкранНастройки.dictor_volum
+	#player_speaker.play()
 
 func musics_play(musics_name):
 	player_musics.stream(load(musics[musics_name]))
