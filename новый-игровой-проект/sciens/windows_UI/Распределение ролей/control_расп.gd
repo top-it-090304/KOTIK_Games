@@ -51,13 +51,30 @@ var rol_arr = []
 var rol_arr_2 =[]
 var name_arr = []
 
+@onready var info_menu = $"Экран_опций/open_options_menu"
+
 func _ready() -> void:
 	hide_all_panels()
 	play_panel.show()
+	info_menu.pressed.connect(play_info_menu)
 	dalee_button.pressed.connect(dalee_pressed)
 
 #Функция которая вызывается, когда игрок меняет имя 
 #(Нужна для того, чтобы использовался только последний вариант имени)
+
+@onready var info_menu_marg = $Play/MarginContainer2
+@onready var info_menu_close = $Play/MarginContainer2/MarginContainer/VBoxContainer/close_options_menu
+@onready var opcii = $"Экран_опций"
+
+func play_info_menu():
+	info_menu_marg.show()
+	opcii.hide()
+	info_menu_close.pressed.connect(play_info_menu_close)
+
+func play_info_menu_close():
+	info_menu_marg.hide()
+	opcii.show()
+
 func app_name(player_name):
 	pl_name_glob = player_name
 	print("55)", pl_name_glob)

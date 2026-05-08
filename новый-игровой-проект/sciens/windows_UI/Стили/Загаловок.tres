@@ -5,7 +5,7 @@
 [resource]
 line_spacing = 167.175
 font = ExtResource("1_8ve8o")
-font_size = 50
+font_size = 38
 font_color = Color(0.2041079, 0.21909213, 0.27902907, 1)
 outline_size = 12
 outline_color = Color(0.12594877, 0.12594877, 0.16854364, 1)
