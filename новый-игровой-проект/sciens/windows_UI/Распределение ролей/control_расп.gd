@@ -51,13 +51,30 @@ var rol_arr = []
 var rol_arr_2 =[]
 var name_arr = []
 
+@onready var info_menu = $"Экран_опций/open_options_menu"
+
 func _ready() -> void:
 	hide_all_panels()
 	play_panel.show()
+	info_menu.pressed.connect(play_info_menu)
 	dalee_button.pressed.connect(dalee_pressed)
 
 #Функция которая вызывается, когда игрок меняет имя 
 #(Нужна для того, чтобы использовался только последний вариант имени)
+
+@onready var info_menu_marg = $Play/MarginContainer2
+@onready var info_menu_close = $Play/MarginContainer2/MarginContainer/VBoxContainer/close_options_menu
+@onready var opcii = $"Экран_опций"
+
+func play_info_menu():
+	info_menu_marg.show()
+	opcii.hide()
+	info_menu_close.pressed.connect(play_info_menu_close)
+
+func play_info_menu_close():
+	info_menu_marg.hide()
+	opcii.show()
+
 func app_name(player_name):
 	pl_name_glob = player_name
 	print("55)", pl_name_glob)
@@ -114,7 +131,17 @@ func Daleerol_pressed():
 		current_panel_index = current_panel_index + 1
 		show_current_panel()
 
+@onready var voice_start_gosleep = $Start/AudioStreamPlayer2D
+
 func first_night():
+	#get_tree().paused = true
+	#await get_tree().create_timer(2.0, true).timeout
+	#get_tree().paused = false
+	voice_start_gosleep.play()
+	await voice_start_gosleep.finished
+	get_tree().paused = true
+	await get_tree().create_timer(3.0, true).timeout
+	get_tree().paused = false
 	$Start.hide()
 	duplicate_menu_maf()
 	For_maf.show()
@@ -182,6 +209,9 @@ func show_all_menu_panel():
 
 #ГЕМПЛЕЙ ДЛЯ МАФИИ
 
+@onready var voice_mafia_wakeup = $ForMafia/AudioStreamPlayer2D
+@onready var voice_mafia_gosleep = $ForMafia/AudioStreamPlayer2D2
+
 var menu_maf_dub = []
 
 var my_button_group = ButtonGroup.new()
@@ -214,6 +244,7 @@ func mafia_kill():
 			current.text = name_arr[i]
 			current.pressed.connect(mafia_check)#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 			menu_maf_dub[i].visible = true
+	voice_mafia_wakeup.play()
 
 @onready var ForMafia: Button = $ForMafia/MarginContainer/Button
 
@@ -232,7 +263,6 @@ func mafia_check():
 
 #Информация для мафии после сделаного выбора
 func mafia_after():
-	Speaker.speaker_phrases("helloy")
 	color_rect.visible = true
 	maf_chec.visible = true
 	var selected_button = my_button_group.get_pressed_button()
@@ -241,7 +271,12 @@ func mafia_after():
 		index_dead_player = name_arr.find(player_name)
 		mafia_after_kill.text = "Игрок: '" + player_name + "' убит"
 		get_tree().paused = true
-		await get_tree().create_timer(5.0, true).timeout
+		await get_tree().create_timer(2.0, true).timeout
+		get_tree().paused = false
+		voice_mafia_gosleep.play()
+		await voice_mafia_gosleep.finished
+		get_tree().paused = true
+		await get_tree().create_timer(3.0, true).timeout
 		get_tree().paused = false
 		For_maf.hide()
 		color_rect.visible = false
@@ -270,6 +305,9 @@ func mafia_after():
 #ДЛЯ ДОКТОРА
 @onready var menu_panel_D: Button = $ForDoctor/Button
 @onready var where_label_D = $ForDoctor/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer
+
+@onready var voice_doctor_wakeup = $ForDoctor/AudioStreamPlayer2D
+@onready var voice_doctor_gosleep = $ForDoctor/AudioStreamPlayer2D2 
 
 var menu_doc_dub = []
 
@@ -308,7 +346,7 @@ func doctor_heal():
 			current.text = name_arr[i]
 			current.pressed.connect(doctor_check)
 			menu_doc_dub[i].visible = true
-
+	voice_doctor_wakeup.play()
 
 @onready var ForDoctor: Button = $ForDoctor/MarginContainer/Button
 
@@ -338,7 +376,12 @@ func doctor_after():
 	color_rect_doc.visible = true
 	doc_chec.visible = true
 	get_tree().paused = true
-	await get_tree().create_timer(5.0, true).timeout
+	await get_tree().create_timer(2.0, true).timeout
+	get_tree().paused = false
+	voice_doctor_gosleep.play()
+	await voice_doctor_gosleep.finished
+	get_tree().paused = true
+	await get_tree().create_timer(3.0, true).timeout
 	get_tree().paused = false
 	For_doc.hide()
 	color_rect_doc.visible = false
@@ -361,6 +404,9 @@ func doctor_after():
 
 @onready var menu_panel_Don: Button = $ForDon/Button
 @onready var where_label_Don = $ForDon/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer
+
+@onready var voice_don_wakeup = $ForDon/AudioStreamPlayer2D
+@onready var voice_don_gosleep = $ForDon/AudioStreamPlayer2D2 
 
 var menu_don_dub = []
 
@@ -392,6 +438,7 @@ func don_test():
 			current.text = name_arr[i]
 			current.pressed.connect(don_check)
 			menu_don_dub[i].visible = true
+	voice_don_wakeup.play()
 
 
 @onready var ForDon: Button = $ForDon/MarginContainer/Button
@@ -435,7 +482,12 @@ func don_sleep():
 	don_go_sleep1.visible = false
 	don_go_sleep2.visible = true
 	get_tree().paused = true
-	await get_tree().create_timer(5.0, true).timeout
+	await get_tree().create_timer(2.0, true).timeout
+	get_tree().paused = false
+	voice_don_gosleep.play()
+	await voice_don_gosleep.finished
+	get_tree().paused = true
+	await get_tree().create_timer(3.0, true).timeout
 	get_tree().paused = false
 	For_don.hide()
 	don_go_sleep2.visible = false
@@ -462,6 +514,9 @@ func don_sleep():
 
 @onready var menu_panel_Sh: Button = $ForSh/Button
 @onready var where_label_Sh = $ForSh/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer
+
+@onready var voice_sh_wakeup = $ForSh/AudioStreamPlayer2D
+@onready var voice_sh_gosleep = $ForSh/AudioStreamPlayer2D2 
 
 var menu_sh_dub = []
 
@@ -493,7 +548,7 @@ func sh_test():
 			current.text = name_arr[i]
 			current.pressed.connect(sh_check)
 			menu_sh_dub[i].visible = true
-
+	voice_sh_wakeup.play()
 
 @onready var ForSh: Button = $ForSh/MarginContainer/Button
 
@@ -536,7 +591,12 @@ func sh_sleep():
 	sh_go_sleep1.visible = false
 	sh_go_sleep2.visible = true
 	get_tree().paused = true
-	await get_tree().create_timer(5.0, true).timeout
+	await get_tree().create_timer(2.0, true).timeout
+	get_tree().paused = false
+	voice_sh_gosleep.play()
+	await voice_sh_gosleep.finished
+	get_tree().paused = true
+	await get_tree().create_timer(3.0, true).timeout
 	get_tree().paused = false
 	For_sh.hide()
 	sh_go_sleep2.visible = false
@@ -549,6 +609,9 @@ func sh_sleep():
 
 
 ####################################################################################################
+
+@onready var voice_day_wakeup = $After_night/AudioStreamPlayer2D
+@onready var voice_day_gosleep = $After_night/AudioStreamPlayer2D2
 
 var dead_name
 var heal_name
@@ -609,6 +672,7 @@ func af_test():
 		current.text = name_arr[i]
 		current.pressed.connect(af_check)
 		menu_af_dub[i].visible = true
+	voice_day_wakeup.play()
 	info_after_night()
 
 @onready var ForAf: Button = $After_night/MarginContainer/Button
@@ -674,7 +738,12 @@ func af_sleep():
 		af_go_sleep1.visible = false
 		af_go_sleep2.visible = true
 		get_tree().paused = true
-		await get_tree().create_timer(5.0, true).timeout
+		await get_tree().create_timer(2.0, true).timeout
+		get_tree().paused = false
+		voice_day_gosleep.play()
+		await voice_day_gosleep.finished
+		get_tree().paused = true
+		await get_tree().create_timer(3.0, true).timeout
 		get_tree().paused = false
 		For_af.hide()
 		$Day.hide()

@@ -15,12 +15,29 @@
 [ext_resource type="StyleBox" uid="uid://bu4f2dyvrx0wb" path="res://sciens/windows_UI/Стили/style_for_panelkis.tres" id="8_hwxkn"]
 [ext_resource type="LabelSettings" uid="uid://cx84npfc0nuue" path="res://sciens/windows_UI/Стили/Акцентный текст.tres" id="10_kkqd1"]
 [ext_resource type="Theme" uid="uid://dm5ksso32lkcf" path="res://sciens/windows_UI/Стили/основные_кнопки.tres" id="10_wsnh3"]
+[ext_resource type="LabelSettings" uid="uid://b3g53xgid2gt5" path="res://sciens/windows_UI/Стили/Загаловок.tres" id="16_hwxkn"]
+[ext_resource type="FontFile" uid="uid://bbnbnsovldl32" path="res://Text_stule/SN_Pro/static/SNPro-SemiBold.ttf" id="17_truhm"]
+[ext_resource type="Texture2D" uid="uid://cnes1dgt8ohhp" path="res://sprites/кннк/Кнопка опций/Back_Normal.svg" id="17_wsnh3"]
+[ext_resource type="Texture2D" uid="uid://dgt0nbmknpbbi" path="res://sprites/кннк/Кнопка опций/Back_Presd.svg" id="18_truhm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ad8q"]
 bg_color = Color(0, 0, 0, 0.29411766)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rc2ji"]
 bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="Theme" id="Theme_krjj3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tk7ch"]
+bg_color = Color(0.0755338, 0.074624024, 0.12119275, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="Play" type="Control" unique_id=813698499]
 layout_mode = 3
@@ -81,7 +98,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 26
+theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 59
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 26
@@ -329,5 +346,105 @@ size_flags_horizontal = 10
 size_flags_vertical = 4
 theme = ExtResource("10_wsnh3")
 text = "Далее"
+
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=563172928]
+visible = false
+visibility_layer = 4
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -139.0
+offset_top = -88.5
+offset_right = 139.0
+offset_bottom = 88.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel" type="Panel" parent="MarginContainer2" unique_id=1332267948]
+layout_mode = 2
+theme = SubResource("Theme_krjj3")
+theme_override_styles/panel = SubResource("StyleBoxFlat_tk7ch")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer2" unique_id=1846783207]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2/MarginContainer" unique_id=2111318479]
+custom_minimum_size = Vector2(0, -9.005)
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="MarginContainer2/MarginContainer/VBoxContainer" unique_id=1046153642]
+layout_mode = 2
+text = "Справочник"
+label_settings = ExtResource("16_hwxkn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer2/MarginContainer/VBoxContainer" unique_id=1954742074]
+custom_minimum_size = Vector2(250, 410)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2/MarginContainer/VBoxContainer/ScrollContainer" unique_id=112805774]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2971296]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("17_truhm")
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[center][b][font_size=20][color=gold]НАСТРОЙКИ ИГРОВОГО СОСТАВА[/color][/font_size][/b][/center]
+
+[b]• Состав по умолчанию:[/b]
+В игре участвует [color=red]1 мафия[/color] и [color=green]2 мирных жителя[/color].
+
+[b]• Важное условие ролей:[/b]
+При выборе [color=red]Дона[/color], обязательно выберите [color=cyan]Шерифа[/color]. Без Шерифа роль Дона теряет смысл.
+
+[b]• Баланс сил:[/b]
+Следите, чтобы количество [color=green]мирных игроков[/color] было как минимум [u][b]на 3 больше[/b][/u], чем количество [color=red]мафий[/color].
+
+[center][b][font_size=20][color=gold]ОПИСАНИЕ РОЛЕЙ[/color][/font_size][/b][/center]
+
+[b]• [color=red]Мафия[/color][/b]
+Главные «злодеи» игры. Каждую ночь мафия договаривается и выбирает игрока, которого хочет «убить». Днем их задача — вести себя как мирные жители и не дать себя раскрыть.
+
+[b]• [color=green]Мирный житель[/color][/b]
+Не обладает специальными способностями, но именно за ними численное преимущество. Днем мирные жители обсуждают события ночи, пытаются вычислить мафию и голосуют против подозреваемых.
+
+[b]• [color=red]Дон[/color][/b]
+Предводитель мафии. Помимо участия в ночных «убийствах», Дон каждую ночь проверять одного игрока, пытаясь найти [color=cyan]Шерифа[/color]. Это помогает мафии устранить самую опасную для них угрозу.
+
+[b]• [color=orange]Доктор[/color][/b]
+Играет за сторону мирных. Каждую ночь Доктор выбирает одного игрока, которого хочет «вылечить». Если на этого игрока напала мафия, он остается в живых. Доктор может лечить и себя.
+
+[b]• [color=cyan]Шериф[/color][/b]
+Лидер мирных жителей. Каждую ночь он проверяет одного игрока, на то мафия он или нет. Полученную информацию Шериф должен умело использовать днем, чтобы убедить город проголосовать правильно.
+"
+fit_content = true
+tab_size = 3
+
+[node name="close_options_menu" type="TextureButton" parent="MarginContainer2/MarginContainer/VBoxContainer" unique_id=1118226475]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 10
+texture_normal = ExtResource("17_wsnh3")
+texture_pressed = ExtResource("18_truhm")
+ignore_texture_size = true
+stretch_mode = 4
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/Button" to="." method="_on_button_pressed"]
