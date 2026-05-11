@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bvsrc7anpxvr8" path="res://sciens/speaker/speaker.tscn" id="12_88a3v"]
 [ext_resource type="Texture2D" uid="uid://cicfh8it30ib7" path="res://sprites/Перевернуть.png" id="13_kd564"]
 [ext_resource type="Texture2D" uid="uid://cj6f08jyadyrh" path="res://sprites/Перевернуть2.png" id="14_6cg88"]
+[ext_resource type="LabelSettings" uid="uid://b3g53xgid2gt5" path="res://sciens/windows_UI/Стили/Загаловок.tres" id="17_trvlx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sw6da"]
 bg_color = Color(0.0896, 0.09883999, 0.14, 1)
@@ -66,6 +67,19 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="Theme" id="Theme_rbdqa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_52lde"]
+bg_color = Color(0.0755338, 0.074624024, 0.12119275, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="Panel" type="Panel" unique_id=1544003752]
 anchors_preset = 15
@@ -166,6 +180,81 @@ flip_v = true
 
 [node name="Speaker2" parent="." unique_id=962744579 instance=ExtResource("12_88a3v")]
 layout_mode = 0
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2119045559]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.49319527, 0.5619419, 0.5894406, 0.49803922)
+
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=1745606058]
+visible = false
+visibility_layer = 4
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -153.0
+offset_top = -172.75
+offset_right = 153.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel" type="Panel" parent="MarginContainer2" unique_id=1922806305]
+layout_mode = 2
+theme = SubResource("Theme_rbdqa")
+theme_override_styles/panel = SubResource("StyleBoxFlat_52lde")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer2" unique_id=1504995604]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2/MarginContainer" unique_id=1634779132]
+custom_minimum_size = Vector2(0, -9.005)
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="MarginContainer2/MarginContainer/VBoxContainer" unique_id=1681948439]
+layout_mode = 2
+theme_override_font_sizes/font_size = 17
+text = "Вернуться ..."
+label_settings = ExtResource("17_trvlx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="MarginContainer2/MarginContainer/VBoxContainer" unique_id=1012857222]
+layout_mode = 2
+theme = ExtResource("3_sw6da")
+text = "к прошлому игроку"
+
+[node name="Button2" type="Button" parent="MarginContainer2/MarginContainer/VBoxContainer" unique_id=4156677]
+layout_mode = 2
+theme = ExtResource("3_sw6da")
+text = "к выбору ролей"
+
+[node name="close_options_menu" type="TextureButton" parent="MarginContainer2/MarginContainer/VBoxContainer" unique_id=984040108]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 10
+texture_normal = ExtResource("10_xp5vq")
+texture_pressed = ExtResource("11_trvlx")
+ignore_texture_size = true
+stretch_mode = 4
 
 [connection signal="editing_toggled" from="MarginContainer/VBoxContainer/LineEdit" to="." method="_on_line_edit_editing_toggled"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

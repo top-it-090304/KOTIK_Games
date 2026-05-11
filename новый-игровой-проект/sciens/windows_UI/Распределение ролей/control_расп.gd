@@ -159,6 +159,11 @@ func duplicate_panels_for_players():
 		
 	show_current_panel()
 
+var back_menu
+var back_rect
+var last_player
+var back_to_menu
+var close_back_menu
 
 func show_current_panel():
 	# Скрываем все панели
@@ -172,38 +177,72 @@ func show_current_panel():
 	rol_arr_2.append(a)
 	rol_arr.remove_at(ind)
 	rand = rand - 1
-
+	
 	player_panels[current_panel_index].changing_the_image(a)
 	player_panels[current_panel_index].visible = true
+	
 	var p = player_panels[current_panel_index]
 	var but = p.get_node("MarginContainer/VBoxContainer/HBoxContainer/Button")
 	p.new_name_pl.connect(app_name)
 	but.pressed.connect(Daleerol_pressed)
+	var but_back = p.get_node("MarginContainer/VBoxContainer/HBoxContainer/TextureButton")
+	but_back.pressed.connect(open_back)
 	
+	back_menu = p.get_node("MarginContainer2")
+	back_rect = p.get_node("ColorRect")
+	back_to_menu = p.get_node("MarginContainer2/MarginContainer/VBoxContainer/Button2")
+	back_to_menu.pressed.connect(open_chose_rol)
+	close_back_menu = p.get_node("MarginContainer2/MarginContainer/VBoxContainer/close_options_menu")
+	close_back_menu.pressed.connect(close_back)
+	last_player = p.get_node("MarginContainer2/MarginContainer/VBoxContainer/Button")
+	last_player.pressed.connect(func_last_player)
 
-#Запись имен в Label
-var menu_player_dub = []
 
-func duplicate_menu_player():
-	# Скрываем оригинальную панель (она будет шаблоном)
-	menu_panel_pl.visible = false
-	
-	# Создаем панели для каждого игрока
-	for i in range(all_count):
-		var new_menu_panel = menu_panel_pl.duplicate()
-		new_menu_panel.visible = false
-		where_label.add_child(new_menu_panel)
-		menu_player_dub.append(new_menu_panel)
-	
-	show_all_menu_panel()
-		
+func open_back():
+	back_menu.show()
+	back_rect.show()
 
-func show_all_menu_panel():
-	for i in range(all_count):
-		var current = menu_player_dub[i]
-		var menu_name = current.get_node("Label")
-		menu_name.text = name_arr[i]
-		menu_player_dub[i].visible = true
+func close_back():
+	back_menu.hide()
+	back_rect.hide()
+
+func open_chose_rol():
+	back_menu.hide()
+	back_rect.hide()
+	hide_all_panels()
+	player_panels[current_panel_index].visible = false
+	player_panels.clear()
+	current_panel_index = 0
+	play_panel.show()
+
+func func_last_player():
+	player_panels[current_panel_index].visible = false
+	player_panels[current_panel_index - 1].visible = true
+	current_panel_index = current_panel_index - 1
+
+##Запись имен в Label
+#var menu_player_dub = []
+#
+#func duplicate_menu_player():
+	## Скрываем оригинальную панель (она будет шаблоном)
+	#menu_panel_pl.visible = false
+	#
+	## Создаем панели для каждого игрока
+	#for i in range(all_count):
+		#var new_menu_panel = menu_panel_pl.duplicate()
+		#new_menu_panel.visible = false
+		#where_label.add_child(new_menu_panel)
+		#menu_player_dub.append(new_menu_panel)
+	#
+	#show_all_menu_panel()
+		#
+#
+#func show_all_menu_panel():
+	#for i in range(all_count):
+		#var current = menu_player_dub[i]
+		#var menu_name = current.get_node("Label")
+		#menu_name.text = name_arr[i]
+		#menu_player_dub[i].visible = true
 
 ####################################################################################################
 
