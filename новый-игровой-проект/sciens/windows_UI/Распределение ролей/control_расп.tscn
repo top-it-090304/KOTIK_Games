@@ -153,7 +153,6 @@ texture = ExtResource("10_4uu0p")
 expand_mode = 5
 
 [node name="Виньетка" type="Panel" parent="." unique_id=1242181644]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
