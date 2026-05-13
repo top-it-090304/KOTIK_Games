@@ -109,7 +109,7 @@ offset_right = 8.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 32
-theme_override_constants/margin_top = 38
+theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
@@ -237,6 +237,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="MarginContainer2/MarginContainer/VBoxContainer" unique_id=1012857222]
+visible = false
 layout_mode = 2
 theme = ExtResource("3_sw6da")
 text = "к прошлому игроку"

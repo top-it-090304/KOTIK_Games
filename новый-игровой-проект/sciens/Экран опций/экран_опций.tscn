@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://dxur8bnjtfw3u"]
 
 [ext_resource type="Script" uid="uid://u3ovp54d6j2l" path="res://sciens/Экран опций/экран_опций.gd" id="1_ij4xf"]
+[ext_resource type="Texture2D" uid="uid://bs1q0vkoep3uj" path="res://sprites/кннк/Кнопка опций/Options_Normal_Day@2x.png" id="2_60k4h"]
 [ext_resource type="Texture2D" uid="uid://bqpwxkiim0vlb" path="res://sprites/кннк/Кнопка опций/Options_Normal.svg" id="2_ij4xf"]
 [ext_resource type="Texture2D" uid="uid://dae6ykwqag7yj" path="res://sprites/кннк/Кнопка опций/Options_Presd.svg" id="3_ndh1t"]
+[ext_resource type="Texture2D" uid="uid://dr4axtbgr0e6c" path="res://sprites/кннк/Кнопка опций/Options_Presd_Day.png" id="3_rbuhc"]
 [ext_resource type="LabelSettings" uid="uid://b3g53xgid2gt5" path="res://sciens/windows_UI/Стили/Загаловок.tres" id="4_rbuhc"]
 [ext_resource type="Theme" uid="uid://dm5ksso32lkcf" path="res://sciens/windows_UI/Стили/основные_кнопки.tres" id="5_ahkap"]
 [ext_resource type="Texture2D" uid="uid://cnes1dgt8ohhp" path="res://sprites/кннк/Кнопка опций/Back_Normal.svg" id="6_ef2nh"]
@@ -26,15 +28,28 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_ij4xf")
 
+[node name="TButton_Day" type="TextureButton" parent="." unique_id=203854476]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 0
+offset_left = 256.0
+offset_top = 20.0
+offset_right = 291.0
+offset_bottom = 55.0
+texture_normal = ExtResource("2_60k4h")
+texture_pressed = ExtResource("3_rbuhc")
+ignore_texture_size = true
+stretch_mode = 5
+
 [node name="open_options_menu" type="TextureButton" parent="." unique_id=1913568895]
 visibility_layer = 2
 z_index = 1
 custom_minimum_size = Vector2(35, 35)
 layout_mode = 0
 offset_left = 256.0
-offset_top = 7.0
-offset_right = 291.665
-offset_bottom = 42.0
+offset_top = 20.0
+offset_right = 291.0
+offset_bottom = 55.0
 size_flags_horizontal = 8
 texture_normal = ExtResource("2_ij4xf")
 texture_pressed = ExtResource("3_ndh1t")

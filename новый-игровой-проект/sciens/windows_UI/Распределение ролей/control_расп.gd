@@ -111,6 +111,7 @@ func dalee_pressed():
 	app_arr_rol()
 	print(rol_arr)
 	duplicate_panels_for_players()
+	opcii.hide()
 	pan.hide()
 	value_changed.emit(all_count)
 
@@ -257,8 +258,26 @@ var my_button_group = ButtonGroup.new()
 
 var index_dead_player
 
+@onready var helper_mafia = $ForMafia/MarginContainer3
+@onready var helper_mafia_close = $ForMafia/MarginContainer3/MarginContainer/VBoxContainer/close_options_menu
+
+func mafia_helper_open():
+	helper_mafia.show()
+	opcii.hide()
+	helper_mafia_close.pressed.connect(mafia_helper_close)
+
+func mafia_helper_close():
+	helper_mafia.hide()
+	opcii.show()
+
+#info_menu.pressed.connect(mafia_helper_open)
+
 #Делаем дубликаты кнопок для Мафии (Кого они могут убить)
 func duplicate_menu_maf():
+	opcii.show()
+	info_menu.show()
+	info_menu_day.hide()
+	info_menu.pressed.connect(mafia_helper_open)
 	menu_maf_dub = []
 	my_button_group = ButtonGroup.new()
 	# Скрываем оригинальную панель (она будет шаблоном)
@@ -354,8 +373,23 @@ var my_button_group_doc = ButtonGroup.new()
 
 var index_heal_player
 
+@onready var helper_doc = $ForDoctor/MarginContainer3
+@onready var helper_doc_close = $ForDoctor/MarginContainer3/MarginContainer/VBoxContainer/close_options_menu
+
+func doc_helper_open():
+	helper_doc.show()
+	opcii.hide()
+	helper_doc_close.pressed.connect(doc_helper_close)
+
+func doc_helper_close():
+	helper_doc.hide()
+	opcii.show()
+
+#info_menu.pressed.connect(mafia_helper_open)
+
 #Делаем дубликаты кнопок для Мафии (Кого они могут убить)
 func duplicate_menu_doc():
+	info_menu.pressed.connect(doc_helper_open)
 	menu_doc_dub = []
 	my_button_group_doc = ButtonGroup.new()
 	# Скрываем оригинальную панель (она будет шаблоном)
@@ -451,8 +485,23 @@ var menu_don_dub = []
 
 var my_button_group_don = ButtonGroup.new()
 
+@onready var helper_don = $ForDon/MarginContainer3
+@onready var helper_don_close = $ForDon/MarginContainer3/MarginContainer/VBoxContainer/close_options_menu
+
+func don_helper_open():
+	helper_don.show()
+	opcii.hide()
+	helper_don_close.pressed.connect(don_helper_close)
+
+func don_helper_close():
+	helper_don.hide()
+	opcii.show()
+
+#info_menu.pressed.connect(mafia_helper_open)
+
 #Делаем дубликаты кнопок для Дона (Кого он может проверить на шерифа)
 func duplicate_menu_don():
+	info_menu.pressed.connect(don_helper_open)
 	menu_don_dub = []
 	my_button_group_don = ButtonGroup.new()
 	# Скрываем оригинальную панель (она будет шаблоном)
@@ -561,8 +610,23 @@ var menu_sh_dub = []
 
 var my_button_group_sh = ButtonGroup.new()
 
+@onready var helper_sh = $ForSh/MarginContainer3
+@onready var helper_sh_close = $ForSh/MarginContainer3/MarginContainer/VBoxContainer/close_options_menu
+
+func sh_helper_open():
+	helper_sh.show()
+	opcii.hide()
+	helper_sh_close.pressed.connect(sh_helper_close)
+
+func sh_helper_close():
+	helper_sh.hide()
+	opcii.show()
+
+#info_menu.pressed.connect(mafia_helper_open)
+
 #Делаем дубликаты кнопок для Мафии (Кого они могут убить)
 func duplicate_menu_sh():
+	info_menu.pressed.connect(sh_helper_open)
 	menu_sh_dub = []
 	my_button_group_sh = ButtonGroup.new()
 	# Скрываем оригинальную панель (она будет шаблоном)
@@ -682,12 +746,31 @@ func after_night():
 @onready var where_label_Af = $After_night/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer
 @onready var choice_Af = $After_night/MarginContainer
 
+@onready var info_menu_day = $"Экран_опций/TButton_Day"
+
 var menu_af_dub = []
 
 var my_button_group_af = ButtonGroup.new()
 
+@onready var helper_af = $After_night/MarginContainer3
+@onready var helper_af_close = $After_night/MarginContainer3/MarginContainer/VBoxContainer/close_options_menu
+
+func af_helper_open():
+	helper_af.show()
+	opcii.hide()
+	helper_af_close.pressed.connect(af_helper_close)
+
+func af_helper_close():
+	helper_af.hide()
+	opcii.show()
+
+#info_menu.pressed.connect(mafia_helper_open)
+
 #Делаем дубликаты кнопок для Мафии (Кого они могут убить)
 func duplicate_menu_af():
+	info_menu.hide()
+	info_menu_day.show()
+	info_menu_day.pressed.connect(af_helper_open)
 	menu_af_dub = []
 	my_button_group_af = ButtonGroup.new()
 	# Скрываем оригинальную панель (она будет шаблоном)

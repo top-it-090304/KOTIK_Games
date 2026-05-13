@@ -20,16 +20,22 @@
 [ext_resource type="Theme" uid="uid://cyvfjqsh3i5x5" path="res://sciens/windows_UI/Стили/основные_кнопки_днем.tres" id="16_7p8vt"]
 [ext_resource type="AudioStream" uid="uid://cbo5tcsowmjgq" path="res://audio/Фразы/Мафия/mafia_falling_asleep.mp3" id="16_67wcr"]
 [ext_resource type="AudioStream" uid="uid://ckr11akv80o35" path="res://audio/Фразы/Доктор/doctor_waking_up.mp3" id="17_557rg"]
+[ext_resource type="LabelSettings" uid="uid://b3g53xgid2gt5" path="res://sciens/windows_UI/Стили/Загаловок.tres" id="17_bvot0"]
 [ext_resource type="PackedScene" uid="uid://bvsrc7anpxvr8" path="res://sciens/speaker/speaker.tscn" id="18_6tuo6"]
 [ext_resource type="AudioStream" uid="uid://b4pqe1s2ae66p" path="res://audio/Фразы/Доктор/doctor_falling_asleep.mp3" id="18_jl4s6"]
+[ext_resource type="FontFile" uid="uid://bbnbnsovldl32" path="res://Text_stule/SN_Pro/static/SNPro-SemiBold.ttf" id="18_qdhdj"]
 [ext_resource type="AudioStream" uid="uid://c3073owqhqhbk" path="res://audio/Фразы/Дон/don_waking_up.mp3" id="19_d75iq"]
+[ext_resource type="Texture2D" uid="uid://cnes1dgt8ohhp" path="res://sprites/кннк/Кнопка опций/Back_Normal.svg" id="19_vhxas"]
 [ext_resource type="PackedScene" uid="uid://dxur8bnjtfw3u" path="res://sciens/Экран опций/экран_опций.tscn" id="19_y7sb5"]
+[ext_resource type="Texture2D" uid="uid://dgt0nbmknpbbi" path="res://sprites/кннк/Кнопка опций/Back_Presd.svg" id="20_0o38t"]
 [ext_resource type="AudioStream" uid="uid://cyx4ebqxso65q" path="res://audio/Фразы/Дон/don_faling_sleap.mp3" id="20_vy41r"]
 [ext_resource type="AudioStream" uid="uid://b0xddf7kjdfrd" path="res://audio/Фразы/Шериф/sherif_waking_up.mp3" id="21_i2wf2"]
 [ext_resource type="AudioStream" uid="uid://mi0a402dwque" path="res://audio/Фразы/Шериф/sherif_falling_asleep.mp3" id="22_xnnym"]
 [ext_resource type="AudioStream" uid="uid://b7pj4maph66o0" path="res://audio/Фразы/День/good_morning.mp3" id="27_hkom0"]
 [ext_resource type="AudioStream" uid="uid://4ghecfy2hejw" path="res://audio/Фразы/День/faling_sleep.mp3" id="28_4migy"]
 [ext_resource type="AudioStream" uid="uid://dsixuxvn327w" path="res://audio/Фразы/Пред началом игры/city_falling_asleep.mp3" id="29_bvot0"]
+[ext_resource type="Texture2D" uid="uid://bn2ps86ofh2y5" path="res://sprites/кннк/Кнопка опций/Back_Normal_Day.png" id="33_vhxas"]
+[ext_resource type="Texture2D" uid="uid://y4f50w4ggmn5" path="res://sprites/кннк/Кнопка опций/Back_Presd_Day.png" id="34_0o38t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_umkeg"]
 bg_color = Color(0, 0, 0, 0.3137255)
@@ -66,6 +72,30 @@ corner_radius_bottom_left = 5
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_slymg"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_e5n5q"]
+
+[sub_resource type="Theme" id="Theme_r5gmx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7jvn3"]
+bg_color = Color(0.07450981, 0.07450981, 0.12156863, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vhxas"]
+bg_color = Color(0.6313944, 0.6063704, 0.44065258, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ive8x"]
 bg_color = Color(0.38431373, 0.4, 0.54901963, 1)
@@ -382,6 +412,93 @@ stream = ExtResource("15_hhiyd")
 [node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="ForMafia" unique_id=395412117]
 stream = ExtResource("16_67wcr")
 
+[node name="MarginContainer3" type="MarginContainer" parent="ForMafia" unique_id=446121684]
+visible = false
+visibility_layer = 4
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -139.0
+offset_top = -88.5
+offset_right = 139.0
+offset_bottom = 88.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel" type="Panel" parent="ForMafia/MarginContainer3" unique_id=735285962]
+layout_mode = 2
+theme = SubResource("Theme_r5gmx")
+theme_override_styles/panel = SubResource("StyleBoxFlat_7jvn3")
+
+[node name="MarginContainer" type="MarginContainer" parent="ForMafia/MarginContainer3" unique_id=157920536]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ForMafia/MarginContainer3/MarginContainer" unique_id=2144731389]
+custom_minimum_size = Vector2(0, -9.005)
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="ForMafia/MarginContainer3/MarginContainer/VBoxContainer" unique_id=2003248729]
+layout_mode = 2
+text = "Справочник"
+label_settings = ExtResource("17_bvot0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ForMafia/MarginContainer3/MarginContainer/VBoxContainer" unique_id=905704565]
+custom_minimum_size = Vector2(250, 410)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ForMafia/MarginContainer3/MarginContainer/VBoxContainer/ScrollContainer" unique_id=512006809]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ForMafia/MarginContainer3/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=133637122]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("18_qdhdj")
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[center][b][font_size=20
+][color=gold]ХОД МАФИИ И ДОНА[/color][/font_size][/b][/center]
+
+[b]• Ваша задача:[/b]
+Всем игрокам с ролями [color=red]Мафии[/color] и [color=red]Дона[/color] нужно совместно решить, кого убить этой ночью.
+
+[b]• Как сделать выбор:[/b]
+1. Обсудите план и нажмите на [b][color=yellow]имя игрока[/color][/b], которого хотите устранить.
+2. Если во время обсуждения вы передумали, вы можете свободно нажать на имя другого игрока.
+3. Когда окончательный выбор сделан, нажмите кнопку [b][color=orange]СДЕЛАТЬ ВЫБОР[/color][/b].
+
+[b]• Завершение хода:[/b]
+После нажатия вы увидите имя убитого игрока и надпись [i][color=red]«Мафия засыпает»[/color][/i]. 
+Займите свои места, закройте глаза и ожидайте следующего голосового объявления.
+"
+fit_content = true
+tab_size = 3
+
+[node name="close_options_menu" type="TextureButton" parent="ForMafia/MarginContainer3/MarginContainer/VBoxContainer" unique_id=1280412372]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 10
+texture_normal = ExtResource("19_vhxas")
+texture_pressed = ExtResource("20_0o38t")
+ignore_texture_size = true
+stretch_mode = 4
+
 [node name="ForDoctor" type="Control" parent="." unique_id=233860107]
 visible = false
 layout_mode = 1
@@ -526,6 +643,92 @@ stream = ExtResource("17_557rg")
 
 [node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="ForDoctor" unique_id=1819116003]
 stream = ExtResource("18_jl4s6")
+
+[node name="MarginContainer3" type="MarginContainer" parent="ForDoctor" unique_id=213037592]
+visible = false
+visibility_layer = 4
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -139.0
+offset_top = -88.5
+offset_right = 139.0
+offset_bottom = 88.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel" type="Panel" parent="ForDoctor/MarginContainer3" unique_id=95504573]
+layout_mode = 2
+theme = SubResource("Theme_r5gmx")
+theme_override_styles/panel = SubResource("StyleBoxFlat_7jvn3")
+
+[node name="MarginContainer" type="MarginContainer" parent="ForDoctor/MarginContainer3" unique_id=831784168]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ForDoctor/MarginContainer3/MarginContainer" unique_id=2127559234]
+custom_minimum_size = Vector2(0, -9.005)
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="ForDoctor/MarginContainer3/MarginContainer/VBoxContainer" unique_id=409052670]
+layout_mode = 2
+text = "Справочник"
+label_settings = ExtResource("17_bvot0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ForDoctor/MarginContainer3/MarginContainer/VBoxContainer" unique_id=2114443062]
+custom_minimum_size = Vector2(250, 410)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ForDoctor/MarginContainer3/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1403215296]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ForDoctor/MarginContainer3/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=238935324]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("18_qdhdj")
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[center][b][font_size=20][color=gold]ХОД ДОКТОРА[/color][/font_size][/b][/center]
+
+[b]• Ваша задача:[/b]
+Вам нужно решить, кого из игроков вы хотите спасти этой ночью. Если на выбранного игрока нападет [color=red]Мафия[/color], он останется в живых.
+
+[b]• Как сделать выбор:[/b]
+1. Нажмите на [b][color=yellow]имя игрока[/color][/b], которого хотите вылечить (вы можете выбрать и [color=orange]самого себя[/color]).
+2. Если вы передумали, вы можете свободно нажать на имя другого игрока до подтверждения.
+3. Когда окончательный выбор сделан, нажмите кнопку [b][color=orange]СДЕЛАТЬ ВЫБОР[/color][/b].
+
+[b]• Завершение хода:[/b]
+После нажатия появится надпись [i][color=orange]«Доктор засыпает»[/color][/i]. 
+Займите свое место, закройте глаза и ожидайте следующего голосового объявления.
+"
+fit_content = true
+tab_size = 3
+
+[node name="close_options_menu" type="TextureButton" parent="ForDoctor/MarginContainer3/MarginContainer/VBoxContainer" unique_id=806759943]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 10
+texture_normal = ExtResource("19_vhxas")
+texture_pressed = ExtResource("20_0o38t")
+ignore_texture_size = true
+stretch_mode = 4
 
 [node name="ForDon" type="Control" parent="." unique_id=683900148]
 visible = false
@@ -687,6 +890,91 @@ stream = ExtResource("19_d75iq")
 
 [node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="ForDon" unique_id=462787612]
 stream = ExtResource("20_vy41r")
+
+[node name="MarginContainer3" type="MarginContainer" parent="ForDon" unique_id=1089050506]
+visible = false
+visibility_layer = 4
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.499
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -139.0
+offset_top = -87.899994
+offset_right = 139.0
+offset_bottom = 88.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel" type="Panel" parent="ForDon/MarginContainer3" unique_id=1345985677]
+layout_mode = 2
+theme = SubResource("Theme_r5gmx")
+theme_override_styles/panel = SubResource("StyleBoxFlat_7jvn3")
+
+[node name="MarginContainer" type="MarginContainer" parent="ForDon/MarginContainer3" unique_id=173306450]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ForDon/MarginContainer3/MarginContainer" unique_id=1773746337]
+custom_minimum_size = Vector2(0, -9.005)
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="ForDon/MarginContainer3/MarginContainer/VBoxContainer" unique_id=903421459]
+layout_mode = 2
+text = "Справочник"
+label_settings = ExtResource("17_bvot0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ForDon/MarginContainer3/MarginContainer/VBoxContainer" unique_id=433690800]
+custom_minimum_size = Vector2(250, 410)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ForDon/MarginContainer3/MarginContainer/VBoxContainer/ScrollContainer" unique_id=38350087]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ForDon/MarginContainer3/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1622977793]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("18_qdhdj")
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[center][b][font_size=20][color=gold]ХОД ДОНА[/color][/font_size][/b][/center]
+
+[b]• Ваша задача:[/b]
+Вам нужно вычислить, кто из игроков является [color=cyan]Шерифом[/color]. Это поможет вашей команде устранить главную угрозу для [color=red]Мафии[/color].
+
+[b]• Как сделать выбор:[/b]
+1. Нажмите на [b][color=yellow]имя игрока[/color][/b], статус которого вы хотите проверить.
+2. Если во время размышлений вы передумали, вы можете нажать на имя другого игрока.
+3. Когда выбор сделан, нажмите кнопку [b][color=orange]СДЕЛАТЬ ВЫБОР[/color][/b].
+
+[b]• Результат проверки:[/b]
+После нажатия на экране отобразится, является ли этот игрок [color=cyan]Шерифом[/color], и появится надпись [i][color=red]«Дон засыпает»[/color][/i]. 
+Закройте глаза и ожидайте следующего голосового объявления."
+fit_content = true
+tab_size = 3
+
+[node name="close_options_menu" type="TextureButton" parent="ForDon/MarginContainer3/MarginContainer/VBoxContainer" unique_id=1152835593]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 10
+texture_normal = ExtResource("19_vhxas")
+texture_pressed = ExtResource("20_0o38t")
+ignore_texture_size = true
+stretch_mode = 4
 
 [node name="ForSh" type="Control" parent="." unique_id=1616007370]
 visible = false
@@ -850,6 +1138,92 @@ stream = ExtResource("21_i2wf2")
 [node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="ForSh" unique_id=1616273106]
 stream = ExtResource("22_xnnym")
 
+[node name="MarginContainer3" type="MarginContainer" parent="ForSh" unique_id=784616862]
+visible = false
+visibility_layer = 4
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.499
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -139.0
+offset_top = -87.899994
+offset_right = 139.0
+offset_bottom = 88.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel" type="Panel" parent="ForSh/MarginContainer3" unique_id=157554603]
+layout_mode = 2
+theme = SubResource("Theme_r5gmx")
+theme_override_styles/panel = SubResource("StyleBoxFlat_7jvn3")
+
+[node name="MarginContainer" type="MarginContainer" parent="ForSh/MarginContainer3" unique_id=1415184350]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ForSh/MarginContainer3/MarginContainer" unique_id=1345435519]
+custom_minimum_size = Vector2(0, -9.005)
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="ForSh/MarginContainer3/MarginContainer/VBoxContainer" unique_id=122701068]
+layout_mode = 2
+text = "Справочник"
+label_settings = ExtResource("17_bvot0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ForSh/MarginContainer3/MarginContainer/VBoxContainer" unique_id=1747816841]
+custom_minimum_size = Vector2(250, 410)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ForSh/MarginContainer3/MarginContainer/VBoxContainer/ScrollContainer" unique_id=89337973]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ForSh/MarginContainer3/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1054261225]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("18_qdhdj")
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[center][b][font_size=20][color=gold]ХОД ШЕРИФА[/color][/font_size][/b][/center]
+
+[b]• Ваша задача:[/b]
+Вам нужно узнать статус любого игрока, чтобы выяснить, играет ли он за [color=red]Мафию[/color] или является [color=green]Мирным жителем[/color].
+
+[b]• Как сделать выбор:[/b]
+1. Нажмите на [b][color=yellow]имя игрока[/color][/b], чью истинную роль вы хотите проверить этой ночью.
+2. Если вы сомневаетесь, вы можете изменить выбор, нажав на имя другого игрока.
+3. Когда выбор сделан, нажмите кнопку [b][color=orange]СДЕЛАТЬ ВЫБОР[/color][/b].
+
+[b]• Результат проверки:[/b]
+После нажатия вы увидите точную роль проверенного игрока, а затем надпись [i][color=cyan]«Шериф засыпает»[/color][/i]. 
+Запомните полученную информацию, закройте глаза и ожидайте объявления утра.
+"
+fit_content = true
+tab_size = 3
+
+[node name="close_options_menu" type="TextureButton" parent="ForSh/MarginContainer3/MarginContainer/VBoxContainer" unique_id=1510336749]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 10
+texture_normal = ExtResource("19_vhxas")
+texture_pressed = ExtResource("20_0o38t")
+ignore_texture_size = true
+stretch_mode = 4
+
 [node name="After_night" type="Control" parent="." unique_id=563883058]
 visible = false
 layout_mode = 1
@@ -875,6 +1249,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -20.0
+offset_right = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 20
@@ -1037,6 +1413,91 @@ stream = ExtResource("27_hkom0")
 
 [node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="After_night" unique_id=352869852]
 stream = ExtResource("28_4migy")
+
+[node name="MarginContainer3" type="MarginContainer" parent="After_night" unique_id=1585801321]
+visible = false
+visibility_layer = 4
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.499
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -139.0
+offset_top = -87.899994
+offset_right = 139.0
+offset_bottom = 88.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel2" type="Panel" parent="After_night/MarginContainer3" unique_id=1520128629]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vhxas")
+
+[node name="MarginContainer" type="MarginContainer" parent="After_night/MarginContainer3" unique_id=1422096061]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="After_night/MarginContainer3/MarginContainer" unique_id=971355033]
+custom_minimum_size = Vector2(0, -9.005)
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="After_night/MarginContainer3/MarginContainer/VBoxContainer" unique_id=2076167559]
+layout_mode = 2
+text = "Справочник"
+label_settings = ExtResource("17_bvot0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="After_night/MarginContainer3/MarginContainer/VBoxContainer" unique_id=1864924064]
+custom_minimum_size = Vector2(250, 410)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="After_night/MarginContainer3/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1945144944]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="After_night/MarginContainer3/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=138683337]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("18_qdhdj")
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[center][b][font_size=20][color=gold]ХОД ШЕРИФА[/color][/font_size][/b][/center]
+
+[b]• Ваша задача:[/b]
+Вам нужно узнать статус любого игрока, чтобы выяснить, играет ли он за [color=red]Мафию[/color] или является [color=green]Мирным жителем[/color].
+
+[b]• Как сделать выбор:[/b]
+1. Нажмите на [b][color=yellow]имя игрока[/color][/b], чью истинную роль вы хотите проверить этой ночью.
+2. Если вы сомневаетесь, вы можете изменить выбор, нажав на имя другого игрока.
+3. Когда выбор сделан, нажмите кнопку [b][color=orange]СДЕЛАТЬ ВЫБОР[/color][/b].
+
+[b]• Результат проверки:[/b]
+После нажатия вы увидите точную роль проверенного игрока, а затем надпись [i][color=cyan]«Шериф засыпает»[/color][/i]. 
+Запомните полученную информацию, закройте глаза и ожидайте объявления утра.
+"
+fit_content = true
+tab_size = 3
+
+[node name="close_options_menu" type="TextureButton" parent="After_night/MarginContainer3/MarginContainer/VBoxContainer" unique_id=542593052]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 10
+texture_normal = ExtResource("33_vhxas")
+texture_pressed = ExtResource("34_0o38t")
+ignore_texture_size = true
+stretch_mode = 4
 
 [node name="End" type="Control" parent="." unique_id=66378296]
 visible = false
