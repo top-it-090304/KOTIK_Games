@@ -98,7 +98,7 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ive8x"]
-bg_color = Color(0.38431373, 0.4, 0.54901963, 1)
+bg_color = Color(0, 0, 0, 0.54901963)
 border_color = Color(0.8, 0.8, 0.8, 0)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
@@ -1552,25 +1552,48 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelContainer2" type="PanelContainer" parent="Start" unique_id=286115672]
-custom_minimum_size = Vector2(231.835, 35.535)
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Start" unique_id=1021089647]
+stream = ExtResource("29_bvot0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Start" unique_id=1589336744]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -115.9175
-offset_top = -31.5
-offset_right = 115.9175
-offset_bottom = 31.5
+offset_left = -140.0
+offset_top = -283.5
+offset_right = 140.0
+offset_bottom = 283.5
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="Start/VBoxContainer" unique_id=286115672]
+custom_minimum_size = Vector2(280, 520)
+layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_ive8x")
 
-[node name="Label" type="Label" parent="Start/PanelContainer2" unique_id=792457869]
+[node name="RichTextLabel" type="RichTextLabel" parent="Start/VBoxContainer/PanelContainer2" unique_id=1180814808]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][b][font_size=22][color=gold]ПОДГОТОВКА К ИГРЕ[/color][/font_size][/b][/center]
+
+[b]• [color=orange]Знакомство:[/color][/b]
+Перед началом первой ночи все игроки могут по очереди представиться городу и кратко обсудить свои планы на игру.
+
+[b]• [color=orange]Подготовка к началу:[/color][/b]
+1. Всем участникам необходимо занять свои постоянные места.
+2. Положите телефон [color=wheat]в центр стола[/color] или так, чтобы каждый игрок ночью мог свободно и бесшумно дотянуться до экрана.
+
+[b]• [color=orange]Переход к ночи:[/color][/b]
+Когда все игроки будут готовы, нажмите кнопку [color=tan]ПЕРЕЙТИ К НОЧИ[/color]. 
+После нажатия [color=cadet_blue]закройте глаза[/color] — вы услышите голосовое объявление диктора о начале ночи. Далее строго следуйте его указаниям."
+
+[node name="Label" type="Label" parent="Start/VBoxContainer" unique_id=792457869]
+visible = false
 layout_mode = 2
 size_flags_vertical = 0
 theme = ExtResource("6_wg8vd")
@@ -1581,15 +1604,38 @@ text = "Город годовится ко сну
 label_settings = ExtResource("9_umkeg")
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="Start/PanelContainer2" unique_id=908852425]
+[node name="Button" type="Button" parent="Start/VBoxContainer" unique_id=908852425]
 custom_minimum_size = Vector2(0, 33)
 layout_mode = 2
-size_flags_vertical = 8
+size_flags_vertical = 10
 theme = ExtResource("11_4uu0p")
 text = "Перейти к ночи"
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Start" unique_id=1021089647]
-stream = ExtResource("29_bvot0")
+[node name="MarginContainer2" type="MarginContainer" parent="Start" unique_id=1073870569]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="PanelContainer" type="PanelContainer" parent="Start/MarginContainer2" unique_id=659633700]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 1
+theme_override_styles/panel = ExtResource("12_0rw8h")
+
+[node name="Label2" type="Label" parent="Start/MarginContainer2/PanelContainer" unique_id=479808799]
+layout_mode = 2
+text = "Город засыпает"
+label_settings = ExtResource("9_umkeg")
+horizontal_alignment = 1
 
 [node name="Экран_опций" parent="." unique_id=764931924 instance=ExtResource("19_y7sb5")]
 layout_mode = 1

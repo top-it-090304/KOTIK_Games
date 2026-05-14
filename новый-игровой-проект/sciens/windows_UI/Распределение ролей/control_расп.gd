@@ -25,7 +25,7 @@ extends Control
 
 @onready var menu_panel_M: Button = $ForMafia/Button
 
-@onready var start_night: Button = $Start/PanelContainer2/Button
+@onready var start_night: Button = $Start/VBoxContainer/Button
 
 @onready var where_label_M = $ForMafia/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer
 
@@ -75,6 +75,8 @@ func play_info_menu_close():
 	info_menu_marg.hide()
 	opcii.show()
 
+var app_name_i: int = 1
+
 func app_name(player_name):
 	pl_name_glob = player_name
 	print("55)", pl_name_glob)
@@ -117,8 +119,13 @@ func dalee_pressed():
 
 
 func Daleerol_pressed():
+	if pl_name_glob == " ":
+		pl_name_glob = "Игрок " + str(app_name_i)
+	app_name_i = app_name_i + 1
+	print(app_name_i)
 	name_arr.append(pl_name_glob)
 	print("1)", pl_name_glob)
+	pl_name_glob = " "
 	if rand == -1:
 		hide_all_panels()
 		player_panels[current_panel_index].visible = false
@@ -138,6 +145,8 @@ func first_night():
 	#get_tree().paused = true
 	#await get_tree().create_timer(2.0, true).timeout
 	#get_tree().paused = false
+	$Start/VBoxContainer.hide()
+	$Start/MarginContainer2.show()
 	voice_start_gosleep.play()
 	await voice_start_gosleep.finished
 	get_tree().paused = true
