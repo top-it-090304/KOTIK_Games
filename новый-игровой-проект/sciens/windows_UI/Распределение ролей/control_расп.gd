@@ -285,6 +285,7 @@ func mafia_helper_close():
 func duplicate_menu_maf():
 	opcii.show()
 	info_menu.show()
+	helper_mafia.hide()
 	info_menu_day.hide()
 	info_menu.pressed.connect(mafia_helper_open)
 	menu_maf_dub = []
@@ -398,6 +399,7 @@ func doc_helper_close():
 
 #Делаем дубликаты кнопок для Мафии (Кого они могут убить)
 func duplicate_menu_doc():
+	helper_doc.hide()
 	info_menu.pressed.connect(doc_helper_open)
 	menu_doc_dub = []
 	my_button_group_doc = ButtonGroup.new()
@@ -510,6 +512,7 @@ func don_helper_close():
 
 #Делаем дубликаты кнопок для Дона (Кого он может проверить на шерифа)
 func duplicate_menu_don():
+	helper_don.hide()
 	info_menu.pressed.connect(don_helper_open)
 	menu_don_dub = []
 	my_button_group_don = ButtonGroup.new()
@@ -635,6 +638,7 @@ func sh_helper_close():
 
 #Делаем дубликаты кнопок для Мафии (Кого они могут убить)
 func duplicate_menu_sh():
+	helper_sh.hide()
 	info_menu.pressed.connect(sh_helper_open)
 	menu_sh_dub = []
 	my_button_group_sh = ButtonGroup.new()
@@ -739,10 +743,12 @@ func after_night():
 	if (all_count - mafia_count - don_count <= mafia_count + don_count) :
 		$End/VBoxContainer/PanelContainer2/Label.text = "Мафия победила"
 		$End.show()
+		opcii.hide()
 	elif(mafia_count + don_count == 0):
 		$End/VBoxContainer/PanelContainer2/Label.text = "Мирные жители победили"
 		print("This")
 		$End.show()
+		opcii.hide()
 	else:
 		For_af.show()
 		$"Виньетка".hide()
@@ -859,12 +865,14 @@ func af_sleep():
 		For_af.hide()
 		$Day.hide()
 		$End.show()
+		opcii.hide()
 	elif (all_count - mafia_count - don_count <= mafia_count + don_count) :
 		$End/VBoxContainer/PanelContainer2/Label.text = "Мафия победила"
 		print("This")
 		For_af.hide()
 		$Day.hide()
 		$End.show()
+		opcii.hide()
 	else:
 		af_go_sleep1.visible = false
 		af_go_sleep2.visible = true
