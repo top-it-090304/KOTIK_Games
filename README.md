@@ -3,7 +3,7 @@
 
 <img width="298" height="600" alt="image" src="https://github.com/user-attachments/assets/b5d0a577-0eb5-4b9a-9348-354fbe90f6b4" />
 
-<img width="822/2" height="1122/2" alt="Доктор" src="https://github.com/user-attachments/assets/bd976bc6-018a-4f84-b555-3305b92e527a" />
+<img width="411" height="561" alt="Доктор" src="https://github.com/user-attachments/assets/bd976bc6-018a-4f84-b555-3305b92e527a" />
 
 <img width="822" height="1122" alt="Шериф" src="https://github.com/user-attachments/assets/6369b5ca-6fa8-480a-aeca-3a43bd1bc580" />
 
